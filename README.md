@@ -1,8 +1,8 @@
 # ĐỒ ÁN - LẬP TRÌNH TRỰC QUAN - ĐHCNTT
-XÂY DỰNG CHƯƠNG TRÌNH MÔ PHỎNG CÁC THUẬT TOÁN SẮP SẾP;
+XÂY DỰNG CHƯƠNG TRÌNH MÔ PHỎNG CÁC THUẬT TOÁN SẮP SẾP
 
 # MỤC ĐÍCH
-Chương trình làm ra nhằm giúp các sinh viên hiểu rõ hơn về cách thực hiện các thuật toán sắp xếp;
+Chương trình làm ra nhằm giúp các sinh viên hiểu rõ hơn về cách thực hiện các thuật toán sắp xếp
 
 # TÍNH NĂNG
 ##### Thực hiện các loại sắp sếp tăng dần, giảm dần cho các thuật toán sắp xếp sau:
@@ -18,12 +18,12 @@ Chương trình làm ra nhằm giúp các sinh viên hiểu rõ hơn về cách 
 # THIẾT KẾ GIAO DIỆN
 * Khung hình hiển thị các phần tử để sắp xếp.
 * Khung phần nhập dữ liệu, tạo mảng.
-* Khung thay đổi tốc độ, chọn kiểu sắp xếp
-* Khung chọn thuật toán sắp xếp
-* Khung C++ code, ý tưởng
+* Khung thay đổi tốc độ, chọn kiểu sắp xếp.
+* Khung chọn thuật toán sắp xếp.
+* Khung C++ code, ý tưởng.
 
 # DỮ LIỆU
 ##### Cho phép người dùng có thể nhập vào bằng các cách:
-* Bằng tay
-* Ngẫu Nhiên
-* Đọc từ file text
+* Bằng tay.
+* Ngẫu Nhiên.
+* Đọc từ file text.
