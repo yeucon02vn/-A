@@ -1,4 +1,4 @@
-# ĐỒ ÁN - Lập trình trực quan - ĐHCNTT
+# ĐỒ ÁN - LẬP TRÌNH TRỰC QUAN - ĐHCNTT
 XÂY DỰNG CHƯƠNG TRÌNH MÔ PHỎNG CÁC THUẬT TOÁN SẮP SẾP;
 
 # MỤC ĐÍCH
