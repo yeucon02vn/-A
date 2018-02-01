@@ -5,7 +5,7 @@ XÂY DỰNG CHƯƠNG TRÌNH MÔ PHỎNG CÁC THUẬT TOÁN SẮP SẾP;
 Chương trình làm ra nhằm giúp các sinh viên hiểu rõ hơn về cách thực hiện các thuật toán sắp xếp;
 
 # TÍNH NĂNG
-## Thực hiện các loại sắp sếp tăng dần, giảm dần cho các thuật toán sắp xếp sau:
+##### Thực hiện các loại sắp sếp tăng dần, giảm dần cho các thuật toán sắp xếp sau:
 * Select Sort (Chọn trực tiếp).
 * Insertion Sort (Chèn trực tiếp).
 * Binary intertion Sort (Chèn nhị phân).
@@ -23,7 +23,7 @@ Chương trình làm ra nhằm giúp các sinh viên hiểu rõ hơn về cách 
 * Khung C++ code, ý tưởng
 
 # DỮ LIỆU
-## Cho phép người dùng có thể nhập vào bằng các cách:
+##### Cho phép người dùng có thể nhập vào bằng các cách:
 * Bằng tay
 * Ngẫu Nhiên
 * Đọc từ file text
