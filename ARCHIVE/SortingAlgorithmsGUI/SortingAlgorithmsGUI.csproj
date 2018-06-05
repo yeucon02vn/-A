@@ -58,6 +58,12 @@
     <Compile Include="frmApplication.Designer.cs">
       <DependentUpon>frmApplication.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmByHand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmByHand.Designer.cs">
+      <DependentUpon>frmByHand.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmExcecutors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="YTuong.cs" />
     <EmbeddedResource Include="frmApplication.resx">
       <DependentUpon>frmApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmByHand.resx">
+      <DependentUpon>frmByHand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmExcecutors.resx">
       <DependentUpon>frmExcecutors.cs</DependentUpon>

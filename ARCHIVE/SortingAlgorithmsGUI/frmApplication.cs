@@ -15,6 +15,16 @@ namespace SortingAlgorithmsGUI
 {
     public partial class frmApplication : Form
     {
+        public static string PT1 = string.Empty;
+        public static string PT2 = string.Empty;
+        public static string PT3 = string.Empty;
+        public static string PT4 = string.Empty;
+        public static string PT5 = string.Empty;
+        public static string PT6 = string.Empty;
+        public static string PT7 = string.Empty;
+        public static string PT8 = string.Empty;
+        public static string PT9 = string.Empty;
+        public static string PT10 = string.Empty;
 
         int[] Arrayy;
         Label[] Arrayyy;
@@ -1581,6 +1591,37 @@ namespace SortingAlgorithmsGUI
             pnlChayMau.Controls.Add(lblC);
         }
         public static ManualResetEvent codeListBoxPauseStatus = new ManualResetEvent(true);
+
+        private void bntByHand_Click(object sender, EventArgs e)
+        {
+            frmByHand a = new frmByHand();
+            a.Message = numArray.Value.ToString();
+            a.ShowDialog();
+            int n = Int32.Parse(numArray.Value.ToString());
+
+            for (int i = 0; i < n; i++)
+            {
+
+                switch (i + 1)
+                {
+                    case 1: Arrayyy[i].Text = PT1 ; Arrayy[i] = Int32.Parse(PT1); break;
+                    case 2: Arrayyy[i].Text = PT2 ; Arrayy[i] = Int32.Parse(PT2); break;
+                    case 3: Arrayyy[i].Text = PT3 ; Arrayy[i] = Int32.Parse(PT3); break;
+                    case 4: Arrayyy[i].Text = PT4 ; Arrayy[i] = Int32.Parse(PT4); break;
+                    case 5: Arrayyy[i].Text = PT5 ; Arrayy[i] = Int32.Parse(PT5); break;
+                    case 6: Arrayyy[i].Text = PT6 ; Arrayy[i] = Int32.Parse(PT6); break;
+                    case 7: Arrayyy[i].Text = PT7 ; Arrayy[i] = Int32.Parse(PT7); break;
+                    case 8: Arrayyy[i].Text = PT8 ; Arrayy[i] = Int32.Parse(PT8); break;
+                    case 9: Arrayyy[i].Text = PT9 ; Arrayy[i] = Int32.Parse(PT9); break;
+                    case 10: Arrayyy[i].Text = PT10; Arrayy[i] = Int32.Parse(PT10); break;
+                        
+                }             
+                
+            }
+            pnlLoaiThuatToan.Enabled = true;
+            pnlBangDieuKhien.Enabled = true;
+        }
+
         public static bool CodeListBoxIsPause = false;
         public void ChonDongChoCodeListBox(int viTri)
         {

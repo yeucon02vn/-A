@@ -23,3 +23,17 @@ C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGU
 C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userLecturers.resources
 C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userStudents.resources
 C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.csproj.GenerateResource.Cache
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\bin\Debug\SortingAlgorithmsGUI.exe.config
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.exe
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.pdb
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.csprojResolveAssemblyReference.cache
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmApplication.resources
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmByHand.resources
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmExcecutors.resources
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmIntroduct.resources
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.Properties.Resources.resources
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userLecturers.resources
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userStudents.resources
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.csproj.GenerateResource.Cache
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\bin\Debug\SortingAlgorithmsGUI.exe
+C:\Users\Kaitou Kid\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\bin\Debug\SortingAlgorithmsGUI.pdb

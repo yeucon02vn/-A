@@ -35,23 +35,40 @@
             this.lblGiay = new System.Windows.Forms.Label();
             this.lblPhut = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Thoat = new System.Windows.Forms.Button();
+            this.bntBack = new System.Windows.Forms.Button();
             this.pnlChayMau = new System.Windows.Forms.Panel();
             this.lblB = new System.Windows.Forms.Label();
             this.lblC = new System.Windows.Forms.Label();
             this.lblA = new System.Windows.Forms.Label();
+            this.Mui_ten_do_len = new System.Windows.Forms.Label();
+            this.Mui_ten_xanh_len_2 = new System.Windows.Forms.Label();
+            this.Mui_ten_xanh_len_1 = new System.Windows.Forms.Label();
+            this.Mui_ten_xanh_xuong_2 = new System.Windows.Forms.Label();
+            this.Mui_ten_xanh_xuong_1 = new System.Windows.Forms.Label();
             this.lbl_status_02 = new System.Windows.Forms.Label();
             this.tBarSpeed = new System.Windows.Forms.TrackBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listCode = new System.Windows.Forms.ListBox();
+            this.bntSourceCode = new System.Windows.Forms.Button();
             this.listIdea = new System.Windows.Forms.ListBox();
+            this.bntIdeaAlgorithm = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.grpCreateArray = new System.Windows.Forms.GroupBox();
+            this.radDecrease = new System.Windows.Forms.RadioButton();
+            this.radIncrease = new System.Windows.Forms.RadioButton();
+            this.bntByHand = new System.Windows.Forms.Button();
+            this.bntRandom = new System.Windows.Forms.Button();
             this.grpInitial = new System.Windows.Forms.GroupBox();
+            this.bntReset = new System.Windows.Forms.Button();
+            this.bntCreate = new System.Windows.Forms.Button();
             this.numArray = new System.Windows.Forms.NumericUpDown();
             this.grpDebug = new System.Windows.Forms.GroupBox();
             this.bntDebug = new System.Windows.Forms.Button();
             this.ckDebug = new System.Windows.Forms.CheckBox();
             this.pnlBangDieuKhien = new System.Windows.Forms.Panel();
+            this.bntPlay = new System.Windows.Forms.Button();
+            this.bntPause = new System.Windows.Forms.Button();
             this.pnlLoaiThuatToan = new System.Windows.Forms.Panel();
             this.radSelection = new System.Windows.Forms.RadioButton();
             this.radInsertion = new System.Windows.Forms.RadioButton();
@@ -61,23 +78,6 @@
             this.radMerge = new System.Windows.Forms.RadioButton();
             this.radBubble = new System.Windows.Forms.RadioButton();
             this.radQuick = new System.Windows.Forms.RadioButton();
-            this.radDecrease = new System.Windows.Forms.RadioButton();
-            this.radIncrease = new System.Windows.Forms.RadioButton();
-            this.bntByHand = new System.Windows.Forms.Button();
-            this.bntRandom = new System.Windows.Forms.Button();
-            this.bntReset = new System.Windows.Forms.Button();
-            this.bntCreate = new System.Windows.Forms.Button();
-            this.bntPlay = new System.Windows.Forms.Button();
-            this.bntPause = new System.Windows.Forms.Button();
-            this.bntSourceCode = new System.Windows.Forms.Button();
-            this.bntIdeaAlgorithm = new System.Windows.Forms.Button();
-            this.Mui_ten_do_len = new System.Windows.Forms.Label();
-            this.Mui_ten_xanh_len_2 = new System.Windows.Forms.Label();
-            this.Mui_ten_xanh_len_1 = new System.Windows.Forms.Label();
-            this.Mui_ten_xanh_xuong_2 = new System.Windows.Forms.Label();
-            this.Mui_ten_xanh_xuong_1 = new System.Windows.Forms.Label();
-            this.Thoat = new System.Windows.Forms.Button();
-            this.bntBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.ThoiGianThucThi.SuspendLayout();
             this.pnlChayMau.SuspendLayout();
@@ -166,6 +166,39 @@
             this.label1.TabIndex = 109;
             this.label1.Text = "Thời gian thực hiện:";
             // 
+            // Thoat
+            // 
+            this.Thoat.AutoSize = true;
+            this.Thoat.BackColor = System.Drawing.Color.Transparent;
+            this.Thoat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Thoat.FlatAppearance.BorderSize = 0;
+            this.Thoat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
+            this.Thoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Thoat.Image = ((System.Drawing.Image)(resources.GetObject("Thoat.Image")));
+            this.Thoat.Location = new System.Drawing.Point(1109, 0);
+            this.Thoat.Margin = new System.Windows.Forms.Padding(2);
+            this.Thoat.Name = "Thoat";
+            this.Thoat.Size = new System.Drawing.Size(50, 53);
+            this.Thoat.TabIndex = 1;
+            this.Thoat.UseVisualStyleBackColor = false;
+            this.Thoat.Click += new System.EventHandler(this.Thoat_Click);
+            // 
+            // bntBack
+            // 
+            this.bntBack.BackColor = System.Drawing.Color.Transparent;
+            this.bntBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bntBack.FlatAppearance.BorderSize = 0;
+            this.bntBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
+            this.bntBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntBack.Image = ((System.Drawing.Image)(resources.GetObject("bntBack.Image")));
+            this.bntBack.Location = new System.Drawing.Point(0, 0);
+            this.bntBack.Margin = new System.Windows.Forms.Padding(2);
+            this.bntBack.Name = "bntBack";
+            this.bntBack.Size = new System.Drawing.Size(52, 53);
+            this.bntBack.TabIndex = 0;
+            this.bntBack.UseVisualStyleBackColor = false;
+            this.bntBack.Click += new System.EventHandler(this.bntBack_Click);
+            // 
             // pnlChayMau
             // 
             this.pnlChayMau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
@@ -220,6 +253,67 @@
             this.lblA.Text = "B";
             this.lblA.Visible = false;
             // 
+            // Mui_ten_do_len
+            // 
+            this.Mui_ten_do_len.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.Mui_ten_do_len.Image = ((System.Drawing.Image)(resources.GetObject("Mui_ten_do_len.Image")));
+            this.Mui_ten_do_len.Location = new System.Drawing.Point(363, 290);
+            this.Mui_ten_do_len.Name = "Mui_ten_do_len";
+            this.Mui_ten_do_len.Size = new System.Drawing.Size(60, 40);
+            this.Mui_ten_do_len.TabIndex = 6;
+            this.Mui_ten_do_len.Text = "R";
+            this.Mui_ten_do_len.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Mui_ten_do_len.Visible = false;
+            // 
+            // Mui_ten_xanh_len_2
+            // 
+            this.Mui_ten_xanh_len_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.Mui_ten_xanh_len_2.Image = ((System.Drawing.Image)(resources.GetObject("Mui_ten_xanh_len_2.Image")));
+            this.Mui_ten_xanh_len_2.Location = new System.Drawing.Point(248, 290);
+            this.Mui_ten_xanh_len_2.Name = "Mui_ten_xanh_len_2";
+            this.Mui_ten_xanh_len_2.Size = new System.Drawing.Size(60, 40);
+            this.Mui_ten_xanh_len_2.TabIndex = 5;
+            this.Mui_ten_xanh_len_2.Text = "u2";
+            this.Mui_ten_xanh_len_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Mui_ten_xanh_len_2.Visible = false;
+            // 
+            // Mui_ten_xanh_len_1
+            // 
+            this.Mui_ten_xanh_len_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.Mui_ten_xanh_len_1.Image = ((System.Drawing.Image)(resources.GetObject("Mui_ten_xanh_len_1.Image")));
+            this.Mui_ten_xanh_len_1.Location = new System.Drawing.Point(150, 290);
+            this.Mui_ten_xanh_len_1.Name = "Mui_ten_xanh_len_1";
+            this.Mui_ten_xanh_len_1.Size = new System.Drawing.Size(60, 40);
+            this.Mui_ten_xanh_len_1.TabIndex = 4;
+            this.Mui_ten_xanh_len_1.Text = "u1";
+            this.Mui_ten_xanh_len_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Mui_ten_xanh_len_1.Visible = false;
+            // 
+            // Mui_ten_xanh_xuong_2
+            // 
+            this.Mui_ten_xanh_xuong_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.Mui_ten_xanh_xuong_2.Image = global::SortingAlgorithmsGUI.Properties.Resources._2;
+            this.Mui_ten_xanh_xuong_2.Location = new System.Drawing.Point(291, 58);
+            this.Mui_ten_xanh_xuong_2.Name = "Mui_ten_xanh_xuong_2";
+            this.Mui_ten_xanh_xuong_2.Size = new System.Drawing.Size(60, 40);
+            this.Mui_ten_xanh_xuong_2.TabIndex = 3;
+            this.Mui_ten_xanh_xuong_2.Text = "d2";
+            this.Mui_ten_xanh_xuong_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Mui_ten_xanh_xuong_2.Visible = false;
+            // 
+            // Mui_ten_xanh_xuong_1
+            // 
+            this.Mui_ten_xanh_xuong_1.BackColor = System.Drawing.Color.Transparent;
+            this.Mui_ten_xanh_xuong_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.Mui_ten_xanh_xuong_1.Image = global::SortingAlgorithmsGUI.Properties.Resources._2;
+            this.Mui_ten_xanh_xuong_1.Location = new System.Drawing.Point(164, 58);
+            this.Mui_ten_xanh_xuong_1.Name = "Mui_ten_xanh_xuong_1";
+            this.Mui_ten_xanh_xuong_1.Size = new System.Drawing.Size(60, 40);
+            this.Mui_ten_xanh_xuong_1.TabIndex = 2;
+            this.Mui_ten_xanh_xuong_1.Text = "d1";
+            this.Mui_ten_xanh_xuong_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Mui_ten_xanh_xuong_1.Visible = false;
+            // 
             // lbl_status_02
             // 
             this.lbl_status_02.AutoSize = true;
@@ -269,6 +363,24 @@
             this.listCode.Size = new System.Drawing.Size(353, 286);
             this.listCode.TabIndex = 2;
             // 
+            // bntSourceCode
+            // 
+            this.bntSourceCode.BackColor = System.Drawing.Color.Gray;
+            this.bntSourceCode.FlatAppearance.BorderSize = 0;
+            this.bntSourceCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntSourceCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.bntSourceCode.Image = ((System.Drawing.Image)(resources.GetObject("bntSourceCode.Image")));
+            this.bntSourceCode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntSourceCode.Location = new System.Drawing.Point(2, 290);
+            this.bntSourceCode.Margin = new System.Windows.Forms.Padding(2);
+            this.bntSourceCode.Name = "bntSourceCode";
+            this.bntSourceCode.Size = new System.Drawing.Size(178, 61);
+            this.bntSourceCode.TabIndex = 0;
+            this.bntSourceCode.Text = "Source Code ";
+            this.bntSourceCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bntSourceCode.UseVisualStyleBackColor = false;
+            this.bntSourceCode.Click += new System.EventHandler(this.bntSourceCode_Click);
+            // 
             // listIdea
             // 
             this.listIdea.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
@@ -280,6 +392,25 @@
             this.listIdea.Name = "listIdea";
             this.listIdea.Size = new System.Drawing.Size(353, 286);
             this.listIdea.TabIndex = 1;
+            // 
+            // bntIdeaAlgorithm
+            // 
+            this.bntIdeaAlgorithm.BackColor = System.Drawing.Color.Gray;
+            this.bntIdeaAlgorithm.FlatAppearance.BorderSize = 0;
+            this.bntIdeaAlgorithm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntIdeaAlgorithm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
+            this.bntIdeaAlgorithm.ForeColor = System.Drawing.Color.Gold;
+            this.bntIdeaAlgorithm.Image = ((System.Drawing.Image)(resources.GetObject("bntIdeaAlgorithm.Image")));
+            this.bntIdeaAlgorithm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntIdeaAlgorithm.Location = new System.Drawing.Point(187, 290);
+            this.bntIdeaAlgorithm.Margin = new System.Windows.Forms.Padding(2);
+            this.bntIdeaAlgorithm.Name = "bntIdeaAlgorithm";
+            this.bntIdeaAlgorithm.Size = new System.Drawing.Size(166, 63);
+            this.bntIdeaAlgorithm.TabIndex = 0;
+            this.bntIdeaAlgorithm.Text = "Idea Algorithm";
+            this.bntIdeaAlgorithm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bntIdeaAlgorithm.UseVisualStyleBackColor = false;
+            this.bntIdeaAlgorithm.Click += new System.EventHandler(this.bntIdeaAlgorithm_Click);
             // 
             // panel3
             // 
@@ -311,6 +442,71 @@
             this.grpCreateArray.TabStop = false;
             this.grpCreateArray.Text = "Create Array";
             // 
+            // radDecrease
+            // 
+            this.radDecrease.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.radDecrease.ForeColor = System.Drawing.SystemColors.Control;
+            this.radDecrease.Image = ((System.Drawing.Image)(resources.GetObject("radDecrease.Image")));
+            this.radDecrease.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radDecrease.Location = new System.Drawing.Point(41, 59);
+            this.radDecrease.Margin = new System.Windows.Forms.Padding(2);
+            this.radDecrease.Name = "radDecrease";
+            this.radDecrease.Size = new System.Drawing.Size(116, 28);
+            this.radDecrease.TabIndex = 2;
+            this.radDecrease.Text = "Decrease";
+            this.radDecrease.UseVisualStyleBackColor = true;
+            this.radDecrease.CheckedChanged += new System.EventHandler(this.radDecrease_CheckedChanged);
+            // 
+            // radIncrease
+            // 
+            this.radIncrease.Checked = true;
+            this.radIncrease.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.radIncrease.ForeColor = System.Drawing.SystemColors.Control;
+            this.radIncrease.Image = ((System.Drawing.Image)(resources.GetObject("radIncrease.Image")));
+            this.radIncrease.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radIncrease.Location = new System.Drawing.Point(41, 27);
+            this.radIncrease.Margin = new System.Windows.Forms.Padding(2);
+            this.radIncrease.Name = "radIncrease";
+            this.radIncrease.Size = new System.Drawing.Size(116, 28);
+            this.radIncrease.TabIndex = 2;
+            this.radIncrease.TabStop = true;
+            this.radIncrease.Text = "Increase";
+            this.radIncrease.UseVisualStyleBackColor = true;
+            // 
+            // bntByHand
+            // 
+            this.bntByHand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(115)))), ((int)(((byte)(134)))));
+            this.bntByHand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Italic);
+            this.bntByHand.ForeColor = System.Drawing.SystemColors.Window;
+            this.bntByHand.Image = ((System.Drawing.Image)(resources.GetObject("bntByHand.Image")));
+            this.bntByHand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntByHand.Location = new System.Drawing.Point(116, 92);
+            this.bntByHand.Margin = new System.Windows.Forms.Padding(2);
+            this.bntByHand.Name = "bntByHand";
+            this.bntByHand.Size = new System.Drawing.Size(82, 39);
+            this.bntByHand.TabIndex = 1;
+            this.bntByHand.Text = "By Hand";
+            this.bntByHand.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bntByHand.UseVisualStyleBackColor = false;
+            this.bntByHand.Click += new System.EventHandler(this.bntByHand_Click);
+            // 
+            // bntRandom
+            // 
+            this.bntRandom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(115)))), ((int)(((byte)(134)))));
+            this.bntRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Italic);
+            this.bntRandom.ForeColor = System.Drawing.SystemColors.Window;
+            this.bntRandom.Image = ((System.Drawing.Image)(resources.GetObject("bntRandom.Image")));
+            this.bntRandom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntRandom.Location = new System.Drawing.Point(14, 92);
+            this.bntRandom.Margin = new System.Windows.Forms.Padding(2);
+            this.bntRandom.Name = "bntRandom";
+            this.bntRandom.Size = new System.Drawing.Size(82, 39);
+            this.bntRandom.TabIndex = 1;
+            this.bntRandom.Text = "Random";
+            this.bntRandom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bntRandom.UseVisualStyleBackColor = false;
+            this.bntRandom.Click += new System.EventHandler(this.bntRandom_Click);
+            // 
             // grpInitial
             // 
             this.grpInitial.Controls.Add(this.bntReset);
@@ -326,6 +522,39 @@
             this.grpInitial.TabIndex = 0;
             this.grpInitial.TabStop = false;
             this.grpInitial.Text = "Initial";
+            // 
+            // bntReset
+            // 
+            this.bntReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(115)))), ((int)(((byte)(134)))));
+            this.bntReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Italic);
+            this.bntReset.ForeColor = System.Drawing.SystemColors.Window;
+            this.bntReset.Image = ((System.Drawing.Image)(resources.GetObject("bntReset.Image")));
+            this.bntReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntReset.Location = new System.Drawing.Point(101, 92);
+            this.bntReset.Margin = new System.Windows.Forms.Padding(2);
+            this.bntReset.Name = "bntReset";
+            this.bntReset.Size = new System.Drawing.Size(75, 39);
+            this.bntReset.TabIndex = 1;
+            this.bntReset.Text = "Reset";
+            this.bntReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bntReset.UseVisualStyleBackColor = false;
+            // 
+            // bntCreate
+            // 
+            this.bntCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(115)))), ((int)(((byte)(134)))));
+            this.bntCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Italic);
+            this.bntCreate.ForeColor = System.Drawing.SystemColors.Window;
+            this.bntCreate.Image = ((System.Drawing.Image)(resources.GetObject("bntCreate.Image")));
+            this.bntCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntCreate.Location = new System.Drawing.Point(14, 92);
+            this.bntCreate.Margin = new System.Windows.Forms.Padding(2);
+            this.bntCreate.Name = "bntCreate";
+            this.bntCreate.Size = new System.Drawing.Size(75, 39);
+            this.bntCreate.TabIndex = 1;
+            this.bntCreate.Text = "Create";
+            this.bntCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bntCreate.UseVisualStyleBackColor = false;
+            this.bntCreate.Click += new System.EventHandler(this.bntCreate_Click);
             // 
             // numArray
             // 
@@ -396,6 +625,39 @@
             this.pnlBangDieuKhien.Name = "pnlBangDieuKhien";
             this.pnlBangDieuKhien.Size = new System.Drawing.Size(211, 135);
             this.pnlBangDieuKhien.TabIndex = 4;
+            // 
+            // bntPlay
+            // 
+            this.bntPlay.FlatAppearance.BorderSize = 0;
+            this.bntPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic);
+            this.bntPlay.ForeColor = System.Drawing.Color.MistyRose;
+            this.bntPlay.Image = ((System.Drawing.Image)(resources.GetObject("bntPlay.Image")));
+            this.bntPlay.Location = new System.Drawing.Point(13, 16);
+            this.bntPlay.Margin = new System.Windows.Forms.Padding(2);
+            this.bntPlay.Name = "bntPlay";
+            this.bntPlay.Size = new System.Drawing.Size(101, 117);
+            this.bntPlay.TabIndex = 1;
+            this.bntPlay.Text = "Play";
+            this.bntPlay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bntPlay.UseVisualStyleBackColor = true;
+            this.bntPlay.Click += new System.EventHandler(this.bntPlay_Click);
+            // 
+            // bntPause
+            // 
+            this.bntPause.FlatAppearance.BorderSize = 0;
+            this.bntPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic);
+            this.bntPause.ForeColor = System.Drawing.Color.MistyRose;
+            this.bntPause.Image = ((System.Drawing.Image)(resources.GetObject("bntPause.Image")));
+            this.bntPause.Location = new System.Drawing.Point(108, 15);
+            this.bntPause.Margin = new System.Windows.Forms.Padding(2);
+            this.bntPause.Name = "bntPause";
+            this.bntPause.Size = new System.Drawing.Size(101, 117);
+            this.bntPause.TabIndex = 1;
+            this.bntPause.Text = "Pause";
+            this.bntPause.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bntPause.UseVisualStyleBackColor = true;
             // 
             // pnlLoaiThuatToan
             // 
@@ -527,267 +789,6 @@
             this.radQuick.Text = "Quick Sort";
             this.radQuick.UseVisualStyleBackColor = true;
             this.radQuick.CheckedChanged += new System.EventHandler(this.radQuick_CheckedChanged);
-            // 
-            // radDecrease
-            // 
-            this.radDecrease.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.radDecrease.ForeColor = System.Drawing.SystemColors.Control;
-            this.radDecrease.Image = ((System.Drawing.Image)(resources.GetObject("radDecrease.Image")));
-            this.radDecrease.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radDecrease.Location = new System.Drawing.Point(41, 59);
-            this.radDecrease.Margin = new System.Windows.Forms.Padding(2);
-            this.radDecrease.Name = "radDecrease";
-            this.radDecrease.Size = new System.Drawing.Size(116, 28);
-            this.radDecrease.TabIndex = 2;
-            this.radDecrease.Text = "Decrease";
-            this.radDecrease.UseVisualStyleBackColor = true;
-            this.radDecrease.CheckedChanged += new System.EventHandler(this.radDecrease_CheckedChanged);
-            // 
-            // radIncrease
-            // 
-            this.radIncrease.Checked = true;
-            this.radIncrease.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.radIncrease.ForeColor = System.Drawing.SystemColors.Control;
-            this.radIncrease.Image = ((System.Drawing.Image)(resources.GetObject("radIncrease.Image")));
-            this.radIncrease.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radIncrease.Location = new System.Drawing.Point(41, 27);
-            this.radIncrease.Margin = new System.Windows.Forms.Padding(2);
-            this.radIncrease.Name = "radIncrease";
-            this.radIncrease.Size = new System.Drawing.Size(116, 28);
-            this.radIncrease.TabIndex = 2;
-            this.radIncrease.TabStop = true;
-            this.radIncrease.Text = "Increase";
-            this.radIncrease.UseVisualStyleBackColor = true;
-            // 
-            // bntByHand
-            // 
-            this.bntByHand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(115)))), ((int)(((byte)(134)))));
-            this.bntByHand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Italic);
-            this.bntByHand.ForeColor = System.Drawing.SystemColors.Window;
-            this.bntByHand.Image = ((System.Drawing.Image)(resources.GetObject("bntByHand.Image")));
-            this.bntByHand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntByHand.Location = new System.Drawing.Point(116, 92);
-            this.bntByHand.Margin = new System.Windows.Forms.Padding(2);
-            this.bntByHand.Name = "bntByHand";
-            this.bntByHand.Size = new System.Drawing.Size(82, 39);
-            this.bntByHand.TabIndex = 1;
-            this.bntByHand.Text = "By Hand";
-            this.bntByHand.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bntByHand.UseVisualStyleBackColor = false;
-            // 
-            // bntRandom
-            // 
-            this.bntRandom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(115)))), ((int)(((byte)(134)))));
-            this.bntRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Italic);
-            this.bntRandom.ForeColor = System.Drawing.SystemColors.Window;
-            this.bntRandom.Image = ((System.Drawing.Image)(resources.GetObject("bntRandom.Image")));
-            this.bntRandom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntRandom.Location = new System.Drawing.Point(14, 92);
-            this.bntRandom.Margin = new System.Windows.Forms.Padding(2);
-            this.bntRandom.Name = "bntRandom";
-            this.bntRandom.Size = new System.Drawing.Size(82, 39);
-            this.bntRandom.TabIndex = 1;
-            this.bntRandom.Text = "Random";
-            this.bntRandom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bntRandom.UseVisualStyleBackColor = false;
-            this.bntRandom.Click += new System.EventHandler(this.bntRandom_Click);
-            // 
-            // bntReset
-            // 
-            this.bntReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(115)))), ((int)(((byte)(134)))));
-            this.bntReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Italic);
-            this.bntReset.ForeColor = System.Drawing.SystemColors.Window;
-            this.bntReset.Image = ((System.Drawing.Image)(resources.GetObject("bntReset.Image")));
-            this.bntReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntReset.Location = new System.Drawing.Point(101, 92);
-            this.bntReset.Margin = new System.Windows.Forms.Padding(2);
-            this.bntReset.Name = "bntReset";
-            this.bntReset.Size = new System.Drawing.Size(75, 39);
-            this.bntReset.TabIndex = 1;
-            this.bntReset.Text = "Reset";
-            this.bntReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bntReset.UseVisualStyleBackColor = false;
-            // 
-            // bntCreate
-            // 
-            this.bntCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(115)))), ((int)(((byte)(134)))));
-            this.bntCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Italic);
-            this.bntCreate.ForeColor = System.Drawing.SystemColors.Window;
-            this.bntCreate.Image = ((System.Drawing.Image)(resources.GetObject("bntCreate.Image")));
-            this.bntCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntCreate.Location = new System.Drawing.Point(14, 92);
-            this.bntCreate.Margin = new System.Windows.Forms.Padding(2);
-            this.bntCreate.Name = "bntCreate";
-            this.bntCreate.Size = new System.Drawing.Size(75, 39);
-            this.bntCreate.TabIndex = 1;
-            this.bntCreate.Text = "Create";
-            this.bntCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bntCreate.UseVisualStyleBackColor = false;
-            this.bntCreate.Click += new System.EventHandler(this.bntCreate_Click);
-            // 
-            // bntPlay
-            // 
-            this.bntPlay.FlatAppearance.BorderSize = 0;
-            this.bntPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic);
-            this.bntPlay.ForeColor = System.Drawing.Color.MistyRose;
-            this.bntPlay.Image = ((System.Drawing.Image)(resources.GetObject("bntPlay.Image")));
-            this.bntPlay.Location = new System.Drawing.Point(13, 16);
-            this.bntPlay.Margin = new System.Windows.Forms.Padding(2);
-            this.bntPlay.Name = "bntPlay";
-            this.bntPlay.Size = new System.Drawing.Size(101, 117);
-            this.bntPlay.TabIndex = 1;
-            this.bntPlay.Text = "Play";
-            this.bntPlay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bntPlay.UseVisualStyleBackColor = true;
-            this.bntPlay.Click += new System.EventHandler(this.bntPlay_Click);
-            // 
-            // bntPause
-            // 
-            this.bntPause.FlatAppearance.BorderSize = 0;
-            this.bntPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic);
-            this.bntPause.ForeColor = System.Drawing.Color.MistyRose;
-            this.bntPause.Image = ((System.Drawing.Image)(resources.GetObject("bntPause.Image")));
-            this.bntPause.Location = new System.Drawing.Point(108, 15);
-            this.bntPause.Margin = new System.Windows.Forms.Padding(2);
-            this.bntPause.Name = "bntPause";
-            this.bntPause.Size = new System.Drawing.Size(101, 117);
-            this.bntPause.TabIndex = 1;
-            this.bntPause.Text = "Pause";
-            this.bntPause.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bntPause.UseVisualStyleBackColor = true;
-            // 
-            // bntSourceCode
-            // 
-            this.bntSourceCode.BackColor = System.Drawing.Color.Gray;
-            this.bntSourceCode.FlatAppearance.BorderSize = 0;
-            this.bntSourceCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntSourceCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.bntSourceCode.Image = ((System.Drawing.Image)(resources.GetObject("bntSourceCode.Image")));
-            this.bntSourceCode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntSourceCode.Location = new System.Drawing.Point(2, 290);
-            this.bntSourceCode.Margin = new System.Windows.Forms.Padding(2);
-            this.bntSourceCode.Name = "bntSourceCode";
-            this.bntSourceCode.Size = new System.Drawing.Size(178, 61);
-            this.bntSourceCode.TabIndex = 0;
-            this.bntSourceCode.Text = "Source Code ";
-            this.bntSourceCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bntSourceCode.UseVisualStyleBackColor = false;
-            this.bntSourceCode.Click += new System.EventHandler(this.bntSourceCode_Click);
-            // 
-            // bntIdeaAlgorithm
-            // 
-            this.bntIdeaAlgorithm.BackColor = System.Drawing.Color.Gray;
-            this.bntIdeaAlgorithm.FlatAppearance.BorderSize = 0;
-            this.bntIdeaAlgorithm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntIdeaAlgorithm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
-            this.bntIdeaAlgorithm.ForeColor = System.Drawing.Color.Gold;
-            this.bntIdeaAlgorithm.Image = ((System.Drawing.Image)(resources.GetObject("bntIdeaAlgorithm.Image")));
-            this.bntIdeaAlgorithm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntIdeaAlgorithm.Location = new System.Drawing.Point(187, 290);
-            this.bntIdeaAlgorithm.Margin = new System.Windows.Forms.Padding(2);
-            this.bntIdeaAlgorithm.Name = "bntIdeaAlgorithm";
-            this.bntIdeaAlgorithm.Size = new System.Drawing.Size(166, 63);
-            this.bntIdeaAlgorithm.TabIndex = 0;
-            this.bntIdeaAlgorithm.Text = "Idea Algorithm";
-            this.bntIdeaAlgorithm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bntIdeaAlgorithm.UseVisualStyleBackColor = false;
-            this.bntIdeaAlgorithm.Click += new System.EventHandler(this.bntIdeaAlgorithm_Click);
-            // 
-            // Mui_ten_do_len
-            // 
-            this.Mui_ten_do_len.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Mui_ten_do_len.Image = ((System.Drawing.Image)(resources.GetObject("Mui_ten_do_len.Image")));
-            this.Mui_ten_do_len.Location = new System.Drawing.Point(363, 290);
-            this.Mui_ten_do_len.Name = "Mui_ten_do_len";
-            this.Mui_ten_do_len.Size = new System.Drawing.Size(60, 40);
-            this.Mui_ten_do_len.TabIndex = 6;
-            this.Mui_ten_do_len.Text = "R";
-            this.Mui_ten_do_len.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Mui_ten_do_len.Visible = false;
-            // 
-            // Mui_ten_xanh_len_2
-            // 
-            this.Mui_ten_xanh_len_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Mui_ten_xanh_len_2.Image = ((System.Drawing.Image)(resources.GetObject("Mui_ten_xanh_len_2.Image")));
-            this.Mui_ten_xanh_len_2.Location = new System.Drawing.Point(248, 290);
-            this.Mui_ten_xanh_len_2.Name = "Mui_ten_xanh_len_2";
-            this.Mui_ten_xanh_len_2.Size = new System.Drawing.Size(60, 40);
-            this.Mui_ten_xanh_len_2.TabIndex = 5;
-            this.Mui_ten_xanh_len_2.Text = "u2";
-            this.Mui_ten_xanh_len_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Mui_ten_xanh_len_2.Visible = false;
-            // 
-            // Mui_ten_xanh_len_1
-            // 
-            this.Mui_ten_xanh_len_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Mui_ten_xanh_len_1.Image = ((System.Drawing.Image)(resources.GetObject("Mui_ten_xanh_len_1.Image")));
-            this.Mui_ten_xanh_len_1.Location = new System.Drawing.Point(150, 290);
-            this.Mui_ten_xanh_len_1.Name = "Mui_ten_xanh_len_1";
-            this.Mui_ten_xanh_len_1.Size = new System.Drawing.Size(60, 40);
-            this.Mui_ten_xanh_len_1.TabIndex = 4;
-            this.Mui_ten_xanh_len_1.Text = "u1";
-            this.Mui_ten_xanh_len_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Mui_ten_xanh_len_1.Visible = false;
-            // 
-            // Mui_ten_xanh_xuong_2
-            // 
-            this.Mui_ten_xanh_xuong_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Mui_ten_xanh_xuong_2.Image = global::SortingAlgorithmsGUI.Properties.Resources._2;
-            this.Mui_ten_xanh_xuong_2.Location = new System.Drawing.Point(291, 58);
-            this.Mui_ten_xanh_xuong_2.Name = "Mui_ten_xanh_xuong_2";
-            this.Mui_ten_xanh_xuong_2.Size = new System.Drawing.Size(60, 40);
-            this.Mui_ten_xanh_xuong_2.TabIndex = 3;
-            this.Mui_ten_xanh_xuong_2.Text = "d2";
-            this.Mui_ten_xanh_xuong_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Mui_ten_xanh_xuong_2.Visible = false;
-            // 
-            // Mui_ten_xanh_xuong_1
-            // 
-            this.Mui_ten_xanh_xuong_1.BackColor = System.Drawing.Color.Transparent;
-            this.Mui_ten_xanh_xuong_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Mui_ten_xanh_xuong_1.Image = global::SortingAlgorithmsGUI.Properties.Resources._2;
-            this.Mui_ten_xanh_xuong_1.Location = new System.Drawing.Point(164, 58);
-            this.Mui_ten_xanh_xuong_1.Name = "Mui_ten_xanh_xuong_1";
-            this.Mui_ten_xanh_xuong_1.Size = new System.Drawing.Size(60, 40);
-            this.Mui_ten_xanh_xuong_1.TabIndex = 2;
-            this.Mui_ten_xanh_xuong_1.Text = "d1";
-            this.Mui_ten_xanh_xuong_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Mui_ten_xanh_xuong_1.Visible = false;
-            // 
-            // Thoat
-            // 
-            this.Thoat.AutoSize = true;
-            this.Thoat.BackColor = System.Drawing.Color.Transparent;
-            this.Thoat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Thoat.FlatAppearance.BorderSize = 0;
-            this.Thoat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
-            this.Thoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Thoat.Image = ((System.Drawing.Image)(resources.GetObject("Thoat.Image")));
-            this.Thoat.Location = new System.Drawing.Point(1109, 0);
-            this.Thoat.Margin = new System.Windows.Forms.Padding(2);
-            this.Thoat.Name = "Thoat";
-            this.Thoat.Size = new System.Drawing.Size(50, 53);
-            this.Thoat.TabIndex = 1;
-            this.Thoat.UseVisualStyleBackColor = false;
-            this.Thoat.Click += new System.EventHandler(this.Thoat_Click);
-            // 
-            // bntBack
-            // 
-            this.bntBack.BackColor = System.Drawing.Color.Transparent;
-            this.bntBack.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bntBack.FlatAppearance.BorderSize = 0;
-            this.bntBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
-            this.bntBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntBack.Image = ((System.Drawing.Image)(resources.GetObject("bntBack.Image")));
-            this.bntBack.Location = new System.Drawing.Point(0, 0);
-            this.bntBack.Margin = new System.Windows.Forms.Padding(2);
-            this.bntBack.Name = "bntBack";
-            this.bntBack.Size = new System.Drawing.Size(52, 53);
-            this.bntBack.TabIndex = 0;
-            this.bntBack.UseVisualStyleBackColor = false;
-            this.bntBack.Click += new System.EventHandler(this.bntBack_Click);
             // 
             // frmApplication
             // 
