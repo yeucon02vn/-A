@@ -31,8 +31,7 @@ namespace SortingAlgorithmsGUI
         Label[] Node_B, Node_C;
         int[] b, c;
         int DisN = 18; // Distance Node
-        int nOe; // number of element
-        bool check = true;
+        int nOe; // number of element 
         int SizeN = 50;  // Size Node
         int Canh_le = 30;
         int Speed = 60;
@@ -41,7 +40,8 @@ namespace SortingAlgorithmsGUI
         Color colorMove = Color.LightGreen;
         Color colorComplete = Color.DarkViolet;
         Color colorDefault = Color.Orange;
-
+        Color colorQuickU = Color.AliceBlue;
+        Color colorQuickD = Color.Aquamarine;
         public frmApplication()
         {
             InitializeComponent();
@@ -83,6 +83,14 @@ namespace SortingAlgorithmsGUI
             for (int i = 0; i < nOe; i++)
                 ArrLbl[i].BackColor = Color.Aqua;
             Complete();
+        }
+        private void btnCCN_Click(object sender, EventArgs e)
+        {
+            //colorMove     = Color.Red;
+            //colorComplete = Color.Yellow;
+            //colorDefault  = Color.Green;
+            //colorQuickU   = Color.AliceBlue;
+            //colorQuickD   = Color.Aquamarine;
         }
         private void bntCreate_Click(object sender, EventArgs e)
         {
@@ -157,9 +165,9 @@ namespace SortingAlgorithmsGUI
             pnlLoaiThuatToan.Enabled = true;
             grpControl.Enabled = true;
         }
-        private void Thoat_Click(object sender, EventArgs e)
+        private void Exit_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn có muốn thoát chương trình không?","Thông báo", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes )
+            if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 Application.Exit();
         }
         int min(int a, int b)
@@ -247,7 +255,6 @@ namespace SortingAlgorithmsGUI
                 t.Refresh();
             });
         }
-
         public void toLocaN(Control t, int i)
         {
             Point p1 = t.Location; // lưu lại vị trí của t
@@ -354,8 +361,6 @@ namespace SortingAlgorithmsGUI
 
             });
         }
-
-
         #endregion
         #region functions conversion
         public void Swap_NodeAn(int a, int b)
@@ -368,7 +373,8 @@ namespace SortingAlgorithmsGUI
         public void Swap_Node(Control t1, Control t2)
         {
             Application.DoEvents();
-
+            t1.BackColor = colorMove;
+            t2.BackColor = colorMove;
             this.Invoke((MethodInvoker)delegate
             {
                 Point p1 = t1.Location; //lưu vị trí ban đầu của t1
@@ -1644,7 +1650,7 @@ namespace SortingAlgorithmsGUI
 
             int i, pa, pb, pc;
             pa = pb = pc = 0;
-
+               // wtf tên như cứt vậy
             while (pa < nOe)
             {
                 Application.DoEvents();
@@ -1658,7 +1664,7 @@ namespace SortingAlgorithmsGUI
                         Node_Up(Node_B[pb], 2 * (SizeN));
                         Den_tdo_x_node(Node_B[pb], pb);
                     });
-                    ArrLbl[pa].BackColor = Color.AntiqueWhite;
+                    ArrLbl[pa].BackColor = colorQuickU;  // màu trên
                 }
                 for (i = 0; (pa < nOe) && (i < k); i++, pa++, pc++)
                 {
@@ -1670,13 +1676,11 @@ namespace SortingAlgorithmsGUI
                         Node_Down(Node_C[pc], (SizeN + 80));
                         Den_tdo_x_node(Node_C[pc], pc);
                     });
-                    ArrLbl[pa].BackColor = Color.AliceBlue;
+                    ArrLbl[pa].BackColor = colorQuickD; // màu dưới
                 }
             }
             nb = pb;
             nc = pc;
-
-            //
         }
         //Hàm kết hợp b và c vào a
         void Merge_increase(int nb, int nc, int k)
@@ -1999,7 +2003,13 @@ namespace SortingAlgorithmsGUI
             Speed = speedTrackBar.Maximum - speedTrackBar.Value;
         }
         private void bntReset_Click(object sender, EventArgs e)
-        {          
+        {
+            for (int i = 0; i < nOe; i++)
+            {
+                ArrLbl[i].Text ="0";
+                ArrLbl[i].BackColor = colorDefault ;
+            }
+            bntPlay.Show();
         }
         private void bntPlay_Click(object sender, EventArgs e)
         {

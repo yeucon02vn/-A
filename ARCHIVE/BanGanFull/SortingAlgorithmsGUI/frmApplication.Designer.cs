@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmApplication));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCCN = new System.Windows.Forms.Button();
             this.ThoiGianThucThi = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblGiay = new System.Windows.Forms.Label();
             this.lblPhut = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Thoat = new System.Windows.Forms.Button();
+            this.Exit = new System.Windows.Forms.Button();
             this.bntBack = new System.Windows.Forms.Button();
             this.pnlChayMau = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -99,14 +100,25 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.btnCCN);
             this.panel1.Controls.Add(this.ThoiGianThucThi);
-            this.panel1.Controls.Add(this.Thoat);
+            this.panel1.Controls.Add(this.Exit);
             this.panel1.Controls.Add(this.bntBack);
             this.panel1.Location = new System.Drawing.Point(0, 15);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1159, 53);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCCN
+            // 
+            this.btnCCN.Location = new System.Drawing.Point(167, 16);
+            this.btnCCN.Name = "btnCCN";
+            this.btnCCN.Size = new System.Drawing.Size(121, 23);
+            this.btnCCN.TabIndex = 114;
+            this.btnCCN.Text = "ChangedColorNode";
+            this.btnCCN.UseVisualStyleBackColor = true;
+            this.btnCCN.Click += new System.EventHandler(this.btnCCN_Click);
             // 
             // ThoiGianThucThi
             // 
@@ -171,22 +183,22 @@
             this.label1.TabIndex = 109;
             this.label1.Text = "Execution time :";
             // 
-            // Thoat
+            // Exit
             // 
-            this.Thoat.AutoSize = true;
-            this.Thoat.BackColor = System.Drawing.Color.Transparent;
-            this.Thoat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Thoat.FlatAppearance.BorderSize = 0;
-            this.Thoat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
-            this.Thoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Thoat.Image = ((System.Drawing.Image)(resources.GetObject("Thoat.Image")));
-            this.Thoat.Location = new System.Drawing.Point(1109, 0);
-            this.Thoat.Margin = new System.Windows.Forms.Padding(2);
-            this.Thoat.Name = "Thoat";
-            this.Thoat.Size = new System.Drawing.Size(50, 53);
-            this.Thoat.TabIndex = 1;
-            this.Thoat.UseVisualStyleBackColor = false;
-            this.Thoat.Click += new System.EventHandler(this.Thoat_Click);
+            this.Exit.AutoSize = true;
+            this.Exit.BackColor = System.Drawing.Color.Transparent;
+            this.Exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Exit.FlatAppearance.BorderSize = 0;
+            this.Exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
+            this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
+            this.Exit.Location = new System.Drawing.Point(1109, 0);
+            this.Exit.Margin = new System.Windows.Forms.Padding(2);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(50, 53);
+            this.Exit.TabIndex = 1;
+            this.Exit.UseVisualStyleBackColor = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // bntBack
             // 
@@ -897,7 +909,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button Thoat;
+        private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Button bntBack;
         private System.Windows.Forms.Panel pnlChayMau;
         private System.Windows.Forms.Panel panel2;
@@ -949,5 +961,6 @@
         private System.Windows.Forms.GroupBox grpControl;
         private System.Windows.Forms.Button bntPlay;
         private System.Windows.Forms.Button bntPause;
+        private System.Windows.Forms.Button btnCCN;
     }
 }
