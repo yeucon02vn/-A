@@ -115,9 +115,10 @@
             this.ThoiGianThucThi.Controls.Add(this.lblGiay);
             this.ThoiGianThucThi.Controls.Add(this.lblPhut);
             this.ThoiGianThucThi.Controls.Add(this.label1);
+            this.ThoiGianThucThi.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThoiGianThucThi.Location = new System.Drawing.Point(446, 9);
             this.ThoiGianThucThi.Name = "ThoiGianThucThi";
-            this.ThoiGianThucThi.Size = new System.Drawing.Size(256, 41);
+            this.ThoiGianThucThi.Size = new System.Drawing.Size(248, 41);
             this.ThoiGianThucThi.TabIndex = 113;
             this.ThoiGianThucThi.Visible = false;
             // 
@@ -125,12 +126,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(199, 9);
+            this.label4.Location = new System.Drawing.Point(179, 6);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 20);
+            this.label4.Size = new System.Drawing.Size(17, 24);
             this.label4.TabIndex = 112;
             this.label4.Text = ":";
             // 
@@ -138,11 +139,11 @@
             // 
             this.lblGiay.AutoSize = true;
             this.lblGiay.BackColor = System.Drawing.Color.Transparent;
-            this.lblGiay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblGiay.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGiay.ForeColor = System.Drawing.Color.Yellow;
-            this.lblGiay.Location = new System.Drawing.Point(207, 9);
+            this.lblGiay.Location = new System.Drawing.Point(191, 6);
             this.lblGiay.Name = "lblGiay";
-            this.lblGiay.Size = new System.Drawing.Size(27, 20);
+            this.lblGiay.Size = new System.Drawing.Size(32, 24);
             this.lblGiay.TabIndex = 111;
             this.lblGiay.Text = "00";
             // 
@@ -150,11 +151,11 @@
             // 
             this.lblPhut.AutoSize = true;
             this.lblPhut.BackColor = System.Drawing.Color.Transparent;
-            this.lblPhut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblPhut.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhut.ForeColor = System.Drawing.Color.Yellow;
-            this.lblPhut.Location = new System.Drawing.Point(177, 9);
+            this.lblPhut.Location = new System.Drawing.Point(153, 6);
             this.lblPhut.Name = "lblPhut";
-            this.lblPhut.Size = new System.Drawing.Size(27, 20);
+            this.lblPhut.Size = new System.Drawing.Size(32, 24);
             this.lblPhut.TabIndex = 110;
             this.lblPhut.Text = "00";
             // 
@@ -162,13 +163,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(32, 9);
+            this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 19);
+            this.label1.Size = new System.Drawing.Size(153, 24);
             this.label1.TabIndex = 109;
-            this.label1.Text = "Thời gian thực hiện:";
+            this.label1.Text = "Execution time :";
             // 
             // Thoat
             // 
@@ -260,13 +261,13 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(733, 5);
+            this.label2.Location = new System.Drawing.Point(741, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 19);
+            this.label2.Size = new System.Drawing.Size(50, 19);
             this.label2.TabIndex = 103;
-            this.label2.Text = "Tốc Độ";
+            this.label2.Text = "Speed";
             // 
             // speedTrackBar
             // 
@@ -289,7 +290,7 @@
             // 
             this.lblB.AutoSize = true;
             this.lblB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblB.Location = new System.Drawing.Point(19, 182);
+            this.lblB.Location = new System.Drawing.Point(5, 175);
             this.lblB.Name = "lblB";
             this.lblB.Size = new System.Drawing.Size(21, 20);
             this.lblB.TabIndex = 9;
@@ -301,7 +302,7 @@
             this.lblC.AutoSize = true;
             this.lblC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblC.ForeColor = System.Drawing.Color.Red;
-            this.lblC.Location = new System.Drawing.Point(19, 290);
+            this.lblC.Location = new System.Drawing.Point(5, 283);
             this.lblC.Name = "lblC";
             this.lblC.Size = new System.Drawing.Size(21, 20);
             this.lblC.TabIndex = 8;
@@ -313,7 +314,7 @@
             this.lblA.AutoSize = true;
             this.lblA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblA.Location = new System.Drawing.Point(19, 74);
+            this.lblA.Location = new System.Drawing.Point(5, 67);
             this.lblA.Name = "lblA";
             this.lblA.Size = new System.Drawing.Size(21, 20);
             this.lblA.TabIndex = 7;
@@ -421,13 +422,13 @@
             this.bntSourceCode.BackColor = System.Drawing.Color.Gray;
             this.bntSourceCode.FlatAppearance.BorderSize = 0;
             this.bntSourceCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntSourceCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.bntSourceCode.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntSourceCode.Image = ((System.Drawing.Image)(resources.GetObject("bntSourceCode.Image")));
             this.bntSourceCode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntSourceCode.Location = new System.Drawing.Point(2, 290);
+            this.bntSourceCode.Location = new System.Drawing.Point(-4, 290);
             this.bntSourceCode.Margin = new System.Windows.Forms.Padding(2);
             this.bntSourceCode.Name = "bntSourceCode";
-            this.bntSourceCode.Size = new System.Drawing.Size(160, 61);
+            this.bntSourceCode.Size = new System.Drawing.Size(166, 63);
             this.bntSourceCode.TabIndex = 0;
             this.bntSourceCode.Text = "Source Code ";
             this.bntSourceCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -451,14 +452,14 @@
             this.bntIdeaAlgorithm.BackColor = System.Drawing.Color.Gray;
             this.bntIdeaAlgorithm.FlatAppearance.BorderSize = 0;
             this.bntIdeaAlgorithm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntIdeaAlgorithm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntIdeaAlgorithm.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntIdeaAlgorithm.ForeColor = System.Drawing.Color.Gold;
             this.bntIdeaAlgorithm.Image = ((System.Drawing.Image)(resources.GetObject("bntIdeaAlgorithm.Image")));
             this.bntIdeaAlgorithm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntIdeaAlgorithm.Location = new System.Drawing.Point(166, 290);
             this.bntIdeaAlgorithm.Margin = new System.Windows.Forms.Padding(2);
             this.bntIdeaAlgorithm.Name = "bntIdeaAlgorithm";
-            this.bntIdeaAlgorithm.Size = new System.Drawing.Size(187, 63);
+            this.bntIdeaAlgorithm.Size = new System.Drawing.Size(196, 63);
             this.bntIdeaAlgorithm.TabIndex = 0;
             this.bntIdeaAlgorithm.Text = "Idea Algorithm";
             this.bntIdeaAlgorithm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -482,9 +483,9 @@
             // 
             this.grpControl.Controls.Add(this.bntPlay);
             this.grpControl.Controls.Add(this.bntPause);
-            this.grpControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.grpControl.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpControl.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.grpControl.Location = new System.Drawing.Point(228, 2);
+            this.grpControl.Location = new System.Drawing.Point(234, 2);
             this.grpControl.Margin = new System.Windows.Forms.Padding(2);
             this.grpControl.Name = "grpControl";
             this.grpControl.Padding = new System.Windows.Forms.Padding(2);
@@ -497,13 +498,14 @@
             // 
             this.bntPlay.FlatAppearance.BorderSize = 0;
             this.bntPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic);
+            this.bntPlay.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntPlay.ForeColor = System.Drawing.Color.MistyRose;
             this.bntPlay.Image = ((System.Drawing.Image)(resources.GetObject("bntPlay.Image")));
             this.bntPlay.Location = new System.Drawing.Point(23, 27);
             this.bntPlay.Margin = new System.Windows.Forms.Padding(2);
             this.bntPlay.Name = "bntPlay";
-            this.bntPlay.Size = new System.Drawing.Size(100, 112);
+            this.bntPlay.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bntPlay.Size = new System.Drawing.Size(111, 112);
             this.bntPlay.TabIndex = 1;
             this.bntPlay.Text = "Play";
             this.bntPlay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -533,7 +535,7 @@
             this.grpCreateArray.Controls.Add(this.radIncrease);
             this.grpCreateArray.Controls.Add(this.bntByHand);
             this.grpCreateArray.Controls.Add(this.bntRandom);
-            this.grpCreateArray.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.grpCreateArray.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpCreateArray.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.grpCreateArray.Location = new System.Drawing.Point(558, 2);
             this.grpCreateArray.Margin = new System.Windows.Forms.Padding(2);
@@ -615,13 +617,13 @@
             this.grpInitial.Controls.Add(this.bntReset);
             this.grpInitial.Controls.Add(this.bntCreate);
             this.grpInitial.Controls.Add(this.numArray);
-            this.grpInitial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.grpInitial.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpInitial.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.grpInitial.Location = new System.Drawing.Point(9, 2);
             this.grpInitial.Margin = new System.Windows.Forms.Padding(2);
             this.grpInitial.Name = "grpInitial";
             this.grpInitial.Padding = new System.Windows.Forms.Padding(2);
-            this.grpInitial.Size = new System.Drawing.Size(205, 145);
+            this.grpInitial.Size = new System.Drawing.Size(215, 145);
             this.grpInitial.TabIndex = 0;
             this.grpInitial.TabStop = false;
             this.grpInitial.Text = "Initial";
@@ -636,7 +638,7 @@
             this.bntReset.Location = new System.Drawing.Point(114, 92);
             this.bntReset.Margin = new System.Windows.Forms.Padding(2);
             this.bntReset.Name = "bntReset";
-            this.bntReset.Size = new System.Drawing.Size(83, 39);
+            this.bntReset.Size = new System.Drawing.Size(87, 39);
             this.bntReset.TabIndex = 1;
             this.bntReset.Text = "Reset";
             this.bntReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -685,7 +687,7 @@
             // 
             this.grpDebug.Controls.Add(this.bntDebug);
             this.grpDebug.Controls.Add(this.ckDebug);
-            this.grpDebug.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.grpDebug.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDebug.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.grpDebug.Location = new System.Drawing.Point(396, 2);
             this.grpDebug.Margin = new System.Windows.Forms.Padding(2);
@@ -717,9 +719,9 @@
             this.ckDebug.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.ckDebug.Location = new System.Drawing.Point(14, 48);
             this.ckDebug.Name = "ckDebug";
-            this.ckDebug.Size = new System.Drawing.Size(130, 22);
+            this.ckDebug.Size = new System.Drawing.Size(116, 22);
             this.ckDebug.TabIndex = 3;
-            this.ckDebug.Text = "Chạy từng dòng";
+            this.ckDebug.Text = "Run each line";
             this.ckDebug.UseVisualStyleBackColor = true;
             // 
             // pnlLoaiThuatToan
@@ -742,12 +744,12 @@
             // radSelection
             // 
             this.radSelection.AutoSize = true;
-            this.radSelection.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.radSelection.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radSelection.ForeColor = System.Drawing.Color.AliceBlue;
             this.radSelection.Location = new System.Drawing.Point(206, 110);
             this.radSelection.Margin = new System.Windows.Forms.Padding(2);
             this.radSelection.Name = "radSelection";
-            this.radSelection.Size = new System.Drawing.Size(144, 28);
+            this.radSelection.Size = new System.Drawing.Size(148, 28);
             this.radSelection.TabIndex = 0;
             this.radSelection.Text = "Selection Sort";
             this.radSelection.UseVisualStyleBackColor = true;
@@ -756,12 +758,12 @@
             // radInsertion
             // 
             this.radInsertion.AutoSize = true;
-            this.radInsertion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.radInsertion.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radInsertion.ForeColor = System.Drawing.Color.AliceBlue;
             this.radInsertion.Location = new System.Drawing.Point(206, 78);
             this.radInsertion.Margin = new System.Windows.Forms.Padding(2);
             this.radInsertion.Name = "radInsertion";
-            this.radInsertion.Size = new System.Drawing.Size(137, 28);
+            this.radInsertion.Size = new System.Drawing.Size(148, 28);
             this.radInsertion.TabIndex = 0;
             this.radInsertion.Text = "Insertion Sort";
             this.radInsertion.UseVisualStyleBackColor = true;
@@ -770,12 +772,12 @@
             // radShell
             // 
             this.radShell.AutoSize = true;
-            this.radShell.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.radShell.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radShell.ForeColor = System.Drawing.Color.AliceBlue;
             this.radShell.Location = new System.Drawing.Point(206, 45);
             this.radShell.Margin = new System.Windows.Forms.Padding(2);
             this.radShell.Name = "radShell";
-            this.radShell.Size = new System.Drawing.Size(108, 28);
+            this.radShell.Size = new System.Drawing.Size(114, 28);
             this.radShell.TabIndex = 0;
             this.radShell.Text = "Shell Sort";
             this.radShell.UseVisualStyleBackColor = true;
@@ -784,12 +786,12 @@
             // radHeap
             // 
             this.radHeap.AutoSize = true;
-            this.radHeap.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.radHeap.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radHeap.ForeColor = System.Drawing.Color.AliceBlue;
             this.radHeap.Location = new System.Drawing.Point(206, 11);
             this.radHeap.Margin = new System.Windows.Forms.Padding(2);
             this.radHeap.Name = "radHeap";
-            this.radHeap.Size = new System.Drawing.Size(112, 28);
+            this.radHeap.Size = new System.Drawing.Size(116, 28);
             this.radHeap.TabIndex = 0;
             this.radHeap.Text = "Heap Sort";
             this.radHeap.UseVisualStyleBackColor = true;
@@ -798,12 +800,12 @@
             // radInterchange
             // 
             this.radInterchange.AutoSize = true;
-            this.radInterchange.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.radInterchange.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radInterchange.ForeColor = System.Drawing.Color.AliceBlue;
             this.radInterchange.Location = new System.Drawing.Point(14, 110);
             this.radInterchange.Margin = new System.Windows.Forms.Padding(2);
             this.radInterchange.Name = "radInterchange";
-            this.radInterchange.Size = new System.Drawing.Size(166, 28);
+            this.radInterchange.Size = new System.Drawing.Size(176, 28);
             this.radInterchange.TabIndex = 0;
             this.radInterchange.Text = "Interchange Sort";
             this.radInterchange.UseVisualStyleBackColor = true;
@@ -812,12 +814,12 @@
             // radMerge
             // 
             this.radMerge.AutoSize = true;
-            this.radMerge.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.radMerge.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radMerge.ForeColor = System.Drawing.Color.AliceBlue;
             this.radMerge.Location = new System.Drawing.Point(14, 78);
             this.radMerge.Margin = new System.Windows.Forms.Padding(2);
             this.radMerge.Name = "radMerge";
-            this.radMerge.Size = new System.Drawing.Size(121, 28);
+            this.radMerge.Size = new System.Drawing.Size(125, 28);
             this.radMerge.TabIndex = 0;
             this.radMerge.Text = "Merge Sort";
             this.radMerge.UseVisualStyleBackColor = true;
@@ -826,12 +828,12 @@
             // radBubble
             // 
             this.radBubble.AutoSize = true;
-            this.radBubble.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.radBubble.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radBubble.ForeColor = System.Drawing.Color.AliceBlue;
             this.radBubble.Location = new System.Drawing.Point(14, 45);
             this.radBubble.Margin = new System.Windows.Forms.Padding(2);
             this.radBubble.Name = "radBubble";
-            this.radBubble.Size = new System.Drawing.Size(126, 28);
+            this.radBubble.Size = new System.Drawing.Size(132, 28);
             this.radBubble.TabIndex = 0;
             this.radBubble.Text = "Bubble Sort";
             this.radBubble.UseVisualStyleBackColor = true;
@@ -841,12 +843,12 @@
             // 
             this.radQuick.AutoSize = true;
             this.radQuick.Checked = true;
-            this.radQuick.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.radQuick.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radQuick.ForeColor = System.Drawing.Color.AliceBlue;
             this.radQuick.Location = new System.Drawing.Point(14, 11);
             this.radQuick.Margin = new System.Windows.Forms.Padding(2);
             this.radQuick.Name = "radQuick";
-            this.radQuick.Size = new System.Drawing.Size(115, 28);
+            this.radQuick.Size = new System.Drawing.Size(122, 28);
             this.radQuick.TabIndex = 0;
             this.radQuick.TabStop = true;
             this.radQuick.Text = "Quick Sort";
