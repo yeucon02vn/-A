@@ -45,6 +45,7 @@ namespace SortingAlgorithmsGUI
                 lbl.AutoSize = false;
                 lbl.Size = new Size(113, 36);
                 lbl.BorderStyle = BorderStyle.None;
+                lbl.ForeColor = Color.Snow;
                 lbl.Font = new Font("Times New Roman", 12);
                 lbl.TextAlign = ContentAlignment.MiddleCenter;
                 lbl.Text = "Phần tử thứ " + (i + 1);
@@ -90,6 +91,11 @@ namespace SortingAlgorithmsGUI
             frmApplication.PT10 = pt10.Text;
             MessageBox.Show("OK", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+        }
+
+        private void bntBack_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

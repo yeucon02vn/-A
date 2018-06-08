@@ -36,7 +36,7 @@
             this.lblGiay = new System.Windows.Forms.Label();
             this.lblPhut = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Exit = new System.Windows.Forms.Button();
+            this.bntExit = new System.Windows.Forms.Button();
             this.bntBack = new System.Windows.Forms.Button();
             this.pnlChayMau = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -102,19 +102,20 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.panel1.Controls.Add(this.btnCCN);
             this.panel1.Controls.Add(this.ThoiGianThucThi);
-            this.panel1.Controls.Add(this.Exit);
+            this.panel1.Controls.Add(this.bntExit);
             this.panel1.Controls.Add(this.bntBack);
-            this.panel1.Location = new System.Drawing.Point(0, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(0, 18);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1159, 53);
+            this.panel1.Size = new System.Drawing.Size(1545, 65);
             this.panel1.TabIndex = 0;
             // 
             // btnCCN
             // 
-            this.btnCCN.Location = new System.Drawing.Point(167, 16);
+            this.btnCCN.Location = new System.Drawing.Point(223, 20);
+            this.btnCCN.Margin = new System.Windows.Forms.Padding(4);
             this.btnCCN.Name = "btnCCN";
-            this.btnCCN.Size = new System.Drawing.Size(121, 23);
+            this.btnCCN.Size = new System.Drawing.Size(161, 28);
             this.btnCCN.TabIndex = 114;
             this.btnCCN.Text = "ChangedColorNode";
             this.btnCCN.UseVisualStyleBackColor = true;
@@ -128,9 +129,10 @@
             this.ThoiGianThucThi.Controls.Add(this.lblPhut);
             this.ThoiGianThucThi.Controls.Add(this.label1);
             this.ThoiGianThucThi.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThoiGianThucThi.Location = new System.Drawing.Point(446, 9);
+            this.ThoiGianThucThi.Location = new System.Drawing.Point(595, 11);
+            this.ThoiGianThucThi.Margin = new System.Windows.Forms.Padding(4);
             this.ThoiGianThucThi.Name = "ThoiGianThucThi";
-            this.ThoiGianThucThi.Size = new System.Drawing.Size(248, 41);
+            this.ThoiGianThucThi.Size = new System.Drawing.Size(331, 50);
             this.ThoiGianThucThi.TabIndex = 113;
             this.ThoiGianThucThi.Visible = false;
             // 
@@ -140,10 +142,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(179, 6);
+            this.label4.Location = new System.Drawing.Point(239, 7);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 24);
+            this.label4.Size = new System.Drawing.Size(23, 31);
             this.label4.TabIndex = 112;
             this.label4.Text = ":";
             // 
@@ -153,9 +155,10 @@
             this.lblGiay.BackColor = System.Drawing.Color.Transparent;
             this.lblGiay.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGiay.ForeColor = System.Drawing.Color.Yellow;
-            this.lblGiay.Location = new System.Drawing.Point(191, 6);
+            this.lblGiay.Location = new System.Drawing.Point(255, 7);
+            this.lblGiay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGiay.Name = "lblGiay";
-            this.lblGiay.Size = new System.Drawing.Size(32, 24);
+            this.lblGiay.Size = new System.Drawing.Size(42, 31);
             this.lblGiay.TabIndex = 111;
             this.lblGiay.Text = "00";
             // 
@@ -165,9 +168,10 @@
             this.lblPhut.BackColor = System.Drawing.Color.Transparent;
             this.lblPhut.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhut.ForeColor = System.Drawing.Color.Yellow;
-            this.lblPhut.Location = new System.Drawing.Point(153, 6);
+            this.lblPhut.Location = new System.Drawing.Point(204, 7);
+            this.lblPhut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhut.Name = "lblPhut";
-            this.lblPhut.Size = new System.Drawing.Size(32, 24);
+            this.lblPhut.Size = new System.Drawing.Size(42, 31);
             this.lblPhut.TabIndex = 110;
             this.lblPhut.Text = "00";
             // 
@@ -177,28 +181,29 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Location = new System.Drawing.Point(4, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 24);
+            this.label1.Size = new System.Drawing.Size(202, 31);
             this.label1.TabIndex = 109;
             this.label1.Text = "Execution time :";
             // 
-            // Exit
+            // bntExit
             // 
-            this.Exit.AutoSize = true;
-            this.Exit.BackColor = System.Drawing.Color.Transparent;
-            this.Exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Exit.FlatAppearance.BorderSize = 0;
-            this.Exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
-            this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
-            this.Exit.Location = new System.Drawing.Point(1109, 0);
-            this.Exit.Margin = new System.Windows.Forms.Padding(2);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(50, 53);
-            this.Exit.TabIndex = 1;
-            this.Exit.UseVisualStyleBackColor = false;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            this.bntExit.AutoSize = true;
+            this.bntExit.BackColor = System.Drawing.Color.Transparent;
+            this.bntExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bntExit.FlatAppearance.BorderSize = 0;
+            this.bntExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
+            this.bntExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntExit.Image = ((System.Drawing.Image)(resources.GetObject("bntExit.Image")));
+            this.bntExit.Location = new System.Drawing.Point(1478, 0);
+            this.bntExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bntExit.Name = "bntExit";
+            this.bntExit.Size = new System.Drawing.Size(67, 65);
+            this.bntExit.TabIndex = 1;
+            this.bntExit.UseVisualStyleBackColor = false;
+            this.bntExit.Click += new System.EventHandler(this.bntExit_Click);
             // 
             // bntBack
             // 
@@ -209,9 +214,9 @@
             this.bntBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntBack.Image = ((System.Drawing.Image)(resources.GetObject("bntBack.Image")));
             this.bntBack.Location = new System.Drawing.Point(0, 0);
-            this.bntBack.Margin = new System.Windows.Forms.Padding(2);
+            this.bntBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntBack.Name = "bntBack";
-            this.bntBack.Size = new System.Drawing.Size(52, 53);
+            this.bntBack.Size = new System.Drawing.Size(69, 65);
             this.bntBack.TabIndex = 0;
             this.bntBack.UseVisualStyleBackColor = false;
             this.bntBack.Click += new System.EventHandler(this.bntBack_Click);
@@ -233,19 +238,20 @@
             this.pnlChayMau.Controls.Add(this.Mui_ten_xanh_xuong_2);
             this.pnlChayMau.Controls.Add(this.Mui_ten_xanh_xuong_1);
             this.pnlChayMau.Controls.Add(this.lbl_status_02);
-            this.pnlChayMau.Location = new System.Drawing.Point(0, 72);
-            this.pnlChayMau.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlChayMau.Location = new System.Drawing.Point(0, 89);
+            this.pnlChayMau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlChayMau.Name = "pnlChayMau";
-            this.pnlChayMau.Size = new System.Drawing.Size(790, 353);
+            this.pnlChayMau.Size = new System.Drawing.Size(1053, 434);
             this.pnlChayMau.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(721, 335);
+            this.label6.Location = new System.Drawing.Point(961, 412);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 16);
+            this.label6.Size = new System.Drawing.Size(18, 19);
             this.label6.TabIndex = 104;
             this.label6.Text = "1";
             // 
@@ -253,9 +259,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(721, 182);
+            this.label5.Location = new System.Drawing.Point(961, 224);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(15, 16);
+            this.label5.Size = new System.Drawing.Size(18, 19);
             this.label5.TabIndex = 104;
             this.label5.Text = "5";
             // 
@@ -263,9 +270,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(721, 36);
+            this.label3.Location = new System.Drawing.Point(961, 44);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 16);
+            this.label3.Size = new System.Drawing.Size(27, 19);
             this.label3.TabIndex = 104;
             this.label3.Text = "10";
             // 
@@ -275,9 +283,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(741, 5);
+            this.label2.Location = new System.Drawing.Point(988, 6);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 19);
+            this.label2.Size = new System.Drawing.Size(61, 23);
             this.label2.TabIndex = 103;
             this.label2.Text = "Speed";
             // 
@@ -286,11 +295,12 @@
             this.speedTrackBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.speedTrackBar.Cursor = System.Windows.Forms.Cursors.Default;
             this.speedTrackBar.LargeChange = 1;
-            this.speedTrackBar.Location = new System.Drawing.Point(745, 27);
+            this.speedTrackBar.Location = new System.Drawing.Point(993, 33);
+            this.speedTrackBar.Margin = new System.Windows.Forms.Padding(4);
             this.speedTrackBar.Maximum = 100;
             this.speedTrackBar.Name = "speedTrackBar";
             this.speedTrackBar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.speedTrackBar.Size = new System.Drawing.Size(45, 323);
+            this.speedTrackBar.Size = new System.Drawing.Size(56, 398);
             this.speedTrackBar.SmallChange = 6;
             this.speedTrackBar.TabIndex = 102;
             this.speedTrackBar.TickFrequency = 10;
@@ -302,9 +312,10 @@
             // 
             this.lblB.AutoSize = true;
             this.lblB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblB.Location = new System.Drawing.Point(5, 175);
+            this.lblB.Location = new System.Drawing.Point(7, 215);
+            this.lblB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblB.Name = "lblB";
-            this.lblB.Size = new System.Drawing.Size(21, 20);
+            this.lblB.Size = new System.Drawing.Size(27, 25);
             this.lblB.TabIndex = 9;
             this.lblB.Text = "A";
             this.lblB.Visible = false;
@@ -314,9 +325,10 @@
             this.lblC.AutoSize = true;
             this.lblC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblC.ForeColor = System.Drawing.Color.Red;
-            this.lblC.Location = new System.Drawing.Point(5, 283);
+            this.lblC.Location = new System.Drawing.Point(7, 348);
+            this.lblC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblC.Name = "lblC";
-            this.lblC.Size = new System.Drawing.Size(21, 20);
+            this.lblC.Size = new System.Drawing.Size(28, 25);
             this.lblC.TabIndex = 8;
             this.lblC.Text = "C";
             this.lblC.Visible = false;
@@ -326,9 +338,10 @@
             this.lblA.AutoSize = true;
             this.lblA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblA.Location = new System.Drawing.Point(5, 67);
+            this.lblA.Location = new System.Drawing.Point(7, 82);
+            this.lblA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(21, 20);
+            this.lblA.Size = new System.Drawing.Size(26, 25);
             this.lblA.TabIndex = 7;
             this.lblA.Text = "B";
             this.lblA.Visible = false;
@@ -337,9 +350,10 @@
             // 
             this.Mui_ten_do_len.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.Mui_ten_do_len.Image = global::SortingAlgorithmsGUI.Properties.Resources.Red_Up_Arrow;
-            this.Mui_ten_do_len.Location = new System.Drawing.Point(363, 290);
+            this.Mui_ten_do_len.Location = new System.Drawing.Point(484, 357);
+            this.Mui_ten_do_len.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Mui_ten_do_len.Name = "Mui_ten_do_len";
-            this.Mui_ten_do_len.Size = new System.Drawing.Size(60, 40);
+            this.Mui_ten_do_len.Size = new System.Drawing.Size(80, 49);
             this.Mui_ten_do_len.TabIndex = 6;
             this.Mui_ten_do_len.Text = "R";
             this.Mui_ten_do_len.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -349,9 +363,10 @@
             // 
             this.Mui_ten_xanh_len_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.Mui_ten_xanh_len_2.Image = ((System.Drawing.Image)(resources.GetObject("Mui_ten_xanh_len_2.Image")));
-            this.Mui_ten_xanh_len_2.Location = new System.Drawing.Point(248, 290);
+            this.Mui_ten_xanh_len_2.Location = new System.Drawing.Point(331, 357);
+            this.Mui_ten_xanh_len_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Mui_ten_xanh_len_2.Name = "Mui_ten_xanh_len_2";
-            this.Mui_ten_xanh_len_2.Size = new System.Drawing.Size(60, 40);
+            this.Mui_ten_xanh_len_2.Size = new System.Drawing.Size(80, 49);
             this.Mui_ten_xanh_len_2.TabIndex = 5;
             this.Mui_ten_xanh_len_2.Text = "u2";
             this.Mui_ten_xanh_len_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -361,9 +376,10 @@
             // 
             this.Mui_ten_xanh_len_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.Mui_ten_xanh_len_1.Image = ((System.Drawing.Image)(resources.GetObject("Mui_ten_xanh_len_1.Image")));
-            this.Mui_ten_xanh_len_1.Location = new System.Drawing.Point(150, 290);
+            this.Mui_ten_xanh_len_1.Location = new System.Drawing.Point(200, 357);
+            this.Mui_ten_xanh_len_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Mui_ten_xanh_len_1.Name = "Mui_ten_xanh_len_1";
-            this.Mui_ten_xanh_len_1.Size = new System.Drawing.Size(60, 40);
+            this.Mui_ten_xanh_len_1.Size = new System.Drawing.Size(80, 49);
             this.Mui_ten_xanh_len_1.TabIndex = 4;
             this.Mui_ten_xanh_len_1.Text = "u1";
             this.Mui_ten_xanh_len_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -373,9 +389,10 @@
             // 
             this.Mui_ten_xanh_xuong_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.Mui_ten_xanh_xuong_2.Image = global::SortingAlgorithmsGUI.Properties.Resources._2;
-            this.Mui_ten_xanh_xuong_2.Location = new System.Drawing.Point(291, 58);
+            this.Mui_ten_xanh_xuong_2.Location = new System.Drawing.Point(388, 71);
+            this.Mui_ten_xanh_xuong_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Mui_ten_xanh_xuong_2.Name = "Mui_ten_xanh_xuong_2";
-            this.Mui_ten_xanh_xuong_2.Size = new System.Drawing.Size(60, 40);
+            this.Mui_ten_xanh_xuong_2.Size = new System.Drawing.Size(80, 49);
             this.Mui_ten_xanh_xuong_2.TabIndex = 3;
             this.Mui_ten_xanh_xuong_2.Text = "d2";
             this.Mui_ten_xanh_xuong_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -386,9 +403,10 @@
             this.Mui_ten_xanh_xuong_1.BackColor = System.Drawing.Color.Transparent;
             this.Mui_ten_xanh_xuong_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.Mui_ten_xanh_xuong_1.Image = global::SortingAlgorithmsGUI.Properties.Resources._2;
-            this.Mui_ten_xanh_xuong_1.Location = new System.Drawing.Point(164, 58);
+            this.Mui_ten_xanh_xuong_1.Location = new System.Drawing.Point(219, 71);
+            this.Mui_ten_xanh_xuong_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Mui_ten_xanh_xuong_1.Name = "Mui_ten_xanh_xuong_1";
-            this.Mui_ten_xanh_xuong_1.Size = new System.Drawing.Size(60, 40);
+            this.Mui_ten_xanh_xuong_1.Size = new System.Drawing.Size(80, 49);
             this.Mui_ten_xanh_xuong_1.TabIndex = 2;
             this.Mui_ten_xanh_xuong_1.Text = "d1";
             this.Mui_ten_xanh_xuong_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -398,9 +416,10 @@
             // 
             this.lbl_status_02.AutoSize = true;
             this.lbl_status_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lbl_status_02.Location = new System.Drawing.Point(355, 15);
+            this.lbl_status_02.Location = new System.Drawing.Point(473, 18);
+            this.lbl_status_02.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_status_02.Name = "lbl_status_02";
-            this.lbl_status_02.Size = new System.Drawing.Size(57, 20);
+            this.lbl_status_02.Size = new System.Drawing.Size(70, 25);
             this.lbl_status_02.TabIndex = 1;
             this.lbl_status_02.Text = "label2";
             this.lbl_status_02.Visible = false;
@@ -412,10 +431,10 @@
             this.panel2.Controls.Add(this.bntSourceCode);
             this.panel2.Controls.Add(this.listIdea);
             this.panel2.Controls.Add(this.bntIdeaAlgorithm);
-            this.panel2.Location = new System.Drawing.Point(806, 72);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(1075, 89);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(353, 353);
+            this.panel2.Size = new System.Drawing.Size(471, 434);
             this.panel2.TabIndex = 2;
             // 
             // listCode
@@ -423,10 +442,11 @@
             this.listCode.BackColor = System.Drawing.Color.White;
             this.listCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listCode.FormattingEnabled = true;
+            this.listCode.ItemHeight = 16;
             this.listCode.Location = new System.Drawing.Point(0, 0);
-            this.listCode.Margin = new System.Windows.Forms.Padding(2);
+            this.listCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listCode.Name = "listCode";
-            this.listCode.Size = new System.Drawing.Size(353, 286);
+            this.listCode.Size = new System.Drawing.Size(471, 352);
             this.listCode.TabIndex = 2;
             // 
             // bntSourceCode
@@ -437,10 +457,10 @@
             this.bntSourceCode.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntSourceCode.Image = ((System.Drawing.Image)(resources.GetObject("bntSourceCode.Image")));
             this.bntSourceCode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntSourceCode.Location = new System.Drawing.Point(-4, 290);
-            this.bntSourceCode.Margin = new System.Windows.Forms.Padding(2);
+            this.bntSourceCode.Location = new System.Drawing.Point(-5, 357);
+            this.bntSourceCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntSourceCode.Name = "bntSourceCode";
-            this.bntSourceCode.Size = new System.Drawing.Size(166, 63);
+            this.bntSourceCode.Size = new System.Drawing.Size(221, 78);
             this.bntSourceCode.TabIndex = 0;
             this.bntSourceCode.Text = "Source Code ";
             this.bntSourceCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -453,10 +473,11 @@
             this.listIdea.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listIdea.Dock = System.Windows.Forms.DockStyle.Top;
             this.listIdea.FormattingEnabled = true;
+            this.listIdea.ItemHeight = 16;
             this.listIdea.Location = new System.Drawing.Point(0, 0);
-            this.listIdea.Margin = new System.Windows.Forms.Padding(2);
+            this.listIdea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listIdea.Name = "listIdea";
-            this.listIdea.Size = new System.Drawing.Size(353, 286);
+            this.listIdea.Size = new System.Drawing.Size(471, 352);
             this.listIdea.TabIndex = 1;
             // 
             // bntIdeaAlgorithm
@@ -468,10 +489,10 @@
             this.bntIdeaAlgorithm.ForeColor = System.Drawing.Color.Gold;
             this.bntIdeaAlgorithm.Image = ((System.Drawing.Image)(resources.GetObject("bntIdeaAlgorithm.Image")));
             this.bntIdeaAlgorithm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntIdeaAlgorithm.Location = new System.Drawing.Point(166, 290);
-            this.bntIdeaAlgorithm.Margin = new System.Windows.Forms.Padding(2);
+            this.bntIdeaAlgorithm.Location = new System.Drawing.Point(221, 357);
+            this.bntIdeaAlgorithm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntIdeaAlgorithm.Name = "bntIdeaAlgorithm";
-            this.bntIdeaAlgorithm.Size = new System.Drawing.Size(196, 63);
+            this.bntIdeaAlgorithm.Size = new System.Drawing.Size(261, 78);
             this.bntIdeaAlgorithm.TabIndex = 0;
             this.bntIdeaAlgorithm.Text = "Idea Algorithm";
             this.bntIdeaAlgorithm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -485,10 +506,10 @@
             this.panel3.Controls.Add(this.grpCreateArray);
             this.panel3.Controls.Add(this.grpInitial);
             this.panel3.Controls.Add(this.grpDebug);
-            this.panel3.Location = new System.Drawing.Point(0, 439);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(0, 540);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(790, 147);
+            this.panel3.Size = new System.Drawing.Size(1053, 181);
             this.panel3.TabIndex = 3;
             // 
             // grpControl
@@ -497,11 +518,11 @@
             this.grpControl.Controls.Add(this.bntPause);
             this.grpControl.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpControl.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.grpControl.Location = new System.Drawing.Point(234, 2);
-            this.grpControl.Margin = new System.Windows.Forms.Padding(2);
+            this.grpControl.Location = new System.Drawing.Point(312, 2);
+            this.grpControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpControl.Name = "grpControl";
-            this.grpControl.Padding = new System.Windows.Forms.Padding(2);
-            this.grpControl.Size = new System.Drawing.Size(153, 145);
+            this.grpControl.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpControl.Size = new System.Drawing.Size(204, 178);
             this.grpControl.TabIndex = 3;
             this.grpControl.TabStop = false;
             this.grpControl.Text = "Control";
@@ -513,11 +534,11 @@
             this.bntPlay.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntPlay.ForeColor = System.Drawing.Color.MistyRose;
             this.bntPlay.Image = ((System.Drawing.Image)(resources.GetObject("bntPlay.Image")));
-            this.bntPlay.Location = new System.Drawing.Point(23, 27);
-            this.bntPlay.Margin = new System.Windows.Forms.Padding(2);
+            this.bntPlay.Location = new System.Drawing.Point(31, 33);
+            this.bntPlay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntPlay.Name = "bntPlay";
             this.bntPlay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bntPlay.Size = new System.Drawing.Size(111, 112);
+            this.bntPlay.Size = new System.Drawing.Size(148, 138);
             this.bntPlay.TabIndex = 1;
             this.bntPlay.Text = "Play";
             this.bntPlay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -531,10 +552,10 @@
             this.bntPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic);
             this.bntPause.ForeColor = System.Drawing.Color.MistyRose;
             this.bntPause.Image = ((System.Drawing.Image)(resources.GetObject("bntPause.Image")));
-            this.bntPause.Location = new System.Drawing.Point(23, 27);
-            this.bntPause.Margin = new System.Windows.Forms.Padding(2);
+            this.bntPause.Location = new System.Drawing.Point(31, 33);
+            this.bntPause.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntPause.Name = "bntPause";
-            this.bntPause.Size = new System.Drawing.Size(100, 112);
+            this.bntPause.Size = new System.Drawing.Size(133, 138);
             this.bntPause.TabIndex = 1;
             this.bntPause.Text = "Pause";
             this.bntPause.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -549,11 +570,11 @@
             this.grpCreateArray.Controls.Add(this.bntRandom);
             this.grpCreateArray.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpCreateArray.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.grpCreateArray.Location = new System.Drawing.Point(558, 2);
-            this.grpCreateArray.Margin = new System.Windows.Forms.Padding(2);
+            this.grpCreateArray.Location = new System.Drawing.Point(744, 2);
+            this.grpCreateArray.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpCreateArray.Name = "grpCreateArray";
-            this.grpCreateArray.Padding = new System.Windows.Forms.Padding(2);
-            this.grpCreateArray.Size = new System.Drawing.Size(230, 145);
+            this.grpCreateArray.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpCreateArray.Size = new System.Drawing.Size(307, 178);
             this.grpCreateArray.TabIndex = 0;
             this.grpCreateArray.TabStop = false;
             this.grpCreateArray.Text = "Create Array";
@@ -564,10 +585,10 @@
             this.radDecrease.ForeColor = System.Drawing.SystemColors.Control;
             this.radDecrease.Image = ((System.Drawing.Image)(resources.GetObject("radDecrease.Image")));
             this.radDecrease.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radDecrease.Location = new System.Drawing.Point(41, 59);
-            this.radDecrease.Margin = new System.Windows.Forms.Padding(2);
+            this.radDecrease.Location = new System.Drawing.Point(55, 73);
+            this.radDecrease.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radDecrease.Name = "radDecrease";
-            this.radDecrease.Size = new System.Drawing.Size(116, 28);
+            this.radDecrease.Size = new System.Drawing.Size(155, 34);
             this.radDecrease.TabIndex = 2;
             this.radDecrease.Text = "Decrease";
             this.radDecrease.UseVisualStyleBackColor = true;
@@ -580,10 +601,10 @@
             this.radIncrease.ForeColor = System.Drawing.SystemColors.Control;
             this.radIncrease.Image = ((System.Drawing.Image)(resources.GetObject("radIncrease.Image")));
             this.radIncrease.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radIncrease.Location = new System.Drawing.Point(41, 27);
-            this.radIncrease.Margin = new System.Windows.Forms.Padding(2);
+            this.radIncrease.Location = new System.Drawing.Point(55, 33);
+            this.radIncrease.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radIncrease.Name = "radIncrease";
-            this.radIncrease.Size = new System.Drawing.Size(116, 28);
+            this.radIncrease.Size = new System.Drawing.Size(155, 34);
             this.radIncrease.TabIndex = 2;
             this.radIncrease.TabStop = true;
             this.radIncrease.Text = "Increase";
@@ -597,10 +618,10 @@
             this.bntByHand.ForeColor = System.Drawing.SystemColors.Window;
             this.bntByHand.Image = ((System.Drawing.Image)(resources.GetObject("bntByHand.Image")));
             this.bntByHand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntByHand.Location = new System.Drawing.Point(118, 91);
-            this.bntByHand.Margin = new System.Windows.Forms.Padding(2);
+            this.bntByHand.Location = new System.Drawing.Point(157, 112);
+            this.bntByHand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntByHand.Name = "bntByHand";
-            this.bntByHand.Size = new System.Drawing.Size(103, 39);
+            this.bntByHand.Size = new System.Drawing.Size(137, 48);
             this.bntByHand.TabIndex = 1;
             this.bntByHand.Text = "By Hand";
             this.bntByHand.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -614,10 +635,10 @@
             this.bntRandom.ForeColor = System.Drawing.SystemColors.Window;
             this.bntRandom.Image = ((System.Drawing.Image)(resources.GetObject("bntRandom.Image")));
             this.bntRandom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntRandom.Location = new System.Drawing.Point(4, 92);
-            this.bntRandom.Margin = new System.Windows.Forms.Padding(2);
+            this.bntRandom.Location = new System.Drawing.Point(5, 113);
+            this.bntRandom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntRandom.Name = "bntRandom";
-            this.bntRandom.Size = new System.Drawing.Size(107, 39);
+            this.bntRandom.Size = new System.Drawing.Size(143, 48);
             this.bntRandom.TabIndex = 1;
             this.bntRandom.Text = "Random";
             this.bntRandom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -631,11 +652,11 @@
             this.grpInitial.Controls.Add(this.numArray);
             this.grpInitial.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpInitial.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.grpInitial.Location = new System.Drawing.Point(9, 2);
-            this.grpInitial.Margin = new System.Windows.Forms.Padding(2);
+            this.grpInitial.Location = new System.Drawing.Point(12, 2);
+            this.grpInitial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpInitial.Name = "grpInitial";
-            this.grpInitial.Padding = new System.Windows.Forms.Padding(2);
-            this.grpInitial.Size = new System.Drawing.Size(215, 145);
+            this.grpInitial.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpInitial.Size = new System.Drawing.Size(287, 178);
             this.grpInitial.TabIndex = 0;
             this.grpInitial.TabStop = false;
             this.grpInitial.Text = "Initial";
@@ -647,10 +668,10 @@
             this.bntReset.ForeColor = System.Drawing.SystemColors.Window;
             this.bntReset.Image = ((System.Drawing.Image)(resources.GetObject("bntReset.Image")));
             this.bntReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntReset.Location = new System.Drawing.Point(114, 92);
-            this.bntReset.Margin = new System.Windows.Forms.Padding(2);
+            this.bntReset.Location = new System.Drawing.Point(152, 113);
+            this.bntReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntReset.Name = "bntReset";
-            this.bntReset.Size = new System.Drawing.Size(87, 39);
+            this.bntReset.Size = new System.Drawing.Size(116, 48);
             this.bntReset.TabIndex = 1;
             this.bntReset.Text = "Reset";
             this.bntReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -664,10 +685,10 @@
             this.bntCreate.ForeColor = System.Drawing.SystemColors.Window;
             this.bntCreate.Image = ((System.Drawing.Image)(resources.GetObject("bntCreate.Image")));
             this.bntCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntCreate.Location = new System.Drawing.Point(14, 92);
-            this.bntCreate.Margin = new System.Windows.Forms.Padding(2);
+            this.bntCreate.Location = new System.Drawing.Point(19, 113);
+            this.bntCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntCreate.Name = "bntCreate";
-            this.bntCreate.Size = new System.Drawing.Size(87, 39);
+            this.bntCreate.Size = new System.Drawing.Size(116, 48);
             this.bntCreate.TabIndex = 1;
             this.bntCreate.Text = "Create";
             this.bntCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -677,15 +698,15 @@
             // numArray
             // 
             this.numArray.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numArray.Location = new System.Drawing.Point(47, 43);
-            this.numArray.Margin = new System.Windows.Forms.Padding(2);
+            this.numArray.Location = new System.Drawing.Point(63, 53);
+            this.numArray.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numArray.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.numArray.Name = "numArray";
-            this.numArray.Size = new System.Drawing.Size(120, 26);
+            this.numArray.Size = new System.Drawing.Size(160, 30);
             this.numArray.TabIndex = 0;
             this.numArray.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numArray.Value = new decimal(new int[] {
@@ -701,11 +722,11 @@
             this.grpDebug.Controls.Add(this.ckDebug);
             this.grpDebug.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDebug.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.grpDebug.Location = new System.Drawing.Point(396, 2);
-            this.grpDebug.Margin = new System.Windows.Forms.Padding(2);
+            this.grpDebug.Location = new System.Drawing.Point(528, 2);
+            this.grpDebug.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDebug.Name = "grpDebug";
-            this.grpDebug.Padding = new System.Windows.Forms.Padding(2);
-            this.grpDebug.Size = new System.Drawing.Size(149, 145);
+            this.grpDebug.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpDebug.Size = new System.Drawing.Size(199, 178);
             this.grpDebug.TabIndex = 3;
             this.grpDebug.TabStop = false;
             this.grpDebug.Text = "Debug";
@@ -716,10 +737,10 @@
             this.bntDebug.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Italic);
             this.bntDebug.ForeColor = System.Drawing.SystemColors.Window;
             this.bntDebug.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntDebug.Location = new System.Drawing.Point(30, 92);
-            this.bntDebug.Margin = new System.Windows.Forms.Padding(2);
+            this.bntDebug.Location = new System.Drawing.Point(40, 113);
+            this.bntDebug.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntDebug.Name = "bntDebug";
-            this.bntDebug.Size = new System.Drawing.Size(92, 39);
+            this.bntDebug.Size = new System.Drawing.Size(123, 48);
             this.bntDebug.TabIndex = 4;
             this.bntDebug.Text = "Debug";
             this.bntDebug.UseVisualStyleBackColor = false;
@@ -729,9 +750,10 @@
             // 
             this.ckDebug.AutoSize = true;
             this.ckDebug.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.ckDebug.Location = new System.Drawing.Point(14, 48);
+            this.ckDebug.Location = new System.Drawing.Point(19, 59);
+            this.ckDebug.Margin = new System.Windows.Forms.Padding(4);
             this.ckDebug.Name = "ckDebug";
-            this.ckDebug.Size = new System.Drawing.Size(116, 22);
+            this.ckDebug.Size = new System.Drawing.Size(149, 28);
             this.ckDebug.TabIndex = 3;
             this.ckDebug.Text = "Run each line";
             this.ckDebug.UseVisualStyleBackColor = true;
@@ -747,10 +769,10 @@
             this.pnlLoaiThuatToan.Controls.Add(this.radMerge);
             this.pnlLoaiThuatToan.Controls.Add(this.radBubble);
             this.pnlLoaiThuatToan.Controls.Add(this.radQuick);
-            this.pnlLoaiThuatToan.Location = new System.Drawing.Point(806, 439);
-            this.pnlLoaiThuatToan.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlLoaiThuatToan.Location = new System.Drawing.Point(1075, 540);
+            this.pnlLoaiThuatToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlLoaiThuatToan.Name = "pnlLoaiThuatToan";
-            this.pnlLoaiThuatToan.Size = new System.Drawing.Size(353, 147);
+            this.pnlLoaiThuatToan.Size = new System.Drawing.Size(471, 181);
             this.pnlLoaiThuatToan.TabIndex = 4;
             // 
             // radSelection
@@ -758,10 +780,10 @@
             this.radSelection.AutoSize = true;
             this.radSelection.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radSelection.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radSelection.Location = new System.Drawing.Point(206, 110);
-            this.radSelection.Margin = new System.Windows.Forms.Padding(2);
+            this.radSelection.Location = new System.Drawing.Point(275, 135);
+            this.radSelection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radSelection.Name = "radSelection";
-            this.radSelection.Size = new System.Drawing.Size(148, 28);
+            this.radSelection.Size = new System.Drawing.Size(194, 35);
             this.radSelection.TabIndex = 0;
             this.radSelection.Text = "Selection Sort";
             this.radSelection.UseVisualStyleBackColor = true;
@@ -772,10 +794,10 @@
             this.radInsertion.AutoSize = true;
             this.radInsertion.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radInsertion.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radInsertion.Location = new System.Drawing.Point(206, 78);
-            this.radInsertion.Margin = new System.Windows.Forms.Padding(2);
+            this.radInsertion.Location = new System.Drawing.Point(275, 96);
+            this.radInsertion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radInsertion.Name = "radInsertion";
-            this.radInsertion.Size = new System.Drawing.Size(148, 28);
+            this.radInsertion.Size = new System.Drawing.Size(194, 35);
             this.radInsertion.TabIndex = 0;
             this.radInsertion.Text = "Insertion Sort";
             this.radInsertion.UseVisualStyleBackColor = true;
@@ -786,10 +808,10 @@
             this.radShell.AutoSize = true;
             this.radShell.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radShell.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radShell.Location = new System.Drawing.Point(206, 45);
-            this.radShell.Margin = new System.Windows.Forms.Padding(2);
+            this.radShell.Location = new System.Drawing.Point(275, 55);
+            this.radShell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radShell.Name = "radShell";
-            this.radShell.Size = new System.Drawing.Size(114, 28);
+            this.radShell.Size = new System.Drawing.Size(148, 35);
             this.radShell.TabIndex = 0;
             this.radShell.Text = "Shell Sort";
             this.radShell.UseVisualStyleBackColor = true;
@@ -800,10 +822,10 @@
             this.radHeap.AutoSize = true;
             this.radHeap.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radHeap.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radHeap.Location = new System.Drawing.Point(206, 11);
-            this.radHeap.Margin = new System.Windows.Forms.Padding(2);
+            this.radHeap.Location = new System.Drawing.Point(275, 14);
+            this.radHeap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radHeap.Name = "radHeap";
-            this.radHeap.Size = new System.Drawing.Size(116, 28);
+            this.radHeap.Size = new System.Drawing.Size(151, 35);
             this.radHeap.TabIndex = 0;
             this.radHeap.Text = "Heap Sort";
             this.radHeap.UseVisualStyleBackColor = true;
@@ -814,10 +836,10 @@
             this.radInterchange.AutoSize = true;
             this.radInterchange.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radInterchange.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radInterchange.Location = new System.Drawing.Point(14, 110);
-            this.radInterchange.Margin = new System.Windows.Forms.Padding(2);
+            this.radInterchange.Location = new System.Drawing.Point(19, 135);
+            this.radInterchange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radInterchange.Name = "radInterchange";
-            this.radInterchange.Size = new System.Drawing.Size(176, 28);
+            this.radInterchange.Size = new System.Drawing.Size(228, 35);
             this.radInterchange.TabIndex = 0;
             this.radInterchange.Text = "Interchange Sort";
             this.radInterchange.UseVisualStyleBackColor = true;
@@ -828,10 +850,10 @@
             this.radMerge.AutoSize = true;
             this.radMerge.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radMerge.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radMerge.Location = new System.Drawing.Point(14, 78);
-            this.radMerge.Margin = new System.Windows.Forms.Padding(2);
+            this.radMerge.Location = new System.Drawing.Point(19, 96);
+            this.radMerge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radMerge.Name = "radMerge";
-            this.radMerge.Size = new System.Drawing.Size(125, 28);
+            this.radMerge.Size = new System.Drawing.Size(163, 35);
             this.radMerge.TabIndex = 0;
             this.radMerge.Text = "Merge Sort";
             this.radMerge.UseVisualStyleBackColor = true;
@@ -842,10 +864,10 @@
             this.radBubble.AutoSize = true;
             this.radBubble.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radBubble.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radBubble.Location = new System.Drawing.Point(14, 45);
-            this.radBubble.Margin = new System.Windows.Forms.Padding(2);
+            this.radBubble.Location = new System.Drawing.Point(19, 55);
+            this.radBubble.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radBubble.Name = "radBubble";
-            this.radBubble.Size = new System.Drawing.Size(132, 28);
+            this.radBubble.Size = new System.Drawing.Size(171, 35);
             this.radBubble.TabIndex = 0;
             this.radBubble.Text = "Bubble Sort";
             this.radBubble.UseVisualStyleBackColor = true;
@@ -857,10 +879,10 @@
             this.radQuick.Checked = true;
             this.radQuick.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radQuick.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radQuick.Location = new System.Drawing.Point(14, 11);
-            this.radQuick.Margin = new System.Windows.Forms.Padding(2);
+            this.radQuick.Location = new System.Drawing.Point(19, 14);
+            this.radQuick.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radQuick.Name = "radQuick";
-            this.radQuick.Size = new System.Drawing.Size(122, 28);
+            this.radQuick.Size = new System.Drawing.Size(159, 35);
             this.radQuick.TabIndex = 0;
             this.radQuick.TabStop = true;
             this.radQuick.Text = "Quick Sort";
@@ -869,10 +891,10 @@
             // 
             // frmApplication
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.ClientSize = new System.Drawing.Size(1159, 586);
+            this.ClientSize = new System.Drawing.Size(1545, 721);
             this.Controls.Add(this.pnlLoaiThuatToan);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -880,7 +902,7 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmApplication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmApplication";
@@ -909,7 +931,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button Exit;
+        private System.Windows.Forms.Button bntExit;
         private System.Windows.Forms.Button bntBack;
         private System.Windows.Forms.Panel pnlChayMau;
         private System.Windows.Forms.Panel panel2;

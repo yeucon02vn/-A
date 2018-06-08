@@ -10,11 +10,13 @@ using System.Threading;
 using System.Windows.Forms;
 using CODE;
 using YTUONG;
+using THAMSO;
 
 namespace SortingAlgorithmsGUI
 {
     public partial class frmApplication : Form
     {
+        #region Public Variables
         public static string PT1 = string.Empty;
         public static string PT2 = string.Empty;
         public static string PT3 = string.Empty;
@@ -25,159 +27,61 @@ namespace SortingAlgorithmsGUI
         public static string PT8 = string.Empty;
         public static string PT9 = string.Empty;
         public static string PT10 = string.Empty;
+        #endregion
 
-        int[] arrNode;
-        Label[] ArrLbl;
-        Label[] Node_B, Node_C;
-        int[] b, c;
-        int DisN = 18; // Distance Node
-        int nOe; // number of element 
-        int SizeN = 50;  // Size Node
-        int Canh_le = 30;
-        int Speed = 60;
-        bool increase;
-        bool checkPause = false;
+        #region Variables
+        ThamSo ts = new ThamSo();
+         
         Color colorMove = Color.LightGreen;
         Color colorComplete = Color.DarkViolet;
         Color colorDefault = Color.Orange;
         Color colorQuickU = Color.AliceBlue;
         Color colorQuickD = Color.Aquamarine;
+        #endregion
+
+        #region Initialize
         public frmApplication()
         {
             InitializeComponent();
         }
-        private void bntBack_Click(object sender, EventArgs e)
-        {
-            frmIntroduct frm1 = new frmIntroduct();
-            frm1.Show();
-            this.Close();
-        }
-        private void bntSourceCode_Click(object sender, EventArgs e)
-        {
-            listCode.Show();
-            listIdea.Hide();
-        }
-        private void bntIdeaAlgorithm_Click(object sender, EventArgs e)
-        {
-            listIdea.Show();
-            listCode.Hide();
-        }
+        #endregion        
+
+        #region Load
         private void frmApplication_Load(object sender, EventArgs e)
         {
-            nOe = (int)numArray.Value;
+            ts.nOe = (int)numArray.Value;
             grpCreateArray.Enabled = false;
             pnlLoaiThuatToan.Enabled = false;
             grpControl.Enabled = false;
             grpDebug.Enabled = false;
-            increase = true;
+            ts.increase = true;
             listIdea.Hide();
-            speedTrackBar.Maximum = Speed;
+            speedTrackBar.Maximum = ts.speed;
             speedTrackBar.Minimum = 0;
-            speedTrackBar.Value = Speed / 2;
+            speedTrackBar.Value = ts.speed / 2;
             speedTrackBar.LargeChange = 1;
             SignArrow();
         }
+        #endregion
+
+        #region Complete Swap
         public void CompleteSwap()
         {
-            nOe = (int)numArray.Value;
-            for (int i = 0; i < nOe; i++)
-                ArrLbl[i].BackColor = Color.Aqua;
+            ts.nOe = (int)numArray.Value;
+            for (int i = 0; i < ts.nOe; i++)
+                ts.arrLbl[i].BackColor = Color.Aqua;
             Complete();
         }
-        private void btnCCN_Click(object sender, EventArgs e)
-        {
-            //colorMove     = Color.Red;
-            //colorComplete = Color.Yellow;
-            //colorDefault  = Color.Green;
-            //colorQuickU   = Color.AliceBlue;
-            //colorQuickD   = Color.Aquamarine;
-        }
-        private void bntCreate_Click(object sender, EventArgs e)
-        {
-            //pnlChayMau.Controls.Clear();
-            if (nOe == 0)
-            {
-                MessageBox.Show("Error", "Vui lòng nhập số phần tử !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; /// > >> >
-            }
-            else
-            {
-                arrNode = new int[nOe];
-                ArrLbl = new Label[nOe];
-                for (int i = 0; i < nOe; i++)
-                {
-                    Label label = new Label();
-                    label.AutoSize = false;
-                    label.Size = new Size(40, 40);
-                    label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                    label.Font = new Font("Times New Roman", 14);
-                    label.TextAlign = ContentAlignment.MiddleCenter;
-                    label.Text = "0";
-                    label.BackColor = colorDefault;
-                    label.Location = new Point(Canh_le + (SizeN + DisN) * i, 3 * SizeN);
-                    ArrLbl[i] = label;
-                    pnlChayMau.Controls.Add(ArrLbl[i]);
-                }
-            }
-            grpCreateArray.Enabled = true;
-        }
+        #endregion          
+
+        #region numArray_ValueChanged
         private void numArray_ValueChanged(object sender, EventArgs e)
         {
-            nOe = int.Parse(numArray.Value.ToString());
+            ts.nOe = int.Parse(numArray.Value.ToString());
         }
-        private void bntRandom_Click(object sender, EventArgs e)
-        {
-            pnlLoaiThuatToan.Enabled = true;
-            grpControl.Enabled = true;
-            grpDebug.Enabled = true;
-            Random r = new Random();
-            for (int i = 0; i < nOe; i++)
-            {
-                int rd = r.Next(0, 99);
+        #endregion
 
-                ArrLbl[i].Text = rd + "";
-                arrNode[i] = rd;
-            }
-            ShowCode();
-        }
-        private void bntByHand_Click(object sender, EventArgs e)
-        {
-            frmByHand a = new frmByHand();
-            a.Message = numArray.Value.ToString();
-            a.ShowDialog();
-            for (int i = 0; i < nOe; i++)
-            {
-
-                switch (i + 1)
-                {
-                    case 1: ArrLbl[i].Text = PT1; arrNode[i] = Int32.Parse(PT1); break;
-                    case 2: ArrLbl[i].Text = PT2; arrNode[i] = Int32.Parse(PT2); break;
-                    case 3: ArrLbl[i].Text = PT3; arrNode[i] = Int32.Parse(PT3); break;
-                    case 4: ArrLbl[i].Text = PT4; arrNode[i] = Int32.Parse(PT4); break;
-                    case 5: ArrLbl[i].Text = PT5; arrNode[i] = Int32.Parse(PT5); break;
-                    case 6: ArrLbl[i].Text = PT6; arrNode[i] = Int32.Parse(PT6); break;
-                    case 7: ArrLbl[i].Text = PT7; arrNode[i] = Int32.Parse(PT7); break;
-                    case 8: ArrLbl[i].Text = PT8; arrNode[i] = Int32.Parse(PT8); break;
-                    case 9: ArrLbl[i].Text = PT9; arrNode[i] = Int32.Parse(PT9); break;
-                    case 10: ArrLbl[i].Text = PT10; arrNode[i] = Int32.Parse(PT10); break;
-                }
-            }
-            pnlLoaiThuatToan.Enabled = true;
-            grpControl.Enabled = true;
-        }
-        private void Exit_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                Application.Exit();
-        }
-        int min(int a, int b)
-        {
-            if (a > b)
-                return b;
-            else
-                return a;
-        }
-        //Hàm phân phối a cho b và c
+        #region Hàm phân phối a cho b và c
         #region functions moving
         public void Node_Right(Control t, int Step)
         {
@@ -185,13 +89,13 @@ namespace SortingAlgorithmsGUI
 
             this.Invoke((MethodInvoker)delegate
             {
-                int Loop_Count = ((SizeN + DisN)) * Step; //Số lần dịch chuyển
+                int Loop_Count = ((ts.sizeN + ts.disN)) * Step; //Số lần dịch chuyển
                 {
                     while (Loop_Count > 0)
                     {
                         Application.DoEvents();
                         t.Left += 1;
-                        Tre(Speed);
+                        Delay(ts.speed);
                         Loop_Count--;
                         t.BackColor = colorDefault;
                     }
@@ -205,12 +109,12 @@ namespace SortingAlgorithmsGUI
             Application.DoEvents();
             this.Invoke((MethodInvoker)delegate
             {
-                int Loop_Count = ((SizeN + DisN)) * Step; //Số lần dịch chuyển
+                int Loop_Count = ((ts.sizeN + ts.disN)) * Step; //Số lần dịch chuyển
                 while (Loop_Count > 0)
                 {
                     Application.DoEvents();
                     t.Left -= 1;
-                    Tre(Speed);
+                    Delay(ts.speed);
                     Loop_Count--;
                     t.BackColor = colorMove;
                 }
@@ -229,7 +133,7 @@ namespace SortingAlgorithmsGUI
                 {
                     Application.DoEvents();
                     t.Top -= 1;
-                    Tre(Speed);
+                    Delay(ts.speed);
                     loop_Count--;
                     t.BackColor = colorMove;
                 }
@@ -248,7 +152,7 @@ namespace SortingAlgorithmsGUI
                 {
                     Application.DoEvents();
                     t.Top += 1;
-                    Tre(Speed);
+                    Delay(ts.speed);
                     loop_Count--;
                     t.BackColor = colorMove;
                 }
@@ -258,7 +162,7 @@ namespace SortingAlgorithmsGUI
         public void toLocaN(Control t, int i)
         {
             Point p1 = t.Location; // lưu lại vị trí của t
-            Point p2 = new Point(Canh_le + (SizeN + DisN) * i, 150);//vị trí của Node i
+            Point p2 = new Point(ts.canh_le + (ts.sizeN + ts.disN) * i, 150);//vị trí của Node i
             Application.DoEvents();
             this.Invoke((MethodInvoker)delegate
             {
@@ -270,7 +174,7 @@ namespace SortingAlgorithmsGUI
                     {
                         Application.DoEvents();
                         t.Top += 1;
-                        Tre(Speed);
+                        Delay(ts.speed);
                         t.Refresh();
                     }
                 }
@@ -280,7 +184,7 @@ namespace SortingAlgorithmsGUI
                     {
                         Application.DoEvents();
                         t.Top -= 1;
-                        Tre(Speed);
+                        Delay(ts.speed);
                         t.Refresh();
                     }
                 }
@@ -291,7 +195,7 @@ namespace SortingAlgorithmsGUI
                     {
                         Application.DoEvents();
                         t.Left += 1;
-                        Tre(Speed);
+                        Delay(ts.speed);
                         t.Refresh();
                     }
                 }
@@ -301,7 +205,7 @@ namespace SortingAlgorithmsGUI
                     {
                         Application.DoEvents();
                         t.Left -= 1;
-                        Tre(Speed);
+                        Delay(ts.speed);
                         t.Refresh();
                     }
                 }
@@ -312,7 +216,7 @@ namespace SortingAlgorithmsGUI
                     {
                         Application.DoEvents();
                         t.Top += 1;
-                        Tre(Speed);
+                        Delay(ts.speed);
                         t.Refresh();
                     }
                 }
@@ -322,7 +226,7 @@ namespace SortingAlgorithmsGUI
                     {
                         Application.DoEvents();
                         t.Top -= 1;
-                        Tre(Speed);
+                        Delay(ts.speed);
                         t.Refresh();
                     }
                 }
@@ -332,7 +236,7 @@ namespace SortingAlgorithmsGUI
         public void Den_tdo_x_node(Control t, int i)
         {
             Point p1 = t.Location; // lưu lại vị trí của t
-            Point p2 = new Point(Canh_le + (SizeN + DisN) * i, 150);//vị trí của Node i
+            Point p2 = new Point(ts.canh_le + (ts.sizeN + ts.disN) * i, 150);//vị trí của Node i
             Application.DoEvents();
             t.BackColor = colorMove;
             this.Invoke((MethodInvoker)delegate
@@ -344,7 +248,7 @@ namespace SortingAlgorithmsGUI
                     {
                         Application.DoEvents();
                         t.Left += 1;
-                        Tre(Speed);
+                        Delay(ts.speed);
                         t.Refresh();
                     }
                 }
@@ -354,7 +258,7 @@ namespace SortingAlgorithmsGUI
                     {
                         Application.DoEvents();
                         t.Left -= 1;
-                        Tre(Speed);
+                        Delay(ts.speed);
                         t.Refresh();
                     }
                 }
@@ -365,9 +269,9 @@ namespace SortingAlgorithmsGUI
         #region functions conversion
         public void Swap_NodeAn(int a, int b)
         {
-            Label temp = ArrLbl[a];
-            ArrLbl[a] = ArrLbl[b];
-            ArrLbl[b] = temp;
+            Label temp = ts.arrLbl[a];
+            ts.arrLbl[a] = ts.arrLbl[b];
+            ts.arrLbl[b] = temp;
         }
 
         public void Swap_Node(Control t1, Control t2)
@@ -382,7 +286,7 @@ namespace SortingAlgorithmsGUI
                 if (p1 != p2)
                 {
                     // t1 lên, t2 xuống
-                    while ((t1.Location.Y > p1.Y - (SizeN + 5)) || (t2.Location.Y < p2.Y + (SizeN + 5)))
+                    while ((t1.Location.Y > p1.Y - (ts.sizeN + 5)) || (t2.Location.Y < p2.Y + (ts.sizeN + 5)))
                     {
                         Application.DoEvents();
                         t1.Top -= 1;
@@ -460,80 +364,50 @@ namespace SortingAlgorithmsGUI
             e.Graphics.DrawString(listIdea.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);          
         }
         #endregion
-        private void radQuick_CheckedChanged(object sender, EventArgs e)
-        {
-            ShowCode();
-        }
-        private void radHeap_CheckedChanged(object sender, EventArgs e)
-        {
-            ShowCode();
-        }
-        private void radBubble_CheckedChanged(object sender, EventArgs e)
-        {
-            ShowCode();
-        }
-        private void radShell_CheckedChanged(object sender, EventArgs e)
-        {
-            ShowCode();
-        }
-        private void radMerge_CheckedChanged(object sender, EventArgs e)
-        {
-            ShowCode();
-        }
-        private void radInsertion_CheckedChanged(object sender, EventArgs e)
-        {
-            ShowCode();
-        }
-        private void radInterchange_CheckedChanged(object sender, EventArgs e)
-        {
-            ShowCode();
-        }
-        private void radSelection_CheckedChanged(object sender, EventArgs e)
-        {
-            ShowCode();
-        }
-        #region Sort algorithms
+        #endregion        
+
+        #region Sort Algorithms
         #region interchange
         private void InterchangeSortGiam(int[] arrNode)
         { 
             ChonDongChoCodeListBox(2);
             int i = 0, j = 0;
             Mui_ten_xanh_len_1.Text = "i = " + i;
-            Mui_ten_xanh_len_1.Location = new Point(Canh_le + (SizeN + DisN) * i, pnlChayMau.Height -50);
+            Mui_ten_xanh_len_1.Location = new Point(ts.canh_le + (ts.sizeN + ts.disN) * i, pnlChayMau.Height -50);
             Mui_ten_xanh_len_1.Visible = true;
-            for ( i = 0; i < nOe - 1; i++)
+            for ( i = 0; i < ts.nOe - 1; i++)
             {
                 ChonDongChoCodeListBox(3);
                 j = i + 1;
                 Mui_ten_xanh_len_2.Text = "j = " + j;
-                Mui_ten_xanh_len_2.Location = new Point(Canh_le + (SizeN + DisN) * j, pnlChayMau.Height - 50);
+                Mui_ten_xanh_len_2.Location = new Point(ts.canh_le + (ts.sizeN + ts.disN) * j, pnlChayMau.Height - 50);
                 Mui_ten_xanh_len_2.Visible = true;
-                for ( j = i + 1; j < nOe; j++)
+                for ( j = i + 1; j < ts.nOe; j++)
                 {
                     ChonDongChoCodeListBox(4);
                     lbl_status_02.Text = "SoSanh(a[" + i + "],a[" + j + "])";
                     lbl_status_02.Visible = true;
-                    if (arrNode[j] > arrNode[i])
+                    if (ts.arrNode[j] > ts.arrNode[i])
                     {
                         ChonDongChoCodeListBox(6);
                         lbl_status_02.Text = "HoanVi(a[" + i + "],a[" + j + "])";
-                        Swap_Giatri(ref arrNode[i], ref arrNode[j]);
-                        Swap_Node(ArrLbl[j], ArrLbl[i]);
+                        Swap_Giatri(ref ts.arrNode[i], ref ts.arrNode[j]);
+                        Swap_Node(ts.arrLbl[j], ts.arrLbl[i]);
                         Swap_NodeAn(j, i);
-                        ArrLbl[i].BackColor = colorComplete;
+                        ts.arrLbl[i].BackColor = colorComplete;
                     }
-                    if (j + 1 < nOe)
+                    if (j + 1 < ts.nOe)
                     {
                         Mui_ten_xanh_len_2.Text = "j = " + (j + 1);
-                        Mui_ten_xanh_len_2.Location = new Point(Canh_le + (SizeN + DisN) * (j + 1), pnlChayMau.Height - 50);
+                        Mui_ten_xanh_len_2.Location = new Point(ts.canh_le + (ts.sizeN + ts.disN) * (j + 1), pnlChayMau.Height - 50);
                         Refresh();
                     }
-                    ArrLbl[i].BackColor = colorDefault;
+                    ts.arrLbl[i].BackColor = colorDefault;
                 }
                 ChonDongChoCodeListBox(3);
                 lbl_status_02.Visible = false;
                 Mui_ten_xanh_len_1.Text = "i = " + (i + 1);
-                Mui_ten_xanh_len_1.Location = new Point(Canh_le + (SizeN + DisN) * (i + 1), pnlChayMau.Height - 50);
+                Mui_ten_xanh_len_1.Location = new Point(ts.canh_le + (ts.sizeN + ts.disN) * (i + 1), pnlChayMau.Height - 50);
             }
             ChonDongChoCodeListBox(0);
         }
@@ -543,43 +417,43 @@ namespace SortingAlgorithmsGUI
             ChonDongChoCodeListBox(2);
             int i = 0, j = 0;
             Mui_ten_xanh_len_1.Text = "i = " + i;
-            Mui_ten_xanh_len_1.Location = new Point(Canh_le + (SizeN + DisN) * i, pnlChayMau.Height - 50);
+            Mui_ten_xanh_len_1.Location = new Point(ts.canh_le + (ts.sizeN + ts.disN) * i, pnlChayMau.Height - 50);
             Mui_ten_xanh_len_1.Visible = true;
             Refresh();
-            for (i = 0; i < nOe - 1; i++)
+            for (i = 0; i < ts.nOe - 1; i++)
             {
                 ChonDongChoCodeListBox(3);
                 j = i + 1;
                 Mui_ten_xanh_len_2.Text = "j = " + j;
-                Mui_ten_xanh_len_2.Location = new Point(Canh_le + (SizeN + DisN) * j, pnlChayMau.Height - 50);
+                Mui_ten_xanh_len_2.Location = new Point(ts.canh_le + (ts.sizeN + ts.disN) * j, pnlChayMau.Height - 50);
                 Mui_ten_xanh_len_2.Visible = true;
                 Refresh();
-                for (j = i + 1; j < nOe; j++)
+                for (j = i + 1; j < ts.nOe; j++)
                 {
                     ChonDongChoCodeListBox(4);
                     lbl_status_02.Text = "SoSanh(a[" + i + "],a[" + j + "])";
                     lbl_status_02.Visible = true;
-                    if (arrNode[j] < arrNode[i])
+                    if (ts.arrNode[j] < ts.arrNode[i])
                     {
                         ChonDongChoCodeListBox(6);
                         lbl_status_02.Text = "HoanVi(a[" + i + "],a[" + j + "])";
-                        Swap_Giatri(ref arrNode[j], ref arrNode[i]);
-                        Swap_Node(ArrLbl[j], ArrLbl[i]);
+                        Swap_Giatri(ref ts.arrNode[j], ref ts.arrNode[i]);
+                        Swap_Node(ts.arrLbl[j], ts.arrLbl[i]);
                         Swap_NodeAn(j, i);
-                        ArrLbl[i].BackColor = colorComplete;
+                        ts.arrLbl[i].BackColor = colorComplete;
                     }
-                    if (j+1 < nOe)
+                    if (j+1 < ts.nOe)
                     {
                         Mui_ten_xanh_len_2.Text = "j = " + (j + 1);
-                        Mui_ten_xanh_len_2.Location = new Point(Canh_le + (SizeN + DisN) * (j + 1), pnlChayMau.Height - 50);
+                        Mui_ten_xanh_len_2.Location = new Point(ts.canh_le + (ts.sizeN + ts.disN) * (j + 1), pnlChayMau.Height - 50);
                         Refresh();
                     }
-                    ArrLbl[i].BackColor = colorDefault;
+                    ts.arrLbl[i].BackColor = colorDefault;
                 }
                 ChonDongChoCodeListBox(3);
                 lbl_status_02.Visible = false;
                 Mui_ten_xanh_len_1.Text = "i = " + (i + 1);
-                Mui_ten_xanh_len_1.Location = new Point(Canh_le + (SizeN + DisN) * (i + 1), pnlChayMau.Height - 50);
+                Mui_ten_xanh_len_1.Location = new Point(ts.canh_le + (ts.sizeN + ts.disN) * (i + 1), pnlChayMau.Height - 50);
                 Refresh();
             }
             ChonDongChoCodeListBox(0);
@@ -592,22 +466,22 @@ namespace SortingAlgorithmsGUI
             SignArrow();
             this.Invoke((MethodInvoker)delegate
             {
-                for (int i = 0; i < nOe - 1; i++)
+                for (int i = 0; i < ts.nOe - 1; i++)
                 {
                     ChonDongChoCodeListBox(3);
                     ChonDongChoCodeListBox(5);
 
                     Mui_ten_xanh_xuong_1.Visible = true;
                     Mui_ten_xanh_xuong_1.Text = "i=" + i;
-                    Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                    Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                     Mui_ten_xanh_xuong_1.Refresh();
                     min = i;
                     Mui_ten_xanh_len_1.Visible = true;
                     Mui_ten_xanh_len_1.Text = "Min=" + min;
-                    Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * min) + (SizeN / 2) - 30, ArrLbl[min].Location.Y + 2 * SizeN + 5);
+                    Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * min) + (ts.sizeN / 2) - 30, ts.arrLbl[min].Location.Y + 2 * ts.sizeN + 5);
                     Mui_ten_xanh_len_1.Refresh();
 
-                    for (int j = i + 1; j < nOe; j++)
+                    for (int j = i + 1; j < ts.nOe; j++)
                     {
                         ChonDongChoCodeListBox(6);
                         Application.DoEvents();
@@ -615,12 +489,12 @@ namespace SortingAlgorithmsGUI
                         lbl_status_02.Visible = true;
                         lbl_status_02.Text = "SoSanh( a[min] , a[" + j + "] )";
                         lbl_status_02.Refresh();
-                        if (arrNode[j] < arrNode[min])
+                        if (ts.arrNode[j] < ts.arrNode[min])
                         {
                             ChonDongChoCodeListBox(8);
                             min = j;
                             Mui_ten_xanh_len_1.Text = "Min=" + min;
-                            Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * min) + (SizeN / 2) - 30, ArrLbl[j].Location.Y + 2 * SizeN + 5);
+                            Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * min) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y + 2 * ts.sizeN + 5);
                             Mui_ten_xanh_len_1.Refresh();
                         }
 
@@ -630,14 +504,14 @@ namespace SortingAlgorithmsGUI
                         ChonDongChoCodeListBox(10);
                         lbl_status_02.Visible = true;
                         lbl_status_02.Text = "HoanVi( a[i] , a[min] )";
-                        Swap_Giatri(ref arrNode[min], ref arrNode[i]);
-                        Swap_Node(ArrLbl[min], ArrLbl[i]);
+                        Swap_Giatri(ref ts.arrNode[min], ref ts.arrNode[i]);
+                        Swap_Node(ts.arrLbl[min], ts.arrLbl[i]);
                         Swap_NodeAn(min, i);
-                        ArrLbl[i].BackColor = colorComplete;
-                        ArrLbl[min].BackColor = colorDefault;
+                        ts.arrLbl[i].BackColor = colorComplete;
+                        ts.arrLbl[min].BackColor = colorDefault;
                     }
                     else
-                        ArrLbl[i].BackColor = colorComplete;
+                        ts.arrLbl[i].BackColor = colorComplete;
                     lbl_status_02.Visible = false;
 
                 }
@@ -651,7 +525,7 @@ namespace SortingAlgorithmsGUI
             Application.DoEvents();
             this.Invoke((MethodInvoker)delegate
             {
-                for (int i = 0; i < nOe - 1; i++)
+                for (int i = 0; i < ts.nOe - 1; i++)
                 {
                     ChonDongChoCodeListBox(3);
                     ChonDongChoCodeListBox(5);
@@ -659,13 +533,13 @@ namespace SortingAlgorithmsGUI
 
                     Mui_ten_xanh_xuong_1.Visible = true;
                     Mui_ten_xanh_xuong_1.Text = "i=" + i;
-                    Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                    Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                     Mui_ten_xanh_xuong_1.Refresh();
                     Mui_ten_xanh_len_1.Visible = true;
                     Mui_ten_xanh_len_1.Text = "Max=" + max;
-                    Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * max) + (SizeN / 2) - 30, ArrLbl[max].Location.Y + 2 * SizeN + 5);
+                    Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * max) + (ts.sizeN / 2) - 30, ts.arrLbl[max].Location.Y + 2 * ts.sizeN + 5);
                     Mui_ten_xanh_len_1.Refresh();
-                    for (int j = i + 1; j < nOe; j++)
+                    for (int j = i + 1; j < ts.nOe; j++)
                     {
                         ChonDongChoCodeListBox(6);
                         Application.DoEvents();
@@ -673,11 +547,11 @@ namespace SortingAlgorithmsGUI
 
                         lbl_status_02.Visible = true;
                         lbl_status_02.Text = "SoSanh( a[max] , a[" + j + "] )";
-                        if (arrNode[j] > arrNode[max])
+                        if (ts.arrNode[j] > ts.arrNode[max])
                         {
                             max = j;
                             Mui_ten_xanh_len_1.Text = "Max=" + max;
-                            Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * max) + (SizeN / 2) - 30, ArrLbl[j].Location.Y + 2 * SizeN + 5);
+                            Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * max) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y + 2 * ts.sizeN + 5);
                             Mui_ten_xanh_len_1.Refresh();
                         }
                     }
@@ -686,15 +560,15 @@ namespace SortingAlgorithmsGUI
                         ChonDongChoCodeListBox(10);
                         lbl_status_02.Visible = true;
                         lbl_status_02.Text = "HoanVi( a[i] , a[max] )";
-                        Swap_Giatri(ref arrNode[max], ref arrNode[i]);
+                        Swap_Giatri(ref ts.arrNode[max], ref ts.arrNode[i]);
                         System.Threading.Thread.Sleep(5);
-                        Swap_Node(ArrLbl[max], ArrLbl[i]);
+                        Swap_Node(ts.arrLbl[max], ts.arrLbl[i]);
                         Swap_NodeAn(max, i);
-                        ArrLbl[i].BackColor = colorComplete;
-                        ArrLbl[max].BackColor = colorDefault;
+                        ts.arrLbl[i].BackColor = colorComplete;
+                        ts.arrLbl[max].BackColor = colorDefault;
                     }
                     else
-                        ArrLbl[i].BackColor = colorComplete;
+                        ts.arrLbl[i].BackColor = colorComplete;
                     lbl_status_02.Visible = false;
                 }
             });
@@ -705,38 +579,38 @@ namespace SortingAlgorithmsGUI
         private void ShellSortincrease(int[] arrNode)
         {
 
-            for (int i = nOe / 2; i > 0; i /= 2)
+            for (int i = ts.nOe / 2; i > 0; i /= 2)
             {
                 ChonDongChoCodeListBox(2);
                 Mui_ten_xanh_xuong_1.Text = "i = " + i;
-                Mui_ten_xanh_xuong_1.Location = new Point(Canh_le-10 + (SizeN + DisN) * 0, 40);
+                Mui_ten_xanh_xuong_1.Location = new Point(ts.canh_le-10 + (ts.sizeN + ts.disN) * 0, 40);
                 Mui_ten_xanh_xuong_1.SendToBack();
                 Mui_ten_xanh_xuong_1.Visible = true;
 
-                for (int j = i; j < nOe; j++)
+                for (int j = i; j < ts.nOe; j++)
                 {
                     ChonDongChoCodeListBox(3);
                     Mui_ten_xanh_len_1.Text = "j = " + j;
-                    Mui_ten_xanh_len_1.Location = new Point(Canh_le-10 + (SizeN + DisN) * j, 40);
+                    Mui_ten_xanh_len_1.Location = new Point(ts.canh_le-10 + (ts.sizeN + ts.disN) * j, 40);
                     Mui_ten_xanh_len_1.Visible = true;
 
 
-                    for (int k = j; k >= i && arrNode[k] < arrNode[k - i]; k -= i)
+                    for (int k = j; k >= i && ts.arrNode[k] < ts.arrNode[k - i]; k -= i)
                     {
                         ChonDongChoCodeListBox(4);
                         Mui_ten_xanh_xuong_2.Text = "k = " + k;
-                        Mui_ten_xanh_xuong_2.Location = new Point(Canh_le -10+ (SizeN + DisN) * k, pnlChayMau.Height - 50);
+                        Mui_ten_xanh_xuong_2.Location = new Point(ts.canh_le -10+ (ts.sizeN + ts.disN) * k, pnlChayMau.Height - 50);
                         Mui_ten_xanh_xuong_2.SendToBack();
                         Mui_ten_xanh_xuong_2.Visible = true;
                         Refresh();
                         ChonDongChoCodeListBox(5);
                         lbl_status_02.Text = "HoanVi(a[" + k  + "],a[" + (k - 1) + "])";
                         lbl_status_02.Visible = true;
-                        Swap_Giatri(ref arrNode[k - i], ref arrNode[k]);
-                        Swap_Node(ArrLbl[k], ArrLbl[k - i]);
+                        Swap_Giatri(ref ts.arrNode[k - i], ref ts.arrNode[k]);
+                        Swap_Node(ts.arrLbl[k], ts.arrLbl[k - i]);
                         Swap_NodeAn(k, k - i);
-                        ArrLbl[k - i].BackColor = colorDefault;
-                        ArrLbl[k].BackColor = colorDefault;
+                        ts.arrLbl[k - i].BackColor = colorDefault;
+                        ts.arrLbl[k].BackColor = colorDefault;
                     }
                     lbl_status_02.Visible = false;
                     ChonDongChoCodeListBox(3);
@@ -746,36 +620,36 @@ namespace SortingAlgorithmsGUI
         }
         private void ShellSortGiam(int[] arrNode)
         {
-            for (int i = nOe / 2; i > 0; i /= 2)
+            for (int i = ts.nOe / 2; i > 0; i /= 2)
             {
                 ChonDongChoCodeListBox(2);
                 Mui_ten_xanh_xuong_1.Text = "i = " + i;
-                Mui_ten_xanh_xuong_1.Location = new Point(Canh_le - 10 + (SizeN + DisN) * 0, 40);
+                Mui_ten_xanh_xuong_1.Location = new Point(ts.canh_le - 10 + (ts.sizeN + ts.disN) * 0, 40);
                 Mui_ten_xanh_xuong_1.SendToBack();
                 Mui_ten_xanh_xuong_1.Visible = true;
-                for (int j = i; j < nOe; j++)
+                for (int j = i; j < ts.nOe; j++)
                 {
                     ChonDongChoCodeListBox(3);
                     Mui_ten_xanh_len_1.Text = "j = " + j;
-                    Mui_ten_xanh_len_1.Location = new Point(Canh_le - 10 + (SizeN + DisN) * j, 40);
+                    Mui_ten_xanh_len_1.Location = new Point(ts.canh_le - 10 + (ts.sizeN + ts.disN) * j, 40);
                     Mui_ten_xanh_len_1.Visible = true;
-                    for (int k = j; k >= i && arrNode[k] > arrNode[k - i]; k -= i)
+                    for (int k = j; k >= i && ts.arrNode[k] > ts.arrNode[k - i]; k -= i)
                     {
                         ChonDongChoCodeListBox(4);
                         Mui_ten_xanh_xuong_2.Text = "k = " + k;
-                        Mui_ten_xanh_xuong_2.Location = new Point(Canh_le - 10 + (SizeN + DisN) * k, pnlChayMau.Height - 50);
+                        Mui_ten_xanh_xuong_2.Location = new Point(ts.canh_le - 10 + (ts.sizeN + ts.disN) * k, pnlChayMau.Height - 50);
                         Mui_ten_xanh_xuong_2.SendToBack();
                         Mui_ten_xanh_xuong_2.Visible = true;
                         Refresh();
                         ChonDongChoCodeListBox(5);
                         lbl_status_02.Text = "HoanVi(a[" + k + "],a[" + (k - 1) + "])";
                         lbl_status_02.Visible = true;
-                        Swap_Giatri(ref arrNode[k - i], ref arrNode[k]);
+                        Swap_Giatri(ref ts.arrNode[k - i], ref ts.arrNode[k]);
                         System.Threading.Thread.Sleep(5);
-                        Swap_Node(ArrLbl[k], ArrLbl[k - i]);
+                        Swap_Node(ts.arrLbl[k], ts.arrLbl[k - i]);
                         Swap_NodeAn(k, k - i);
-                        ArrLbl[k - i].BackColor = colorDefault;
-                        ArrLbl[k].BackColor = colorDefault;
+                        ts.arrLbl[k - i].BackColor = colorDefault;
+                        ts.arrLbl[k].BackColor = colorDefault;
                     }
                     lbl_status_02.Visible = false;
                     ChonDongChoCodeListBox(3);
@@ -791,28 +665,28 @@ namespace SortingAlgorithmsGUI
             Application.DoEvents();
             this.Invoke((MethodInvoker)delegate
             {
-                for (i = 0; i < nOe - 1; i++)
+                for (i = 0; i < ts.nOe - 1; i++)
                 {
                     ChonDongChoCodeListBox(3);
                     Mui_ten_xanh_xuong_1.Text = "i=" + i;
                     Mui_ten_xanh_xuong_1.Visible = true;
-                    Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                    Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                     Mui_ten_xanh_xuong_1.Refresh();
                     Application.DoEvents();
-                    for (j = nOe - 1; j > i; j--)
+                    for (j = ts.nOe - 1; j > i; j--)
                     {
                         Application.DoEvents();
                         ChonDongChoCodeListBox( 4);
                         Mui_ten_xanh_len_1.Text = "j=" + j;
                         Mui_ten_xanh_len_1.Visible = true;
-                        Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y + 2 * SizeN + 5);
+                        Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y + 2 * ts.sizeN + 5);
                         Mui_ten_xanh_len_1.Refresh();
                         lbl_status_02.Visible = false;
                         lbl_status_02.Text = "So_Sanh(a[" + j + "],a[" + (j - 1) + "])";
                         lbl_status_02.Refresh();
                         ChonDongChoCodeListBox (5);
                         lbl_status_02.Visible = true;
-                        if (arrNode[j] < arrNode[j - 1])
+                        if (ts.arrNode[j] < ts.arrNode[j - 1])
                         {
                             //Hieu ung xem code
                             ChonDongChoCodeListBox( 6);
@@ -820,12 +694,12 @@ namespace SortingAlgorithmsGUI
                             lbl_status_02.Text = "Hoan_vi(a[" + j + "],a[" + (j - 1) + "])";
                             lbl_status_02.Refresh();
 
-                            Swap_Giatri(ref arrNode[j], ref arrNode[j - 1]);
-                            Swap_Node(ArrLbl[j], ArrLbl[j - 1]);
+                            Swap_Giatri(ref ts.arrNode[j], ref ts.arrNode[j - 1]);
+                            Swap_Node(ts.arrLbl[j], ts.arrLbl[j - 1]);
                             Swap_NodeAn(j, j - 1);
-                            ArrLbl[j - 1].BackColor = colorComplete;
+                            ts.arrLbl[j - 1].BackColor = colorComplete;
                         }
-                        ArrLbl[j].BackColor = colorDefault;
+                        ts.arrLbl[j].BackColor = colorDefault;
                     }
                     //Cập nhật Status
                     lbl_status_02.Visible = true;
@@ -843,28 +717,28 @@ namespace SortingAlgorithmsGUI
             Application.DoEvents();
             this.Invoke((MethodInvoker)delegate
             {
-                for (i = 0; i < nOe - 1; i++)
+                for (i = 0; i < ts.nOe - 1; i++)
                 {
                     ChonDongChoCodeListBox(3);
                     Mui_ten_xanh_xuong_1.Text = "i=" + i;
                     Mui_ten_xanh_xuong_1.Visible = true;
-                    Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                    Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                     Mui_ten_xanh_xuong_1.Refresh();
                     Application.DoEvents();
-                    for (j = nOe - 1; j > i; j--)
+                    for (j = ts.nOe - 1; j > i; j--)
                     {
                         Application.DoEvents();
                         ChonDongChoCodeListBox(4);
                         Mui_ten_xanh_len_1.Text = "j=" + j;
                         Mui_ten_xanh_len_1.Visible = true;
-                        Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y + 2 * SizeN + 5);
+                        Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y + 2 * ts.sizeN + 5);
                         Mui_ten_xanh_len_1.Refresh();
                         lbl_status_02.Visible = false;
                         lbl_status_02.Text = "So_Sanh(a[" + j + "],a[" + (j - 1) + "])";
                         lbl_status_02.Refresh();
                         ChonDongChoCodeListBox(5);
                         lbl_status_02.Visible = true;
-                        if (arrNode[j] > arrNode[j - 1])
+                        if (ts.arrNode[j] > ts.arrNode[j - 1])
                         {
                             //Hieu ung xem code
                             ChonDongChoCodeListBox(6);
@@ -872,12 +746,12 @@ namespace SortingAlgorithmsGUI
                             lbl_status_02.Text = "Hoan_vi(a[" + j + "],a[" + (j - 1) + "])";
                             lbl_status_02.Refresh();
 
-                            Swap_Giatri(ref arrNode[j], ref arrNode[j - 1]);
-                            Swap_Node(ArrLbl[j], ArrLbl[j - 1]);
+                            Swap_Giatri(ref ts.arrNode[j], ref ts.arrNode[j - 1]);
+                            Swap_Node(ts.arrLbl[j], ts.arrLbl[j - 1]);
                             Swap_NodeAn(j, j - 1);
-                            ArrLbl[j - 1].BackColor = colorComplete;
+                            ts.arrLbl[j - 1].BackColor = colorComplete;
                         }
-                        ArrLbl[j].BackColor = colorDefault;
+                        ts.arrLbl[j].BackColor = colorDefault;
                     }
                     //Cập nhật Status
                     lbl_status_02.Visible = true;
@@ -901,18 +775,18 @@ namespace SortingAlgorithmsGUI
             Application.DoEvents();
             this.Invoke((MethodInvoker)delegate
             {
-                for (i = 1; i < nOe; i++)
+                for (i = 1; i < ts.nOe; i++)
                 {
                     ChonDongChoCodeListBox(3);
                     Mui_ten_xanh_xuong_1.Visible = true;
-                    Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                    Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                     Mui_ten_xanh_xuong_1.Text = "i=" + i;
                     Mui_ten_xanh_xuong_1.Refresh();
                     Application.DoEvents();
                     Dem_node = 0;
                     ChonDongChoCodeListBox(5);
-                    x = arrNode[i];
-                    Node_tam = ArrLbl[i];
+                    x = ts.arrNode[i];
+                    Node_tam = ts.arrLbl[i];
                     Chi_so_tam = i;
                     pos = i - 1;
                     //thiết lập mũi tên đánh dấu nút cần chèn
@@ -922,23 +796,23 @@ namespace SortingAlgorithmsGUI
                     Application.DoEvents();
                     this.Invoke((MethodInvoker)delegate
                     {
-                        Node_Up(Node_tam, (SizeN + 5));
+                        Node_Up(Node_tam, (ts.sizeN + 5));
                     });
 
                     lbl_status_02.Visible = true;
                     lbl_status_02.Text = "So_Sanh(a[" + pos + "],a[i)";
 
                     //Thiết lập bàn tay chỉ vi trí có phải vị trí cần chèn không                        
-                    Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * pos) + (SizeN / 2) - 30, ArrLbl[pos].Location.Y + SizeN + 5);
+                    Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * pos) + (ts.sizeN / 2) - 30, ts.arrLbl[pos].Location.Y + ts.sizeN + 5);
                     Mui_ten_xanh_len_1.Text = "POS=" + pos;
                     Mui_ten_xanh_len_1.Visible = true;
                     Mui_ten_xanh_len_1.Refresh();
                     //lbl_status_02.Visible = false
-                    while ((pos >= 0) && (arrNode[pos] > x))
+                    while ((pos >= 0) && (ts.arrNode[pos] > x))
                     {
                         Application.DoEvents();
                         ChonDongChoCodeListBox(7);
-                        Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * pos) + (SizeN / 2) - 30, ArrLbl[pos].Location.Y + SizeN + 5);
+                        Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * pos) + (ts.sizeN / 2) - 30, ts.arrLbl[pos].Location.Y + ts.sizeN + 5);
                         Mui_ten_xanh_len_1.Text = "POS=" + pos;
                         Mui_ten_xanh_len_1.Visible = true;
                         Mui_ten_xanh_len_1.Refresh();
@@ -949,19 +823,19 @@ namespace SortingAlgorithmsGUI
                         lbl_status_02.Text = "So_Sanh(a[" + pos + "],a[i])";
                         ChonDongChoCodeListBox(9);
                         //Dịch chuyển Node qua phải
-                        arrNode[pos + 1] = arrNode[pos];
+                        ts.arrNode[pos + 1] = ts.arrNode[pos];
                         Dem_node++;
 
                         Application.DoEvents();
                         this.Invoke((MethodInvoker)delegate
                         {
-                            Node_Right(ArrLbl[pos], 1);
+                            Node_Right(ts.arrLbl[pos], 1);
                         });
                         Swap_NodeAn(pos + 1, pos);
                         ChonDongChoCodeListBox(10);
                         pos--;
                         ChonDongChoCodeListBox(12);
-                        arrNode[pos + 1] = x;
+                        ts.arrNode[pos + 1] = x;
                     }
                     //status hoán vị
                     if (Dem_node > 0)
@@ -973,19 +847,19 @@ namespace SortingAlgorithmsGUI
                     this.Invoke((MethodInvoker)delegate
                     {
                         Node_Left(Node_tam, Dem_node);
-                        ArrLbl[pos + 1].BackColor = colorDefault;
+                        ts.arrLbl[pos + 1].BackColor = colorDefault;
                     });
 
                     Application.DoEvents();
                     this.Invoke((MethodInvoker)delegate
                     {
-                        Node_Down(Node_tam, (SizeN + 5));
-                        //ArrLbl[pos+1].BackColor = colorComplete;
-                        ArrLbl[pos + 1].BackColor = colorDefault;
+                        Node_Down(Node_tam, (ts.sizeN + 5));
+                        //ts.arrLbl[pos+1].BackColor = colorComplete;
+                        ts.arrLbl[pos + 1].BackColor = colorDefault;
                     });
                     lbl_status_02.Visible = false;
                     Mui_ten_xanh_len_1.Visible = false; ;
-                    ArrLbl[pos + 1] = Node_tam;
+                    ts.arrLbl[pos + 1] = Node_tam;
                 }
             });
             ChonDongChoCodeListBox(0);
@@ -1000,7 +874,7 @@ namespace SortingAlgorithmsGUI
             Application.DoEvents();
             this.Invoke((MethodInvoker)delegate
             {
-                for (i = 1; i < nOe; i++)
+                for (i = 1; i < ts.nOe; i++)
                 {
                     ChonDongChoCodeListBox(3);
                     Application.DoEvents();
@@ -1008,13 +882,13 @@ namespace SortingAlgorithmsGUI
                     //đềm số bước dịch chuyển 1 Node
                     Dem_node = 0;
                     ChonDongChoCodeListBox(5);
-                    x = arrNode[i];
-                    Node_tam = ArrLbl[i];
+                    x = ts.arrNode[i];
+                    Node_tam = ts.arrLbl[i];
                     Chi_so_tam = i;
                     pos = i - 1;
                     //thiết lập mũi tên đánh dấu nút cần chèn
                     Mui_ten_xanh_xuong_1.Visible = true;
-                    Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                    Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                     Mui_ten_xanh_xuong_1.Text = "i=" + i;
                     Mui_ten_xanh_xuong_1.Refresh();
 
@@ -1022,23 +896,23 @@ namespace SortingAlgorithmsGUI
                     Application.DoEvents();
                     this.Invoke((MethodInvoker)delegate
                     {
-                        Node_Up(Node_tam, (SizeN + 5));
+                        Node_Up(Node_tam, (ts.sizeN + 5));
                     });
 
                     lbl_status_02.Visible = true;
                     lbl_status_02.Text = "So_Sanh(a[" + pos+ "],a[i])";
                     //Thiết lập bàn tay chỉ vi trí có phải vị trí cần chèn không                        
-                    Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * pos) + (SizeN / 2) - 30, ArrLbl[pos].Location.Y + SizeN + 5);
+                    Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * pos) + (ts.sizeN / 2) - 30, ts.arrLbl[pos].Location.Y + ts.sizeN + 5);
                     Mui_ten_xanh_len_1.Text = "POS=" + pos;
                     Mui_ten_xanh_len_1.Visible = true;
                     Mui_ten_xanh_len_1.Refresh();
                     //lbl_status_02.Visible = false;
-                    while ((pos >= 0) && (arrNode[pos] < x))
+                    while ((pos >= 0) && (ts.arrNode[pos] < x))
                     {
                         Application.DoEvents();
                         ChonDongChoCodeListBox(7);
                         //Thiết lập bàn tay chỉ vi trí có phải vị trí cần chèn không                        
-                        Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * pos) + (SizeN / 2) - 30, ArrLbl[pos].Location.Y + SizeN + 5);
+                        Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * pos) + (ts.sizeN / 2) - 30, ts.arrLbl[pos].Location.Y + ts.sizeN + 5);
                         Mui_ten_xanh_len_1.Text = "POS=" + pos;
                         Mui_ten_xanh_len_1.Visible = true;
                         Mui_ten_xanh_len_1.Refresh();
@@ -1048,20 +922,20 @@ namespace SortingAlgorithmsGUI
 
                         ChonDongChoCodeListBox(9);
                         //Dịch chuyển Node qua phải
-                        arrNode[pos + 1] = arrNode[pos];
+                        ts.arrNode[pos + 1] = ts.arrNode[pos];
                         Dem_node++;
 
                         Application.DoEvents();
                         this.Invoke((MethodInvoker)delegate
                         {
-                            Node_Right(ArrLbl[pos], 1);
+                            Node_Right(ts.arrLbl[pos], 1);
                         });
                         Swap_NodeAn(pos + 1, pos);
-                        ArrLbl[pos].BackColor = colorComplete;
+                        ts.arrLbl[pos].BackColor = colorComplete;
                         ChonDongChoCodeListBox(10);
                         pos--;
                         ChonDongChoCodeListBox(12);
-                        arrNode[pos + 1] = x;
+                        ts.arrNode[pos + 1] = x;
 
 
                     }
@@ -1075,22 +949,22 @@ namespace SortingAlgorithmsGUI
                     this.Invoke((MethodInvoker)delegate
                     {
                         Node_Left(Node_tam, Dem_node);
-                        ArrLbl[pos + 1].BackColor = colorDefault;
+                        ts.arrLbl[pos + 1].BackColor = colorDefault;
                     });
 
                     Application.DoEvents();
-                    Tre(Speed * 30);
+                    Delay(ts.speed * 30);
                     this.Invoke((MethodInvoker)delegate
                     {
-                        Node_Down(Node_tam, (SizeN + 5));
-                        ArrLbl[pos + 1].BackColor = colorDefault;
+                        Node_Down(Node_tam, (ts.sizeN + 5));
+                        ts.arrLbl[pos + 1].BackColor = colorDefault;
                     });
                     //Ẩn status
                     lbl_status_02.Visible = false;
                     //Ẩn mũi tên POS sau khi đã tìm ra POS
                     Mui_ten_xanh_len_1.Visible = false; ;
                     //Thiết lập node nằm trong nhóm đã có thứ tự
-                    ArrLbl[pos + 1] = Node_tam;
+                    ts.arrLbl[pos + 1] = Node_tam;
                     //Tạm dừng sau 1 bước dịch chuyển Node
                 }
             });
@@ -1102,7 +976,7 @@ namespace SortingAlgorithmsGUI
         {
             if (left < right)
             {
-                int pivot = arrNode[(left + right) / 2];
+                int pivot = ts.arrNode[(left + right) / 2];
                 int i = left, j = right;
                 int cs_x = (left + right) / 2;
                 //đặt mũi tên chỉ left
@@ -1110,12 +984,12 @@ namespace SortingAlgorithmsGUI
 
                 ChonDongChoCodeListBox(2);
 
-                Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * left) + (SizeN / 2) - 30, ArrLbl[left].Location.Y + 2 * SizeN + 5);
+                Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * left) + (ts.sizeN / 2) - 30, ts.arrLbl[left].Location.Y + 2 * ts.sizeN + 5);
                 Mui_ten_xanh_len_1.Text = "L = " + left;
                 Mui_ten_xanh_len_1.Visible = true;
                 Mui_ten_xanh_len_1.Refresh();
                 //đặt mũi tên chỉ Right
-                Mui_ten_xanh_len_2.Location = new Point((Canh_le + (SizeN + DisN) * right) + (SizeN / 2) - 30, ArrLbl[right].Location.Y + 2 * SizeN + 5);
+                Mui_ten_xanh_len_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * right) + (ts.sizeN / 2) - 30, ts.arrLbl[right].Location.Y + 2 * ts.sizeN + 5);
                 Mui_ten_xanh_len_2.Text = "R = " + right;
                 Mui_ten_xanh_len_2.Visible = true;
                 Mui_ten_xanh_len_2.Refresh();
@@ -1129,7 +1003,7 @@ namespace SortingAlgorithmsGUI
                 ChonDongChoCodeListBox(3);
                 //Thiết lập vị trí của x
                 Mui_ten_do_len.Visible = true;
-                Mui_ten_do_len.Location = new Point((Canh_le + (SizeN + DisN) * cs_x) + (SizeN / 2) - 30, ArrLbl[cs_x].Location.Y + 2 * SizeN + 40);
+                Mui_ten_do_len.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * cs_x) + (ts.sizeN / 2) - 30, ts.arrLbl[cs_x].Location.Y + 2 * ts.sizeN + 40);
                 Mui_ten_do_len.Text = "X";
                 Mui_ten_do_len.Refresh();
                 //
@@ -1137,12 +1011,12 @@ namespace SortingAlgorithmsGUI
 
                 ChonDongChoCodeListBox(4);
                 Mui_ten_xanh_xuong_1.Visible = true;
-                Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                 Mui_ten_xanh_xuong_1.Text = "i=" + i;
                 Mui_ten_xanh_xuong_1.Refresh();
                 //Thiết lập mũi tên chỉ j
                 Mui_ten_xanh_xuong_2.Visible = true;
-                Mui_ten_xanh_xuong_2.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y - SizeN - 70);
+                Mui_ten_xanh_xuong_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y - ts.sizeN - 70);
                 Mui_ten_xanh_xuong_2.Text = "j=" + j;
                 Mui_ten_xanh_xuong_2.Refresh();
                 //
@@ -1154,13 +1028,13 @@ namespace SortingAlgorithmsGUI
                     ChonDongChoCodeListBox(7);
                     lbl_status_02.Text = "SoSanh(a[" + i + "], a[x])";
                     lbl_status_02.Visible = true;
-                    while (arrNode[i] < pivot)
+                    while (ts.arrNode[i] < pivot)
                     {
                         i++;
 
                         //Thiết lập mũi tên chỉ i
                         Mui_ten_xanh_xuong_1.Visible = true;
-                        Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                        Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                         Mui_ten_xanh_xuong_1.Text = "i=" + i;
                         Mui_ten_xanh_xuong_1.Refresh();
                         //
@@ -1169,13 +1043,13 @@ namespace SortingAlgorithmsGUI
                     }
                     ChonDongChoCodeListBox(8);
                     lbl_status_02.Text = "SoSanh(a[" + j + "], a[x])";
-                    while (arrNode[j] > pivot)
+                    while (ts.arrNode[j] > pivot)
                     {
                         j--;
 
                         //Thiết lập mũi tên chỉ j
                         Mui_ten_xanh_xuong_2.Visible = true;
-                        Mui_ten_xanh_xuong_2.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y - SizeN - 70);
+                        Mui_ten_xanh_xuong_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y - ts.sizeN - 70);
                         Mui_ten_xanh_xuong_2.Text = "j=" + j;
                         Mui_ten_xanh_xuong_2.Refresh();
                         //
@@ -1187,7 +1061,7 @@ namespace SortingAlgorithmsGUI
                     {
                         ChonDongChoCodeListBox(11);
                         lbl_status_02.Text = "HoanVi(a[" + i + "], a[" + j + "])";
-                        Swap_Giatri(ref arrNode[i], ref arrNode[j]);
+                        Swap_Giatri(ref ts.arrNode[i], ref ts.arrNode[j]);
                         if (i == cs_x)
                         {
                             cs_x = j;
@@ -1196,12 +1070,12 @@ namespace SortingAlgorithmsGUI
                         {
                             cs_x = i;
                         }
-                        Swap_Node(ArrLbl[j], ArrLbl[i]);
+                        Swap_Node(ts.arrLbl[j], ts.arrLbl[i]);
                         Swap_NodeAn(j, i);
-                        ArrLbl[j].BackColor = colorComplete;
-                        ArrLbl[i].BackColor = colorDefault;
+                        ts.arrLbl[j].BackColor = colorComplete;
+                        ts.arrLbl[i].BackColor = colorDefault;
                         Mui_ten_do_len.Visible = true;
-                        Mui_ten_do_len.Location = new Point((Canh_le + (SizeN + DisN) * cs_x) + (SizeN / 2) - 30, ArrLbl[cs_x].Location.Y + 2 * SizeN + 40);
+                        Mui_ten_do_len.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * cs_x) + (ts.sizeN / 2) - 30, ts.arrLbl[cs_x].Location.Y + 2 * ts.sizeN + 40);
                         Mui_ten_do_len.Text = "X = " + ((left + right) / 2);
                         Mui_ten_do_len.Refresh();
                         ChonDongChoCodeListBox(12);
@@ -1214,13 +1088,13 @@ namespace SortingAlgorithmsGUI
                 if (left < j)
                 {
                     ChonDongChoCodeListBox(17);
-                    QuickSortincrease(arrNode, left, j);
+                    QuickSortincrease(ts.arrNode, left, j);
                 }
                 ChonDongChoCodeListBox(18);
                 if (i < right)
                 {
                     ChonDongChoCodeListBox(19);
-                    QuickSortincrease(arrNode, i, right);
+                    QuickSortincrease(ts.arrNode, i, right);
                 }
             }
         }
@@ -1228,16 +1102,16 @@ namespace SortingAlgorithmsGUI
         {
             if (left < right)
             {
-                int pivot = arrNode[(left + right) / 2];
+                int pivot = ts.arrNode[(left + right) / 2];
                 int i = left, j = right;
                 int cs_x = (left + right) / 2;
                 //đặt mũi tên chỉ left
-                Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * left) + (SizeN / 2) - 30, ArrLbl[left].Location.Y + 2 * SizeN + 5);
+                Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * left) + (ts.sizeN / 2) - 30, ts.arrLbl[left].Location.Y + 2 * ts.sizeN + 5);
                 Mui_ten_xanh_len_1.Text = "L = " + left;
                 Mui_ten_xanh_len_1.Visible = true;
                 Mui_ten_xanh_len_1.Refresh();
                 //đặt mũi tên chỉ Right
-                Mui_ten_xanh_len_2.Location = new Point((Canh_le + (SizeN + DisN) * right) + (SizeN / 2) - 30, ArrLbl[right].Location.Y + 2 * SizeN + 5);
+                Mui_ten_xanh_len_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * right) + (ts.sizeN / 2) - 30, ts.arrLbl[right].Location.Y + 2 * ts.sizeN + 5);
                 Mui_ten_xanh_len_2.Text = "R = " + right;
                 Mui_ten_xanh_len_2.Visible = true;
                 Mui_ten_xanh_len_2.Refresh();
@@ -1252,7 +1126,7 @@ namespace SortingAlgorithmsGUI
 
                 //Thiết lập vị trí của x
                 Mui_ten_do_len.Visible = true;
-                Mui_ten_do_len.Location = new Point((Canh_le + (SizeN + DisN) * cs_x) + (SizeN / 2) - 30, ArrLbl[cs_x].Location.Y + 2 * SizeN + 40);
+                Mui_ten_do_len.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * cs_x) + (ts.sizeN / 2) - 30, ts.arrLbl[cs_x].Location.Y + 2 * ts.sizeN + 40);
                 Mui_ten_do_len.Text = "X";
                 Mui_ten_do_len.Refresh();
                 //
@@ -1262,12 +1136,12 @@ namespace SortingAlgorithmsGUI
                 ChonDongChoCodeListBox(3);
                 //Thiết lập mũi tên chỉ i
                 Mui_ten_xanh_xuong_1.Visible = true;
-                Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                 Mui_ten_xanh_xuong_1.Text = "i=" + i;
                 Mui_ten_xanh_xuong_1.Refresh();
                 //Thiết lập mũi tên chỉ j
                 Mui_ten_xanh_xuong_2.Visible = true;
-                Mui_ten_xanh_xuong_2.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y - SizeN - 70);
+                Mui_ten_xanh_xuong_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y - ts.sizeN - 70);
                 Mui_ten_xanh_xuong_2.Text = "j=" + j;
                 Mui_ten_xanh_xuong_2.Refresh();
                 //
@@ -1277,13 +1151,13 @@ namespace SortingAlgorithmsGUI
                     //Hiệu ứng so sánh
                     lbl_status_02.Text = "So_Sanh(a[" + i + "], a[x])";
                     ChonDongChoCodeListBox(7);
-                    while (arrNode[i] > pivot)
+                    while (ts.arrNode[i] > pivot)
                     {
                         i++;
 
                         //Thiết lập mũi tên chỉ i
                         Mui_ten_xanh_xuong_1.Visible = true;
-                        Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                        Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                         Mui_ten_xanh_xuong_1.Text = "i=" + i;
                         Mui_ten_xanh_xuong_1.Refresh();
                         //
@@ -1293,13 +1167,13 @@ namespace SortingAlgorithmsGUI
                     //Hiệu ứng so sánh
                     lbl_status_02.Text = "So_Sanh(a[" + j + "], a[x])";
                     ChonDongChoCodeListBox(8);
-                    while (arrNode[j] < pivot)
+                    while (ts.arrNode[j] < pivot)
                     {
                         j--;
 
                         //Thiết lập mũi tên chỉ j
                         Mui_ten_xanh_xuong_2.Visible = true;
-                        Mui_ten_xanh_xuong_2.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y - SizeN - 70);
+                        Mui_ten_xanh_xuong_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y - ts.sizeN - 70);
                         Mui_ten_xanh_xuong_2.Text = "j=" + j;
                         Mui_ten_xanh_xuong_2.Refresh();
                         //
@@ -1311,7 +1185,7 @@ namespace SortingAlgorithmsGUI
                     {
                         //status hoán vị             
                         lbl_status_02.Text = "Hoan_Vi(a[" + i + "], a[" + j + "])";
-                        Swap_Giatri(ref arrNode[i], ref arrNode[j]);
+                        Swap_Giatri(ref ts.arrNode[i], ref ts.arrNode[j]);
                         ChonDongChoCodeListBox(11);
                         //Tìm vị trí mới của x
                         if (i == cs_x)
@@ -1322,13 +1196,13 @@ namespace SortingAlgorithmsGUI
                         {
                             cs_x = i;
                         }
-                        Swap_Node(ArrLbl[i], ArrLbl[j]);
+                        Swap_Node(ts.arrLbl[i], ts.arrLbl[j]);
                         Swap_NodeAn(i, j);
-                        ArrLbl[i].BackColor = colorComplete;
-                        ArrLbl[j].BackColor = colorDefault;
+                        ts.arrLbl[i].BackColor = colorComplete;
+                        ts.arrLbl[j].BackColor = colorDefault;
                         //Thiết lập vị trí của 
                         Mui_ten_do_len.Visible = true;
-                        Mui_ten_do_len.Location = new Point((Canh_le + (SizeN + DisN) * cs_x) + (SizeN / 2) - 30, ArrLbl[cs_x].Location.Y + 2 * SizeN + 40);
+                        Mui_ten_do_len.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * cs_x) + (ts.sizeN / 2) - 30, ts.arrLbl[cs_x].Location.Y + 2 * ts.sizeN + 40);
                         Mui_ten_do_len.Text = "X = " + ((left + right) / 2);
                         Mui_ten_do_len.Refresh();
                         ChonDongChoCodeListBox(12);
@@ -1343,17 +1217,17 @@ namespace SortingAlgorithmsGUI
                 if (left < j)
                 {
                     ChonDongChoCodeListBox(18);
-                    QuickSortGiam(arrNode, left, j);
+                    QuickSortGiam(ts.arrNode, left, j);
                 }
                 if (i < right)
                 {
                     ChonDongChoCodeListBox(19);
-                    QuickSortGiam(arrNode, i, right);
+                    QuickSortGiam(ts.arrNode, i, right);
                 }
             }
         }
         #endregion
-        #region HEAP SORT
+        #region heap
         void Shift_increase(int l, int r)
         {
 
@@ -1365,16 +1239,16 @@ namespace SortingAlgorithmsGUI
             lbl_status_02.Text = "Đang shift heap";
             lbl_status_02.Visible = true;
             Mui_ten_xanh_xuong_1.Visible = true;
-            Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+            Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
             Mui_ten_xanh_xuong_1.Text = "i=" + i;
             Mui_ten_xanh_xuong_1.Refresh();
             //thiết lập mũi tên chỉ j
             Mui_ten_xanh_xuong_2.Visible = true;
-            Mui_ten_xanh_xuong_2.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y - SizeN - 70);
+            Mui_ten_xanh_xuong_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y - ts.sizeN - 70);
             Mui_ten_xanh_xuong_2.Text = "j=" + j;
             Mui_ten_xanh_xuong_2.Refresh();
-            x = arrNode[i];
-            temp = ArrLbl[i];
+            x = ts.arrNode[i];
+            temp = ts.arrLbl[i];
             index_temp = i;
 
             while (j <= r)
@@ -1384,49 +1258,49 @@ namespace SortingAlgorithmsGUI
 
                 if (j < r)
 
-                    if (arrNode[j] < arrNode[j + 1])
+                    if (ts.arrNode[j] < ts.arrNode[j + 1])
 
                         j++;
                 //thiết lập mũi tên chỉ j
 
-                Mui_ten_xanh_xuong_2.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y - SizeN - 70);
+                Mui_ten_xanh_xuong_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y - ts.sizeN - 70);
                 Mui_ten_xanh_xuong_2.Text = "j=" + j;
                 Mui_ten_xanh_xuong_2.Refresh();
 
-                if (arrNode[j] <= x)
+                if (ts.arrNode[j] <= x)
                     return;
                 else
                 {
-                    arrNode[i] = arrNode[j];
-                    arrNode[j] = x;
+                    ts.arrNode[i] = ts.arrNode[j];
+                    ts.arrNode[j] = x;
                     Application.DoEvents();                   
                     this.Invoke((MethodInvoker)delegate
                     {
-                        Swap_Node(ArrLbl[j], temp);
+                        Swap_Node(ts.arrLbl[j], temp);
                     });
 
                     Swap_NodeAn(j, index_temp);
                     if (ckDebug.Checked == true)
                         Pause();
                     else
-                        Tre(5 * Speed);
+                        Delay(5 * ts.speed);
                     i = j;
                     j = 2 * i + 1;
                     if (j <= r)
                     {
                         //Thiết lập mũi tên chỉ i
 
-                        Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                        Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                         Mui_ten_xanh_xuong_1.Text = "i=" + i;
                         Mui_ten_xanh_xuong_1.Refresh();
                         //thiết lập mũi tên chỉ j
 
-                        Mui_ten_xanh_xuong_2.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y - SizeN - 70);
+                        Mui_ten_xanh_xuong_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y - ts.sizeN - 70);
                         Mui_ten_xanh_xuong_2.Text = "j=" + j;
                         Mui_ten_xanh_xuong_2.Refresh();
                     }
-                    x = arrNode[i];
-                    temp = ArrLbl[i];
+                    x = ts.arrNode[i];
+                    temp = ts.arrLbl[i];
                     index_temp = i;
                 }
             }        
@@ -1441,16 +1315,16 @@ namespace SortingAlgorithmsGUI
             lbl_status_02.Visible = true;
             //Thiết lập mũi tên chỉ i
             Mui_ten_xanh_xuong_1.Visible = true;
-            Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+            Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
             Mui_ten_xanh_xuong_1.Text = "i=" + i;
             Mui_ten_xanh_xuong_1.Refresh();
             //thiết lập mũi tên chỉ j
             Mui_ten_xanh_xuong_2.Visible = true;
-            Mui_ten_xanh_xuong_2.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y - SizeN - 70);
+            Mui_ten_xanh_xuong_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y - ts.sizeN - 70);
             Mui_ten_xanh_xuong_2.Text = "j=" + j;
             Mui_ten_xanh_xuong_2.Refresh();
-            x = arrNode[i];
-            temp = ArrLbl[i];
+            x = ts.arrNode[i];
+            temp = ts.arrLbl[i];
             index_temp = i;
 
             while (j <= r)
@@ -1460,48 +1334,48 @@ namespace SortingAlgorithmsGUI
 
                 if (j < r)
 
-                    if (arrNode[j] > arrNode[j + 1])
+                    if (ts.arrNode[j] > ts.arrNode[j + 1])
 
                         j++;
                 //thiết lập mũi tên chỉ j
 
-                Mui_ten_xanh_xuong_2.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y - SizeN - 70);
+                Mui_ten_xanh_xuong_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y - ts.sizeN - 70);
                 Mui_ten_xanh_xuong_2.Text = "j=" + j;
                 Mui_ten_xanh_xuong_2.Refresh();
 
-                if (arrNode[j] >= x)
+                if (ts.arrNode[j] >= x)
                     return;
                 else
                 {
-                    arrNode[i] = arrNode[j];
-                    arrNode[j] = x;
+                    ts.arrNode[i] = ts.arrNode[j];
+                    ts.arrNode[j] = x;
                     Application.DoEvents();
                     this.Invoke((MethodInvoker)delegate
                     {
-                        Swap_Node(ArrLbl[j], temp);
+                        Swap_Node(ts.arrLbl[j], temp);
                     });        
                     Swap_NodeAn(j, index_temp);
                     if (ckDebug.Checked == true)
                         Pause();
                     else
-                        Tre(5 * Speed);
+                        Delay(5 * ts.speed);
                     i = j;
                     j = 2 * i + 1;
                     if (j <= r)
                     {
                         //Thiết lập mũi tên chỉ i
 
-                        Mui_ten_xanh_xuong_1.Location = new Point((Canh_le + (SizeN + DisN) * i) + (SizeN / 2) - 30, ArrLbl[i].Location.Y - SizeN - 70);
+                        Mui_ten_xanh_xuong_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * i) + (ts.sizeN / 2) - 30, ts.arrLbl[i].Location.Y - ts.sizeN - 70);
                         Mui_ten_xanh_xuong_1.Text = "i=" + i;
                         Mui_ten_xanh_xuong_1.Refresh();
                         //thiết lập mũi tên chỉ j
 
-                        Mui_ten_xanh_xuong_2.Location = new Point((Canh_le + (SizeN + DisN) * j) + (SizeN / 2) - 30, ArrLbl[j].Location.Y - SizeN - 70);
+                        Mui_ten_xanh_xuong_2.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * j) + (ts.sizeN / 2) - 30, ts.arrLbl[j].Location.Y - ts.sizeN - 70);
                         Mui_ten_xanh_xuong_2.Text = "j=" + j;
                         Mui_ten_xanh_xuong_2.Refresh();
                     }
-                    x = arrNode[i];
-                    temp = ArrLbl[i];
+                    x = ts.arrNode[i];
+                    temp = ts.arrLbl[i];
                     index_temp = i;
                 }
             }   
@@ -1538,7 +1412,7 @@ namespace SortingAlgorithmsGUI
             r = n - 1;
 
             //Thiết lập mũi tên chỉ r
-            Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * r) + (SizeN / 2) - 30, ArrLbl[r].Location.Y + 2 * SizeN + 5);
+            Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * r) + (ts.sizeN / 2) - 30, ts.arrLbl[r].Location.Y + 2 * ts.sizeN + 5);
             Mui_ten_xanh_len_1.Text = "r=" + r;
             Mui_ten_xanh_len_1.Visible = true;
             Mui_ten_xanh_len_1.Refresh();
@@ -1546,7 +1420,7 @@ namespace SortingAlgorithmsGUI
             while (r > 0)
             {
                 Application.DoEvents();
-                Swap_Giatri(ref arrNode[0], ref arrNode[r]);
+                Swap_Giatri(ref ts.arrNode[0], ref ts.arrNode[r]);
                 Mui_ten_xanh_xuong_1.Visible = false;
                 Mui_ten_xanh_xuong_2.Visible = false;
                 //
@@ -1556,13 +1430,13 @@ namespace SortingAlgorithmsGUI
                 listCode.SelectedIndex = 7;
                 this.Invoke((MethodInvoker)delegate
                 {
-                    Swap_Node(ArrLbl[0], ArrLbl[r]);
+                    Swap_Node(ts.arrLbl[0], ts.arrLbl[r]);
                 });
 
                 lbl_status_02.Visible = false;
                 Swap_NodeAn(0, r);
-                ArrLbl[r].BackColor = colorComplete;
-                ArrLbl[0].BackColor = colorDefault;
+                ts.arrLbl[r].BackColor = colorComplete;
+                ts.arrLbl[0].BackColor = colorDefault;
                 // Đặt lại màu cho phần tử đã được sắp xếp
 
                 lbl_status_02.Visible = true;
@@ -1570,12 +1444,12 @@ namespace SortingAlgorithmsGUI
                 if(ckDebug.Checked == true)
                     Pause();
                 else
-                    Tre(10*Speed);
+                    Delay(10*ts.speed);
                 lbl_status_02.Visible = false;
                 listCode.SelectedIndex = 8;
                 r--;
                 //Thiết lập mũi tên chỉ r
-                Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * r) + (SizeN / 2) - 30, ArrLbl[r].Location.Y + 2 * SizeN + 5);
+                Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * r) + (ts.sizeN / 2) - 30, ts.arrLbl[r].Location.Y + 2 * ts.sizeN + 5);
                 Mui_ten_xanh_len_1.Text = "r=" + r;
                 Mui_ten_xanh_len_1.Visible = true;
                 Mui_ten_xanh_len_1.Refresh();
@@ -1597,7 +1471,7 @@ namespace SortingAlgorithmsGUI
             r = n - 1;
 
             //Thiết lập mũi tên chỉ r
-            Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * r) + (SizeN / 2) - 30, ArrLbl[r].Location.Y + 2 * SizeN + 5);
+            Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * r) + (ts.sizeN / 2) - 30, ts.arrLbl[r].Location.Y + 2 * ts.sizeN + 5);
             Mui_ten_xanh_len_1.Text = "r=" + r;
             Mui_ten_xanh_len_1.Visible = true;
             Mui_ten_xanh_len_1.Refresh();
@@ -1605,7 +1479,7 @@ namespace SortingAlgorithmsGUI
             while (r > 0)
             {
                 Application.DoEvents();
-                Swap_Giatri(ref arrNode[0], ref arrNode[r]);
+                Swap_Giatri(ref ts.arrNode[0], ref ts.arrNode[r]);
                 Mui_ten_xanh_xuong_1.Visible = false;
                 Mui_ten_xanh_xuong_2.Visible = false;
                 //
@@ -1615,23 +1489,23 @@ namespace SortingAlgorithmsGUI
                 listCode.SelectedIndex = 7;
                 this.Invoke((MethodInvoker)delegate
                 {
-                    Swap_Node(ArrLbl[0], ArrLbl[r]);
+                    Swap_Node(ts.arrLbl[0], ts.arrLbl[r]);
                 });
                 lbl_status_02.Visible = false;
                 Swap_NodeAn(0, r);
-                ArrLbl[r].BackColor = colorComplete;
-                ArrLbl[0].BackColor = colorDefault;
+                ts.arrLbl[r].BackColor = colorComplete;
+                ts.arrLbl[0].BackColor = colorDefault;
                 lbl_status_02.Visible = true;
                 lbl_status_02.Text = "a[" + r + "] đã đúng thứ tự!";
                 if (ckDebug.Checked == true)
                     Pause();
                 else
-                    Tre(10 * Speed);
+                    Delay(10 * ts.speed);
                 lbl_status_02.Visible = false;
                 listCode.SelectedIndex = 8;
                 r--;
                 //Thiết lập mũi tên chỉ r
-                Mui_ten_xanh_len_1.Location = new Point((Canh_le + (SizeN + DisN) * r) + (SizeN / 2) - 30, ArrLbl[r].Location.Y + 2 * SizeN + 5);
+                Mui_ten_xanh_len_1.Location = new Point((ts.canh_le + (ts.sizeN + ts.disN) * r) + (ts.sizeN / 2) - 30, ts.arrLbl[r].Location.Y + 2 * ts.sizeN + 5);
                 Mui_ten_xanh_len_1.Text = "r=" + r;
                 Mui_ten_xanh_len_1.Visible = true;
                 Mui_ten_xanh_len_1.Refresh();
@@ -1651,32 +1525,32 @@ namespace SortingAlgorithmsGUI
             int i, pa, pb, pc;
             pa = pb = pc = 0;
                // wtf tên như cứt vậy
-            while (pa < nOe)
+            while (pa < ts.nOe)
             {
                 Application.DoEvents();
-                for (i = 0; (pa < nOe) && (i < k); i++, pa++, pb++)
+                for (i = 0; (pa < ts.nOe) && (i < k); i++, pa++, pb++)
                 {
-                    b[pb] = arrNode[pa];
-                    Node_B[pb] = ArrLbl[pa];
+                    ts.b[pb] = ts.arrNode[pa];
+                    ts.node_B[pb] = ts.arrLbl[pa];
                     Application.DoEvents();
                     this.Invoke((MethodInvoker)delegate
                     {
-                        Node_Up(Node_B[pb], 2 * (SizeN));
-                        Den_tdo_x_node(Node_B[pb], pb);
+                        Node_Up(ts.node_B[pb], 2 * (ts.sizeN));
+                        Den_tdo_x_node(ts.node_B[pb], pb);
                     });
-                    ArrLbl[pa].BackColor = colorQuickU;  // màu trên
+                    ts.arrLbl[pa].BackColor = colorQuickU;  // màu trên
                 }
-                for (i = 0; (pa < nOe) && (i < k); i++, pa++, pc++)
+                for (i = 0; (pa < ts.nOe) && (i < k); i++, pa++, pc++)
                 {
-                    c[pc] = arrNode[pa];
-                    Node_C[pc] = ArrLbl[pa];
+                    ts.c[pc] = ts.arrNode[pa];
+                    ts.node_C[pc] = ts.arrLbl[pa];
                     Application.DoEvents();
                     this.Invoke((MethodInvoker)delegate
                     {
-                        Node_Down(Node_C[pc], (SizeN + 80));
-                        Den_tdo_x_node(Node_C[pc], pc);
+                        Node_Down(ts.node_C[pc], (ts.sizeN + 80));
+                        Den_tdo_x_node(ts.node_C[pc], pc);
                     });
-                    ArrLbl[pa].BackColor = colorQuickD; // màu dưới
+                    ts.arrLbl[pa].BackColor = colorQuickD; // màu dưới
                 }
             }
             nb = pb;
@@ -1695,28 +1569,28 @@ namespace SortingAlgorithmsGUI
                 Application.DoEvents();
                 kb = min(k, nb);
                 kc = min(k, nc);
-                if (b[pb + ib] <= c[pc + ic])
+                if (ts.b[pb + ib] <= ts.c[pc + ic])
                 {
-                    arrNode[pa] = b[pb + ib];
+                    ts.arrNode[pa] = ts.b[pb + ib];
                     Application.DoEvents();
                     this.Invoke((MethodInvoker)delegate
                     {
-                        toLocaN(Node_B[pb + ib], pa);          
+                        toLocaN(ts.node_B[pb + ib], pa);          
                     });
-                    ArrLbl[pa] = Node_B[pb + ib];
+                    ts.arrLbl[pa] = ts.node_B[pb + ib];
                     pa++;
                     ib++;
                     if (ib == kb)
                     {
                         for (; ic < kc; ic++)
                         {
-                            arrNode[pa] = c[pc + ic];
+                            ts.arrNode[pa] = ts.c[pc + ic];
                             Application.DoEvents();
                             this.Invoke((MethodInvoker)delegate
                             {
-                                toLocaN(Node_C[pc + ic], pa);
+                                toLocaN(ts.node_C[pc + ic], pa);
                             });
-                            ArrLbl[pa] = Node_C[pc + ic];
+                            ts.arrLbl[pa] = ts.node_C[pc + ic];
                             pa++;
                         }
                         pb += kb;
@@ -1728,26 +1602,26 @@ namespace SortingAlgorithmsGUI
                 }
                 else
                 {
-                    arrNode[pa] = c[pc + ic];
+                    ts.arrNode[pa] = ts.c[pc + ic];
                     Application.DoEvents();
                     this.Invoke((MethodInvoker)delegate
                     {
-                        toLocaN(Node_C[pc + ic], pa);
+                        toLocaN(ts.node_C[pc + ic], pa);
                     });
-                    ArrLbl[pa] = Node_C[pc + ic];
+                    ts.arrLbl[pa] = ts.node_C[pc + ic];
                     pa++;
                     ic++;
                     if (ic == kc)
                     {
                         for (; ib < kb; ib++)
                         {
-                            arrNode[pa] = b[pb + ib];
+                            ts.arrNode[pa] = ts.b[pb + ib];
                             Application.DoEvents();
                             this.Invoke((MethodInvoker)delegate
                             {
-                                toLocaN(Node_B[pb + ib], pa);
+                                toLocaN(ts.node_B[pb + ib], pa);
                             });
-                            ArrLbl[pa] = Node_B[pb + ib];
+                            ts.arrLbl[pa] = ts.node_B[pb + ib];
                             pa++;
                         }
                         pb += kb;
@@ -1764,7 +1638,7 @@ namespace SortingAlgorithmsGUI
                 Application.DoEvents();
                 this.Invoke((MethodInvoker)delegate
                 {
-                    toLocaN(Node_B[lennb - nb], pa);
+                    toLocaN(ts.node_B[lennb - nb], pa);
                     
                 });
                 pa++;
@@ -1774,7 +1648,7 @@ namespace SortingAlgorithmsGUI
                 Application.DoEvents();
                 this.Invoke((MethodInvoker)delegate
                 {
-                    toLocaN(Node_C[lennc - nc], pa);
+                    toLocaN(ts.node_C[lennc - nc], pa);
                 });
                 pa++;
             }
@@ -1791,28 +1665,28 @@ namespace SortingAlgorithmsGUI
                 Application.DoEvents();
                 kb = min(k, nb);
                 kc = min(k, nc);
-                if (b[pb + ib] >= c[pc + ic])
+                if (ts.b[pb + ib] >= ts.c[pc + ic])
                 {
-                    arrNode[pa] = b[pb + ib];
+                    ts.arrNode[pa] = ts.b[pb + ib];
                     Application.DoEvents();
                     this.Invoke((MethodInvoker)delegate
                     {
-                        toLocaN(Node_B[pb + ib], pa);
+                        toLocaN(ts.node_B[pb + ib], pa);
                     });
-                    ArrLbl[pa] = Node_B[pb + ib];
+                    ts.arrLbl[pa] = ts.node_B[pb + ib];
                     pa++;
                     ib++;
                     if (ib == kb)
                     {
                         for (; ic < kc; ic++)
                         {
-                            arrNode[pa] = c[pc + ic];
+                            ts.arrNode[pa] = ts.c[pc + ic];
                             Application.DoEvents();
                             this.Invoke((MethodInvoker)delegate
                             {
-                                toLocaN(Node_C[pc + ic], pa);
+                                toLocaN(ts.node_C[pc + ic], pa);
                             });
-                            ArrLbl[pa] = Node_C[pc + ic];
+                            ts.arrLbl[pa] = ts.node_C[pc + ic];
                             pa++;
                         }
                         pb += kb;
@@ -1824,26 +1698,26 @@ namespace SortingAlgorithmsGUI
                 }
                 else
                 {
-                    arrNode[pa] = c[pc + ic];
+                    ts.arrNode[pa] = ts.c[pc + ic];
                     Application.DoEvents();
                     this.Invoke((MethodInvoker)delegate
                     {
-                        toLocaN(Node_C[pc + ic], pa);
+                        toLocaN(ts.node_C[pc + ic], pa);
                     });
-                    ArrLbl[pa] = Node_C[pc + ic];
+                    ts.arrLbl[pa] = ts.node_C[pc + ic];
                     pa++;
                     ic++;
                     if (ic == kc)
                     {
                         for (; ib < kb; ib++)
                         {
-                            arrNode[pa] = b[pb + ib];
+                            ts.arrNode[pa] = ts.b[pb + ib];
                             Application.DoEvents();
                             this.Invoke((MethodInvoker)delegate
                             {
-                                toLocaN(Node_B[pb + ib], pa);
+                                toLocaN(ts.node_B[pb + ib], pa);
                             });
-                            ArrLbl[pa] = Node_B[pb + ib];
+                            ts.arrLbl[pa] = ts.node_B[pb + ib];
                             pa++;
                         }
                         pb += kb;
@@ -1860,7 +1734,7 @@ namespace SortingAlgorithmsGUI
                 Application.DoEvents();
                 this.Invoke((MethodInvoker)delegate
                 {
-                    toLocaN(Node_B[lennb - nb], pa);
+                    toLocaN(ts.node_B[lennb - nb], pa);
                 });
                 pa++;
             }
@@ -1869,7 +1743,7 @@ namespace SortingAlgorithmsGUI
                 Application.DoEvents();
                 this.Invoke((MethodInvoker)delegate
                 {
-                    toLocaN(Node_C[lennc - nc], pa);
+                    toLocaN(ts.node_C[lennc - nc], pa);
                 });
                 pa++;
             }
@@ -1882,14 +1756,14 @@ namespace SortingAlgorithmsGUI
             lblA.Visible = true;
             lblC.Visible = true;
             lblB.Visible = true;
-            b = new int[nOe];
-            c = new int[nOe];
-            Node_B = new Label[nOe];
-            Node_C = new Label[nOe];
+            ts.b = new int[ts.nOe];
+            ts.c = new int[ts.nOe];
+            ts.node_B = new Label[ts.nOe];
+            ts.node_C = new Label[ts.nOe];
             //Dán nhãn mảng b
 
             int k, nc = 0, nb = 0;
-            for (k = 1; k < nOe; k *= 2)
+            for (k = 1; k < ts.nOe; k *= 2)
             {
                 lbl_status_02.Visible = true;
                 lbl_status_02.Text = "k = " + k;
@@ -1900,13 +1774,13 @@ namespace SortingAlgorithmsGUI
         void MergeSortGiam()
         {
             SignArrow();
-            b = new int[nOe];
-            c = new int[nOe];
-            Node_B = new Label[nOe];
-            Node_C = new Label[nOe];
+            ts.b = new int[ts.nOe];
+            ts.c = new int[ts.nOe];
+            ts.node_B = new Label[ts.nOe];
+            ts.node_C = new Label[ts.nOe];
             //Dán nhãn mảng b
             int k, nc = 0, nb = 0;
-            for (k = 1; k < nOe; k *= 2)
+            for (k = 1; k < ts.nOe; k *= 2)
             {
                 lbl_status_02.Visible = true;
                 lbl_status_02.Text = "k = " + k;
@@ -1916,6 +1790,8 @@ namespace SortingAlgorithmsGUI
         }
         #endregion
         #endregion
+
+        #region Show Code
         private void ShowCode()
         {
             listCode.Items.Clear();
@@ -1929,45 +1805,48 @@ namespace SortingAlgorithmsGUI
             listIdea.ForeColor = Color.White;
             if (radQuick.Checked)
             {
-                code.quicksort(listCode, increase);
+                code.quicksort(listCode, ts.increase);
                 ytuong.Quicksort(listIdea);
             }
             if (radHeap.Checked)
             {
-                code.heapsort(listCode, increase);
+                code.heapsort(listCode, ts.increase);
                 ytuong.Heapsort(listIdea);
             }
             if (radInsertion.Checked)
             {
-                code.insertionsort(listCode, increase);
+                code.insertionsort(listCode, ts.increase);
                 ytuong.Insertionsort(listIdea);
             }
             if (radMerge.Checked)
             {
-                code.mergesort(listCode, increase);
+                code.mergesort(listCode, ts.increase);
                 ytuong.Mergesort(listIdea);
             }
             if (radInterchange.Checked)
             {
-                code.interchangesort(listCode, increase);
+                code.interchangesort(listCode, ts.increase);
                 ytuong.Interchangesort(listIdea);
             }
             if (radShell.Checked)
             {
-                code.shellsort(listCode, increase);
+                code.shellsort(listCode, ts.increase);
                 ytuong.Shellsort(listIdea);
             }
             if (radBubble.Checked)
             {
-                code.bubblesort(listCode, increase);
+                code.bubblesort(listCode, ts.increase);
                 ytuong.Bubblesort(listIdea);
             }
             if (radSelection.Checked)
             {
-                code.selectionsort(listCode, increase);
+                code.selectionsort(listCode, ts.increase);
                 ytuong.Selectionsort(listIdea);
             }
         }
+        #endregion
+
+        #region Complete
         public void Complete()
         {
             Mui_ten_xanh_xuong_1.Visible = false;
@@ -1981,11 +1860,9 @@ namespace SortingAlgorithmsGUI
             lbl_status_02.Visible = false;
             MessageBox.Show("Sắp xếp hoàn tất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        private void radDecrease_CheckedChanged(object sender, EventArgs e)
-        {
-            increase = false;
-            ShowCode();
-        }
+        #endregion     
+
+        #region SignArrow
         public void SignArrow()
         {
             pnlChayMau.Controls.Add(Mui_ten_xanh_xuong_1);
@@ -1998,109 +1875,304 @@ namespace SortingAlgorithmsGUI
             pnlChayMau.Controls.Add(lblB);
             pnlChayMau.Controls.Add(lblC);
         }
-        private void speedTrackBar_ValueChanged(object sender, EventArgs e)
+        #endregion       
+
+        //ToolBox 
+        #region Working 
+        #region bnt"Initial","Control","Debug","Create Array"_Click
+        #region Initial
+        private void bntCreate_Click(object sender, EventArgs e)
         {
-            Speed = speedTrackBar.Maximum - speedTrackBar.Value;
+            //pnlChayMau.Controls.Clear();
+            if (ts.nOe == 0)
+            {
+                MessageBox.Show("Error", "Vui lòng nhập số phần tử !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; /// > >> >
+            }
+            else
+            {
+                ts.arrNode = new int[ts.nOe];
+                ts.arrLbl = new Label[ts.nOe];
+                for (int i = 0; i < ts.nOe; i++)
+                {
+                    Label label = new Label();
+                    label.AutoSize = false;
+                    label.Size = new Size(40, 40);
+                    label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    label.Font = new Font("Times New Roman", 14);
+                    label.TextAlign = ContentAlignment.MiddleCenter;
+                    label.Text = "0";
+                    label.BackColor = colorDefault;
+                    label.Location = new Point(ts.canh_le + (ts.sizeN + ts.disN) * i, 3 * ts.sizeN);
+                    ts.arrLbl[i] = label;
+                    pnlChayMau.Controls.Add(ts.arrLbl[i]);
+                }
+            }
+            grpCreateArray.Enabled = true;
         }
+
         private void bntReset_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < nOe; i++)
+            for (int i = 0; i < ts.nOe; i++)
             {
-                ArrLbl[i].Text ="0";
-                ArrLbl[i].BackColor = colorDefault ;
+                ts.arrLbl[i].Text = "0";
+                ts.arrLbl[i].BackColor = colorDefault;
             }
             bntPlay.Show();
         }
+        #endregion
+
+        #region Control
         private void bntPlay_Click(object sender, EventArgs e)
         {
             bntPlay.Hide();
             bntPause.Show();
 
-            if (checkPause == false)
+            if (ts.checkPause == false)
             {
-                if (radSelection.Checked == true && increase == true)
-                    SelectionSortincrease(arrNode);
-                if (radSelection.Checked == true && increase == false)
-                    SelectionSortGiam(arrNode);
-                if (radBubble.Checked == true && increase == true)
-                    BubbleSortincrease(arrNode);
-                if (radBubble.Checked == true && increase == false)
-                    BubbleSortGiam(arrNode);
-                if (radShell.Checked == true && increase == true)
-                    ShellSortincrease(arrNode);
-                if (radShell.Checked == true && increase == false)
-                    ShellSortGiam(arrNode);
-                if (radQuick.Checked == true && increase == true)
-                    QuickSortincrease(arrNode, 0, nOe - 1);
-                if (radQuick.Checked == true && increase == false)
-                    QuickSortGiam(arrNode, 0, nOe - 1);
-                if (radHeap.Checked == true && increase == true)
-                    HeapSortincrease(nOe);
-                if (radHeap.Checked == true && increase == false)
-                    HeapSortGiam(nOe);
-                if (radInsertion.Checked == true && increase == true)
-                    InsertionSortincrease(arrNode);
-                if (radInsertion.Checked == true && increase == false)
-                    InsertionSortGiam(arrNode);
-                if (radInterchange.Checked == true && increase == true)
-                    InterchangeSortincrease(arrNode);
-                if (radInterchange.Checked == true && increase == false)
-                    InterchangeSortGiam(arrNode);
-                if (radMerge.Checked == true && increase == true)
+                if (radSelection.Checked == true && ts.increase == true)
+                    SelectionSortincrease(ts.arrNode);
+                if (radSelection.Checked == true && ts.increase == false)
+                    SelectionSortGiam(ts.arrNode);
+                if (radBubble.Checked == true && ts.increase == true)
+                    BubbleSortincrease(ts.arrNode);
+                if (radBubble.Checked == true && ts.increase == false)
+                    BubbleSortGiam(ts.arrNode);
+                if (radShell.Checked == true && ts.increase == true)
+                    ShellSortincrease(ts.arrNode);
+                if (radShell.Checked == true && ts.increase == false)
+                    ShellSortGiam(ts.arrNode);
+                if (radQuick.Checked == true && ts.increase == true)
+                    QuickSortincrease(ts.arrNode, 0, ts.nOe - 1);
+                if (radQuick.Checked == true && ts.increase == false)
+                    QuickSortGiam(ts.arrNode, 0, ts.nOe - 1);
+                if (radHeap.Checked == true && ts.increase == true)
+                    HeapSortincrease(ts.nOe);
+                if (radHeap.Checked == true && ts.increase == false)
+                    HeapSortGiam(ts.nOe);
+                if (radInsertion.Checked == true && ts.increase == true)
+                    InsertionSortincrease(ts.arrNode);
+                if (radInsertion.Checked == true && ts.increase == false)
+                    InsertionSortGiam(ts.arrNode);
+                if (radInterchange.Checked == true && ts.increase == true)
+                    InterchangeSortincrease(ts.arrNode);
+                if (radInterchange.Checked == true && ts.increase == false)
+                    InterchangeSortGiam(ts.arrNode);
+                if (radMerge.Checked == true && ts.increase == true)
                     MergeSortincrease();
-                if (radMerge.Checked == true && increase == false)
+                if (radMerge.Checked == true && ts.increase == false)
                     MergeSortGiam();
                 CompleteSwap();
             }
             else
             {
-                checkPause = false;
+                ts.checkPause = false;
             }
         }
+
         private void bntPause_Click(object sender, EventArgs e)
         {
             bntPlay.Show();
             bntPause.Hide();
-            checkPause = true;
+            ts.checkPause = true;
             Play_or_Stop();
         }
         public void Pause()
         {
             if (ckDebug.Checked == true)
             {
-                checkPause = true;
+                ts.checkPause = true;
                 Play_or_Stop();
             }
         }
         public void Play_or_Stop()
         {
-            while (checkPause == true)
+            while (ts.checkPause == true)
             {
                 Application.DoEvents();
             }
         }
+        #endregion
+
+        #region Debug
+        private void bntDebug_Click(object sender, EventArgs e)
+        {
+            ts.checkPause = false;
+        }
+        #endregion
+
+        #region Create Array
+        private void bntRandom_Click(object sender, EventArgs e)
+        {
+            pnlLoaiThuatToan.Enabled = true;
+            grpControl.Enabled = true;
+            grpDebug.Enabled = true;
+            Random r = new Random();
+            for (int i = 0; i < ts.nOe; i++)
+            {
+                int rd = r.Next(0, 99);
+
+                ts.arrLbl[i].Text = rd + "";
+                ts.arrNode[i] = rd;
+            }
+            ShowCode();
+        }
+
+        private void bntByHand_Click(object sender, EventArgs e)
+        {
+            pnlLoaiThuatToan.Enabled = true;
+            grpControl.Enabled = true;
+            grpDebug.Enabled = true;
+            ShowCode();
+            frmByHand a = new frmByHand();
+            a.Message = numArray.Value.ToString();
+            a.ShowDialog();
+            for (int i = 0; i < ts.nOe; i++)
+            {
+
+                switch (i + 1)
+                {
+                    case 1: ts.arrLbl[i].Text = PT1; ts.arrNode[i] = Int32.Parse(PT1); break;
+                    case 2: ts.arrLbl[i].Text = PT2; ts.arrNode[i] = Int32.Parse(PT2); break;
+                    case 3: ts.arrLbl[i].Text = PT3; ts.arrNode[i] = Int32.Parse(PT3); break;
+                    case 4: ts.arrLbl[i].Text = PT4; ts.arrNode[i] = Int32.Parse(PT4); break;
+                    case 5: ts.arrLbl[i].Text = PT5; ts.arrNode[i] = Int32.Parse(PT5); break;
+                    case 6: ts.arrLbl[i].Text = PT6; ts.arrNode[i] = Int32.Parse(PT6); break;
+                    case 7: ts.arrLbl[i].Text = PT7; ts.arrNode[i] = Int32.Parse(PT7); break;
+                    case 8: ts.arrLbl[i].Text = PT8; ts.arrNode[i] = Int32.Parse(PT8); break;
+                    case 9: ts.arrLbl[i].Text = PT9; ts.arrNode[i] = Int32.Parse(PT9); break;
+                    case 10: ts.arrLbl[i].Text = PT10; ts.arrNode[i] = Int32.Parse(PT10); break;
+                }
+            }
+            pnlLoaiThuatToan.Enabled = true;
+            grpControl.Enabled = true;
+        }
+
+        private void radDecrease_CheckedChanged(object sender, EventArgs e)
+        {
+            ts.increase = false;
+            ShowCode();
+        }
+
+        private void radIncrease_CheckedChanged(object sender, EventArgs e)
+        {
+            ts.increase = true;
+            ShowCode();
+        }
+        #endregion
+
         public void ChonDongChoCodeListBox(int viTri)
         {
-            Tre(Speed * 30);
+            Delay(ts.speed * 30);
             listCode.SelectedIndex = viTri;
             // nếu đang trong chế độ Debug thì dừng sau mỗi câu lệnh chạy xong sẽ dừng lại
             if (ckDebug.Checked)
             {
-                checkPause = true;
+                ts.checkPause = true;
                 Play_or_Stop();
             }
         }
-        private void radIncrease_CheckedChanged(object sender, EventArgs e)
+
+
+        #endregion
+
+        #region bntBack_Click
+        private void bntBack_Click(object sender, EventArgs e)
         {
-            increase = true;
+            frmIntroduct frm1 = new frmIntroduct();
+            frm1.Show();
+            this.Close();
+        }
+        #endregion
+        #region bntExit_Click
+        private void bntExit_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+        int min(int a, int b)
+        {
+            if (a > b)
+                return b;
+            else
+                return a;
+        }
+        #endregion
+        #region bntCCN_Click
+        private void btnCCN_Click(object sender, EventArgs e)
+        {
+            //colorMove     = Color.Red;
+            //colorComplete = Color.Yellow;
+            //colorDefault  = Color.Green;
+            //colorQuickU   = Color.AliceBlue;
+            //colorQuickD   = Color.Aquamarine;
+        }
+        #endregion
+
+        #region bntSourceCode_Click
+        private void bntSourceCode_Click(object sender, EventArgs e)
+        {
+            listCode.Show();
+            listIdea.Hide();
+        }
+        #endregion
+        #region bntIdea_Click
+        private void bntIdeaAlgorithm_Click(object sender, EventArgs e)
+        {
+            listIdea.Show();
+            listCode.Hide();
+        }
+        #endregion
+
+        #region speedTrackBar_ValueChanged
+        private void speedTrackBar_ValueChanged(object sender, EventArgs e)
+        {
+            ts.speed = speedTrackBar.Maximum - speedTrackBar.Value;
+        }
+        #endregion
+
+        #region rad"Sort"_CheckedChanged
+        private void radQuick_CheckedChanged(object sender, EventArgs e)
+        {
             ShowCode();
         }
-        private void bntDebug_Click(object sender, EventArgs e)
+        private void radHeap_CheckedChanged(object sender, EventArgs e)
         {
-            checkPause = false;
+            ShowCode();
         }
-        //Hàm Trễ
-        public void Tre(int milisecond)
+        private void radBubble_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowCode();
+        }
+        private void radShell_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowCode();
+        }
+        private void radMerge_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowCode();
+        }
+        private void radInsertion_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowCode();
+        }
+        private void radInterchange_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowCode();
+        }
+        private void radSelection_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowCode();
+        }
+        #endregion
+        #endregion  
+
+        #region Delay
+        //Hàm Delay
+        public void Delay(int milisecond)
         {
             //Nếu tốc độ max thì ko sleep
             if (speedTrackBar.Value == speedTrackBar.Maximum)
@@ -2111,6 +2183,7 @@ namespace SortingAlgorithmsGUI
             Application.DoEvents();
             Thread.Sleep(milisecond);
         }
+        #endregion
     }
 }
 
