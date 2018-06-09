@@ -84,7 +84,6 @@ C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\
 C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.pdb
 C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\bin\Debug\SortingAlgorithmsGUI.exe
 C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\bin\Debug\SortingAlgorithmsGUI.pdb
-C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.csprojResolveAssemblyReference.cache
 C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmApplication.resources
 C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmByHand.resources
 C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmExcecutors.resources

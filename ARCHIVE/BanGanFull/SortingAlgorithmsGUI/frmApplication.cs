@@ -50,12 +50,7 @@ namespace SortingAlgorithmsGUI
         private void frmApplication_Load(object sender, EventArgs e)
         {
             ts.nOe = (int)numArray.Value;
-            grpCreateArray.Enabled = false;
-            pnlLoaiThuatToan.Enabled = false;
-            grpControl.Enabled = false;
-            grpDebug.Enabled = false;
-            ts.increase = true;
-            listIdea.Hide();
+            Init();
             ts.speed = 60;
             speedTrackBar.Maximum = ts.speed;
             speedTrackBar.Minimum = 0;
@@ -63,6 +58,18 @@ namespace SortingAlgorithmsGUI
             speedTrackBar.LargeChange = 1;
             AddPanel();
         }
+
+        public void Init()
+        {
+            grpCreateArray.Enabled = false;
+            pnlLoaiThuatToan.Enabled = false;
+            grpControl.Enabled = false;
+            grpDebug.Enabled = false;
+            ts.increase = true;
+            bntReset.Enabled = false;
+            listIdea.Hide();
+        }
+
         #endregion
 
         #region Complete Swap
@@ -1854,7 +1861,20 @@ namespace SortingAlgorithmsGUI
         #region Complete
         public void Complete()
         {
+            ChonDongChoCodeListBox(0);
             ExTime.Stop();
+            pnlExTime.Visible = false;
+            Init();
+            bntReset.Enabled = true;
+            bntCreate.Enabled = false;
+            bntExit.Enabled = true;
+            bntBack.Enabled = true;
+            Hidelbl();
+            MessageBox.Show("----------Sắp xếp hoàn tất----------\nThời gian thực thi là: " + lblMinutes.Text + ":" + lblSeconds.Text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+        public void Hidelbl()
+        {
             Mui_ten_xanh_xuong_1.Visible = false;
             Mui_ten_xanh_xuong_2.Visible = false;
             Mui_ten_xanh_len_1.Visible = false;
@@ -1864,11 +1884,10 @@ namespace SortingAlgorithmsGUI
             lblB.Visible = false;
             lblC.Visible = false;
             lbl_status_02.Visible = false;
-            MessageBox.Show("----------Sắp xếp hoàn tất----------\nThời gian thực thi là: " + lblMinutes.Text + ":" + lblSeconds.Text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion     
 
-        #region SignArrow
+        #region AddPanel
         public void AddPanel()
         {
             pnlChayMau.Controls.Add(Mui_ten_xanh_xuong_1);
@@ -1881,14 +1900,28 @@ namespace SortingAlgorithmsGUI
             pnlChayMau.Controls.Add(lblB);
             pnlChayMau.Controls.Add(lblC);
         }
-        #endregion       
+        #endregion
 
         //ToolBox 
         #region Working 
         #region bnt"Initial","Control","Debug","Create Array"_Click
         #region Initial
+
+        public void DeleteArray(Label[] a)
+        {   
+            
+            for (int i = 0; i < ts.nOe; i++)
+            {
+                this.Controls.Remove(a[i]);
+            }
+        }
         private void bntCreate_Click(object sender, EventArgs e)
         {
+            bntCreate.Enabled = false;
+            numArray.Enabled = false;
+            bntReset.Enabled = true;
+            ts.checkPause = false;
+            //DeleteArray(ts.arrLbl);
             if (ts.nOe < 2 && ts.nOe > 10)
             {
                 MessageBox.Show("Error", "Vui lòng nhập số phần tử tuwf 2->10 !", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1930,6 +1963,7 @@ namespace SortingAlgorithmsGUI
                     label.BackColor = colorDefault;
                     label.Location = new Point(ts.canh_le + (ts.sizeN + ts.disN) * i, 3 * ts.sizeN);
                     ts.arrLbl[i] = label;
+                    
                     pnlChayMau.Controls.Add(ts.arrLbl[i]);
                 }
             }
@@ -1938,12 +1972,13 @@ namespace SortingAlgorithmsGUI
 
         private void bntReset_Click(object sender, EventArgs e)
         {
-            Play_or_Stop();
-            Pause();
+            numArray.Enabled = true;
+            bntCreate.Enabled = true;
+            Init();          
+            Hidelbl();
             for (int i = 0; i < ts.nOe; i++)
             {
-                ts.arrLbl[i].Text = "0";
-                ts.arrLbl[i].BackColor = colorDefault;
+                pnlChayMau.Controls.Remove(ts.arrLbl[i]);
             }
             bntPlay.Show();
             speedTrackBar.Value = 30;
@@ -1955,8 +1990,11 @@ namespace SortingAlgorithmsGUI
         {
             bntPlay.Hide();
             bntPause.Show();
+            pnlExTime.Visible = true;
             ExTime.Start();
             bntBack.Enabled = false;
+            bntReset.Enabled = false;
+            bntExit.Enabled = false;
             if (ts.checkPause == false)
             {
                 if (radSelection.Checked == true && ts.increase == true)
@@ -2024,6 +2062,20 @@ namespace SortingAlgorithmsGUI
         #endregion
 
         #region Debug
+
+        private void ckDebug_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckDebug.Checked == true)
+            {
+                speedTrackBar.Value = speedTrackBar.Maximum - 7;
+            }
+            else
+            {
+                speedTrackBar.Value = speedTrackBar.Maximum / 2;
+                bntPlay.Show();
+                bntPause.Hide();
+            }
+        }
         private void bntDebug_Click(object sender, EventArgs e)
         {
             ts.checkPause = false;
@@ -2116,11 +2168,11 @@ namespace SortingAlgorithmsGUI
         #region bntExit_Click
         private void bntExit_Click(object sender, EventArgs e)
         {
-
             if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
+
         }
         int min(int a, int b)
         {
@@ -2128,16 +2180,6 @@ namespace SortingAlgorithmsGUI
                 return b;
             else
                 return a;
-        }
-        #endregion
-        #region bntCCN_Click
-        private void btnCCN_Click(object sender, EventArgs e)
-        {
-            //colorMove     = Color.Red;
-            //colorComplete = Color.Yellow;
-            //colorDefault  = Color.Green;
-            //colorQuickU   = Color.AliceBlue;
-            //colorQuickD   = Color.Aquamarine;
         }
         #endregion
 
@@ -2153,6 +2195,22 @@ namespace SortingAlgorithmsGUI
         {
             listIdea.Show();
             listCode.Hide();
+        }
+        #endregion
+
+        #region ExTime
+
+        private void ExTime_Tick(object sender, EventArgs e)
+        {
+            if (int.Parse(lblSeconds.Text) == 59)
+            {
+                lblSeconds.Text = "00";
+                lblMinutes.Text = (int.Parse(lblMinutes.Text) + 1).ToString("00");
+            }
+            else
+            {
+                lblSeconds.Text = (int.Parse(lblSeconds.Text) + 1).ToString("00");
+            }
         }
         #endregion
 
@@ -2213,19 +2271,6 @@ namespace SortingAlgorithmsGUI
             Thread.Sleep(milisecond);
         }
         #endregion
-
-        private void ExTime_Tick(object sender, EventArgs e)
-        {
-            if(int.Parse(lblSeconds.Text) == 59)
-            {
-                lblSeconds.Text = "00";
-                lblMinutes.Text = (int.Parse(lblMinutes.Text) + 1).ToString("00");
-            }
-            else
-            {
-                lblSeconds.Text = (int.Parse(lblSeconds.Text) + 1).ToString("00");
-            }
-        }
     }
 }
 
