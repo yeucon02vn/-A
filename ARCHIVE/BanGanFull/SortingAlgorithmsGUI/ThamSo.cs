@@ -13,11 +13,11 @@ namespace THAMSO
         public Label[] arrLbl;
         public Label[] node_B, node_C;
         public int[] b, c;
-        public int disN = 18; // Distance Node
+        public int disN; // Distance Node
         public int nOe; // number of element 
-        public int sizeN = 50;  // Size Node
-        public int canh_le = 30;
-        public int speed = 60;
+        public int sizeN;  // Size Node
+        public int canh_le;
+        public int speed;
         public bool increase;
         public bool checkPause = false;
 

@@ -79,3 +79,17 @@ C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\
 C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userLecturers.resources
 C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userStudents.resources
 C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.csproj.GenerateResource.Cache
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\bin\Debug\SortingAlgorithmsGUI.exe.config
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.exe
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.pdb
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\bin\Debug\SortingAlgorithmsGUI.exe
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\bin\Debug\SortingAlgorithmsGUI.pdb
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.csprojResolveAssemblyReference.cache
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmApplication.resources
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmByHand.resources
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmExcecutors.resources
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmIntroduct.resources
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.Properties.Resources.resources
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userLecturers.resources
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userStudents.resources
+C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.csproj.GenerateResource.Cache
