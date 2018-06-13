@@ -1,9 +1,0 @@
-C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\bin\Release\SortingAlgorithmsGUI.exe.config
-C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\obj\Release\SortingAlgorithmsGUI.csprojResolveAssemblyReference.cache
-C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\obj\Release\SortingAlgorithmsGUI.frmApplication.resources
-C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\obj\Release\SortingAlgorithmsGUI.frmExcecutors.resources
-C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\obj\Release\SortingAlgorithmsGUI.frmIntroduct.resources
-C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\obj\Release\SortingAlgorithmsGUI.Properties.Resources.resources
-C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\obj\Release\ApplicationsGUI.userLecturers.resources
-C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\obj\Release\ApplicationsGUI.userStudents.resources
-C:\Users\Percy\Downloads\SortingAlgorithms\SortingAlgorithms\SortingAlgorithmsGUI\obj\Release\SortingAlgorithmsGUI.csproj.GenerateResource.Cache

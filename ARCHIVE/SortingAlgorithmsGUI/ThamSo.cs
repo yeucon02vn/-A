@@ -16,7 +16,7 @@ namespace THAMSO
         public int disN; // Distance Node
         public int nOe; // number of element 
         public int sizeN;  // Size Node
-        public int canh_le;
+        public int firstN; // First Node 
         public int speed;
         public bool increase;
         public bool checkPause = false;

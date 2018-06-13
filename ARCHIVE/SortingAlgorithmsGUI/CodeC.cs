@@ -38,7 +38,6 @@ namespace CODE
             lst_Code.Items.Add("void SelectionSort(int a[], int n) ");
             lst_Code.Items.Add("  {");
             if (tang)
-
                 lst_Code.Items.Add("    int min, i, j; ");
             else
                 lst_Code.Items.Add("    int max, i, j; ");
@@ -252,7 +251,7 @@ namespace CODE
             else
                 lst_Code.Items.Add("                   while(a[j] < x) j--;");
 
-            lst_Code.Items.Add("                       if(i <= j");
+            lst_Code.Items.Add("                       if(i <= j)");
             lst_Code.Items.Add("                         { ");
             lst_Code.Items.Add("                           Swap(a[i], a[j]);");
             lst_Code.Items.Add("                           i++ ; j--;");
@@ -283,9 +282,7 @@ namespace CODE
             else
                 lst_Code.Items.Add("        if (a[i] < a[j])");
             lst_Code.Items.Add("        {");
-            lst_Code.Items.Add("            int temp = a[i];");
-            lst_Code.Items.Add("            a[i] = a[j];");
-            lst_Code.Items.Add("            a[j] = temp;");
+            lst_Code.Items.Add("                Swap(a[i],a[j])");
             lst_Code.Items.Add("        }");
             lst_Code.Items.Add("}");
         }
@@ -293,27 +290,13 @@ namespace CODE
         {
             lst_Code.Items.Add("void ShellSort(int a[], int n)");
             lst_Code.Items.Add("{");
-            lst_Code.Items.Add("    int i, j, k, temp;");
-            lst_Code.Items.Add("    for (i = n / 2; i > 0; i = i / 2)");
-            lst_Code.Items.Add("    {");
-            lst_Code.Items.Add("        for (j = i; j < n; j++)");
-            lst_Code.Items.Add("        {");
-            lst_Code.Items.Add("            for (k = j - i; k >= 0; k = k - i)");
-            lst_Code.Items.Add("            {");
+            lst_Code.Items.Add("    for (int i = n / 2; i > 0; i = i / 2)");
+            lst_Code.Items.Add("        for (int j = i; j < n; j++)");
             if (tang == true)
-                lst_Code.Items.Add("                if (a[k + i] <= a[k])");
+                lst_Code.Items.Add("            for (int k = j; k >= i && a[k] < a[k - i]; k -= i)");
             else
-                lst_Code.Items.Add("                if (a[k + i] >= a[k])");
-            lst_Code.Items.Add("                    beark;");
-            lst_Code.Items.Add("                else");
-            lst_Code.Items.Add("                    {");
-            lst_Code.Items.Add("                    int temp = a[i];");
-            lst_Code.Items.Add("                    a[i] = a[j];");
-            lst_Code.Items.Add("                    a[j] = temp;");
-            lst_Code.Items.Add("                    }");
-            lst_Code.Items.Add("            }");
-            lst_Code.Items.Add("        }");
-            lst_Code.Items.Add("    }");
+                lst_Code.Items.Add("             for (int k = j; k >= i && a[k] > a[k - i]; k -= i)");
+            lst_Code.Items.Add("                    Swap(a[k],a[k-i])");
             lst_Code.Items.Add("}");
         }
     }
