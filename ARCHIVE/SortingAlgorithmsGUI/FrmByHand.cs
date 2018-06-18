@@ -48,7 +48,7 @@ namespace SortingAlgorithmsGUI
                 lbl.ForeColor = Color.Snow;
                 lbl.Font = new Font("Times New Roman", 12);
                 lbl.TextAlign = ContentAlignment.MiddleCenter;
-                lbl.Text = "Phần tử thứ " + (i + 1);
+                lbl.Text = "Array[" + (i + 1)+ "]";
                 if (i % 2 == 0)
                 {
                     lbl.Location = new Point(12, 39 * h + 13);
@@ -95,7 +95,32 @@ namespace SortingAlgorithmsGUI
 
         private void bntBack_Click(object sender, EventArgs e)
         {
+            string tempt = "0";
+            frmApplication.PT1 = tempt;
+            frmApplication.PT2 = tempt;
+            frmApplication.PT3 = tempt;
+            frmApplication.PT4 = tempt;
+            frmApplication.PT5 = tempt;
+            frmApplication.PT6 = tempt;
+            frmApplication.PT7 = tempt;
+            frmApplication.PT8 = tempt;
+            frmApplication.PT9 = tempt;
+            frmApplication.PT10 = tempt;
             this.Dispose();
+        }
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                bntBack.PerformClick();
+                return true;
+            }
+            else if (keyData == Keys.Enter)
+            {
+                btApply.PerformClick();
+                return true;
+            }
+            else return false;
         }
     }
 }

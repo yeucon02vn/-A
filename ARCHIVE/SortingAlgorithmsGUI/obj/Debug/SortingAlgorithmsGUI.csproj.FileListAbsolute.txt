@@ -92,3 +92,17 @@ C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\
 C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userLecturers.resources
 C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userStudents.resources
 C:\Users\Percy\Desktop\DALTTQ\ARCHIVE\BanGanFull\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.csproj.GenerateResource.Cache
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\bin\Debug\SortingAlgorithmsGUI.exe.config
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.exe
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.pdb
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\bin\Debug\SortingAlgorithmsGUI.exe
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\bin\Debug\SortingAlgorithmsGUI.pdb
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.csprojResolveAssemblyReference.cache
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmApplication.resources
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmByHand.resources
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmExcecutors.resources
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.frmIntroduct.resources
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.Properties.Resources.resources
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userLecturers.resources
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\ApplicationsGUI.userStudents.resources
+C:\Users\tuanlocstore.vn\Desktop\DALTTQ\ARCHIVE\SortingAlgorithmsGUI\obj\Debug\SortingAlgorithmsGUI.csproj.GenerateResource.Cache

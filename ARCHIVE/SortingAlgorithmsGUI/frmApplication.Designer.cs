@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmApplication));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.pnlExTime = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblSeconds = new System.Windows.Forms.Label();
@@ -38,9 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bntExit = new System.Windows.Forms.Button();
             this.bntBack = new System.Windows.Forms.Button();
-            this.pnlChayMau = new System.Windows.Forms.Panel();
+            this.pnlExcution = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.speedTrackBar = new System.Windows.Forms.TrackBar();
@@ -74,7 +74,7 @@
             this.grpDebug = new System.Windows.Forms.GroupBox();
             this.bntDebug = new System.Windows.Forms.Button();
             this.ckDebug = new System.Windows.Forms.CheckBox();
-            this.pnlLoaiThuatToan = new System.Windows.Forms.Panel();
+            this.pnlChosesAlgorithms = new System.Windows.Forms.Panel();
             this.radSelection = new System.Windows.Forms.RadioButton();
             this.radInsertion = new System.Windows.Forms.RadioButton();
             this.radShell = new System.Windows.Forms.RadioButton();
@@ -86,7 +86,7 @@
             this.ExTime = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.pnlExTime.SuspendLayout();
-            this.pnlChayMau.SuspendLayout();
+            this.pnlExcution.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.speedTrackBar)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -95,20 +95,33 @@
             this.grpInitial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numArray)).BeginInit();
             this.grpDebug.SuspendLayout();
-            this.pnlLoaiThuatToan.SuspendLayout();
+            this.pnlChosesAlgorithms.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.btnHelp);
             this.panel1.Controls.Add(this.pnlExTime);
             this.panel1.Controls.Add(this.bntExit);
             this.panel1.Controls.Add(this.bntBack);
-            this.panel1.Location = new System.Drawing.Point(0, 15);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1159, 53);
+            this.panel1.Size = new System.Drawing.Size(1157, 57);
             this.panel1.TabIndex = 0;
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnHelp.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.Image")));
+            this.btnHelp.Location = new System.Drawing.Point(1036, 2);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(52, 52);
+            this.btnHelp.TabIndex = 114;
+            this.btnHelp.UseVisualStyleBackColor = false;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // pnlExTime
             // 
@@ -182,10 +195,10 @@
             this.bntExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
             this.bntExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntExit.Image = ((System.Drawing.Image)(resources.GetObject("bntExit.Image")));
-            this.bntExit.Location = new System.Drawing.Point(1109, 0);
+            this.bntExit.Location = new System.Drawing.Point(1093, 0);
             this.bntExit.Margin = new System.Windows.Forms.Padding(2);
             this.bntExit.Name = "bntExit";
-            this.bntExit.Size = new System.Drawing.Size(50, 53);
+            this.bntExit.Size = new System.Drawing.Size(64, 57);
             this.bntExit.TabIndex = 1;
             this.bntExit.UseVisualStyleBackColor = false;
             this.bntExit.Click += new System.EventHandler(this.bntExit_Click);
@@ -201,63 +214,51 @@
             this.bntBack.Location = new System.Drawing.Point(0, 0);
             this.bntBack.Margin = new System.Windows.Forms.Padding(2);
             this.bntBack.Name = "bntBack";
-            this.bntBack.Size = new System.Drawing.Size(52, 53);
+            this.bntBack.Size = new System.Drawing.Size(62, 57);
             this.bntBack.TabIndex = 0;
             this.bntBack.UseVisualStyleBackColor = false;
             this.bntBack.Click += new System.EventHandler(this.bntBack_Click);
             // 
-            // pnlChayMau
+            // pnlExcution
             // 
-            this.pnlChayMau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.pnlChayMau.Controls.Add(this.label6);
-            this.pnlChayMau.Controls.Add(this.label5);
-            this.pnlChayMau.Controls.Add(this.label3);
-            this.pnlChayMau.Controls.Add(this.label2);
-            this.pnlChayMau.Controls.Add(this.speedTrackBar);
-            this.pnlChayMau.Controls.Add(this.lblB);
-            this.pnlChayMau.Controls.Add(this.lblC);
-            this.pnlChayMau.Controls.Add(this.lblA);
-            this.pnlChayMau.Controls.Add(this.Mui_ten_do_len);
-            this.pnlChayMau.Controls.Add(this.Mui_ten_xanh_len_2);
-            this.pnlChayMau.Controls.Add(this.Mui_ten_xanh_len_1);
-            this.pnlChayMau.Controls.Add(this.Mui_ten_xanh_xuong_2);
-            this.pnlChayMau.Controls.Add(this.Mui_ten_xanh_xuong_1);
-            this.pnlChayMau.Controls.Add(this.lbl_status_02);
-            this.pnlChayMau.Location = new System.Drawing.Point(0, 72);
-            this.pnlChayMau.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlChayMau.Name = "pnlChayMau";
-            this.pnlChayMau.Size = new System.Drawing.Size(790, 353);
-            this.pnlChayMau.TabIndex = 1;
+            this.pnlExcution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.pnlExcution.Controls.Add(this.label6);
+            this.pnlExcution.Controls.Add(this.label3);
+            this.pnlExcution.Controls.Add(this.label2);
+            this.pnlExcution.Controls.Add(this.speedTrackBar);
+            this.pnlExcution.Controls.Add(this.lblB);
+            this.pnlExcution.Controls.Add(this.lblC);
+            this.pnlExcution.Controls.Add(this.lblA);
+            this.pnlExcution.Controls.Add(this.Mui_ten_do_len);
+            this.pnlExcution.Controls.Add(this.Mui_ten_xanh_len_2);
+            this.pnlExcution.Controls.Add(this.Mui_ten_xanh_len_1);
+            this.pnlExcution.Controls.Add(this.Mui_ten_xanh_xuong_2);
+            this.pnlExcution.Controls.Add(this.Mui_ten_xanh_xuong_1);
+            this.pnlExcution.Controls.Add(this.lbl_status_02);
+            this.pnlExcution.Location = new System.Drawing.Point(0, 72);
+            this.pnlExcution.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlExcution.Name = "pnlExcution";
+            this.pnlExcution.Size = new System.Drawing.Size(790, 353);
+            this.pnlExcution.TabIndex = 1;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(721, 335);
+            this.label6.Location = new System.Drawing.Point(704, 339);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 16);
+            this.label6.Size = new System.Drawing.Size(41, 15);
             this.label6.TabIndex = 104;
-            this.label6.Text = "1";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(721, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(15, 16);
-            this.label5.TabIndex = 104;
-            this.label5.Text = "5";
+            this.label6.Text = "Slow";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(721, 36);
+            this.label3.Location = new System.Drawing.Point(709, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 16);
+            this.label3.Size = new System.Drawing.Size(34, 16);
             this.label3.TabIndex = 104;
-            this.label3.Text = "10";
+            this.label3.Text = "Fast";
             // 
             // label2
             // 
@@ -265,7 +266,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(741, 5);
+            this.label2.Location = new System.Drawing.Point(741, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 19);
             this.label2.TabIndex = 103;
@@ -276,11 +277,11 @@
             this.speedTrackBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.speedTrackBar.Cursor = System.Windows.Forms.Cursors.Default;
             this.speedTrackBar.LargeChange = 1;
-            this.speedTrackBar.Location = new System.Drawing.Point(745, 27);
+            this.speedTrackBar.Location = new System.Drawing.Point(745, 18);
             this.speedTrackBar.Maximum = 100;
             this.speedTrackBar.Name = "speedTrackBar";
             this.speedTrackBar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.speedTrackBar.Size = new System.Drawing.Size(45, 323);
+            this.speedTrackBar.Size = new System.Drawing.Size(45, 335);
             this.speedTrackBar.SmallChange = 6;
             this.speedTrackBar.TabIndex = 102;
             this.speedTrackBar.TickFrequency = 10;
@@ -388,7 +389,7 @@
             // 
             this.lbl_status_02.AutoSize = true;
             this.lbl_status_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lbl_status_02.Location = new System.Drawing.Point(355, 15);
+            this.lbl_status_02.Location = new System.Drawing.Point(353, 4);
             this.lbl_status_02.Name = "lbl_status_02";
             this.lbl_status_02.Size = new System.Drawing.Size(59, 20);
             this.lbl_status_02.TabIndex = 1;
@@ -427,10 +428,10 @@
             this.bntSourceCode.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntSourceCode.Image = ((System.Drawing.Image)(resources.GetObject("bntSourceCode.Image")));
             this.bntSourceCode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntSourceCode.Location = new System.Drawing.Point(-4, 290);
+            this.bntSourceCode.Location = new System.Drawing.Point(0, 290);
             this.bntSourceCode.Margin = new System.Windows.Forms.Padding(2);
             this.bntSourceCode.Name = "bntSourceCode";
-            this.bntSourceCode.Size = new System.Drawing.Size(166, 63);
+            this.bntSourceCode.Size = new System.Drawing.Size(176, 63);
             this.bntSourceCode.TabIndex = 0;
             this.bntSourceCode.Text = "Source Code ";
             this.bntSourceCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -439,7 +440,7 @@
             // 
             // listIdea
             // 
-            this.listIdea.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.listIdea.BackColor = System.Drawing.SystemColors.InfoText;
             this.listIdea.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listIdea.Dock = System.Windows.Forms.DockStyle.Top;
             this.listIdea.FormattingEnabled = true;
@@ -454,16 +455,16 @@
             this.bntIdeaAlgorithm.BackColor = System.Drawing.Color.Gray;
             this.bntIdeaAlgorithm.FlatAppearance.BorderSize = 0;
             this.bntIdeaAlgorithm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntIdeaAlgorithm.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntIdeaAlgorithm.Font = new System.Drawing.Font("Times New Roman", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntIdeaAlgorithm.ForeColor = System.Drawing.Color.Gold;
             this.bntIdeaAlgorithm.Image = ((System.Drawing.Image)(resources.GetObject("bntIdeaAlgorithm.Image")));
             this.bntIdeaAlgorithm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntIdeaAlgorithm.Location = new System.Drawing.Point(166, 290);
+            this.bntIdeaAlgorithm.Location = new System.Drawing.Point(180, 290);
             this.bntIdeaAlgorithm.Margin = new System.Windows.Forms.Padding(2);
             this.bntIdeaAlgorithm.Name = "bntIdeaAlgorithm";
-            this.bntIdeaAlgorithm.Size = new System.Drawing.Size(196, 63);
+            this.bntIdeaAlgorithm.Size = new System.Drawing.Size(174, 63);
             this.bntIdeaAlgorithm.TabIndex = 0;
-            this.bntIdeaAlgorithm.Text = "Idea Algorithm";
+            this.bntIdeaAlgorithm.Text = "Idea Algorithms";
             this.bntIdeaAlgorithm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bntIdeaAlgorithm.UseVisualStyleBackColor = false;
             this.bntIdeaAlgorithm.Click += new System.EventHandler(this.bntIdeaAlgorithm_Click);
@@ -727,29 +728,29 @@
             this.ckDebug.UseVisualStyleBackColor = true;
             this.ckDebug.CheckedChanged += new System.EventHandler(this.ckDebug_CheckedChanged);
             // 
-            // pnlLoaiThuatToan
+            // pnlChosesAlgorithms
             // 
-            this.pnlLoaiThuatToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.pnlLoaiThuatToan.Controls.Add(this.radSelection);
-            this.pnlLoaiThuatToan.Controls.Add(this.radInsertion);
-            this.pnlLoaiThuatToan.Controls.Add(this.radShell);
-            this.pnlLoaiThuatToan.Controls.Add(this.radHeap);
-            this.pnlLoaiThuatToan.Controls.Add(this.radInterchange);
-            this.pnlLoaiThuatToan.Controls.Add(this.radMerge);
-            this.pnlLoaiThuatToan.Controls.Add(this.radBubble);
-            this.pnlLoaiThuatToan.Controls.Add(this.radQuick);
-            this.pnlLoaiThuatToan.Location = new System.Drawing.Point(806, 439);
-            this.pnlLoaiThuatToan.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlLoaiThuatToan.Name = "pnlLoaiThuatToan";
-            this.pnlLoaiThuatToan.Size = new System.Drawing.Size(353, 147);
-            this.pnlLoaiThuatToan.TabIndex = 4;
+            this.pnlChosesAlgorithms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.pnlChosesAlgorithms.Controls.Add(this.radSelection);
+            this.pnlChosesAlgorithms.Controls.Add(this.radInsertion);
+            this.pnlChosesAlgorithms.Controls.Add(this.radShell);
+            this.pnlChosesAlgorithms.Controls.Add(this.radHeap);
+            this.pnlChosesAlgorithms.Controls.Add(this.radInterchange);
+            this.pnlChosesAlgorithms.Controls.Add(this.radMerge);
+            this.pnlChosesAlgorithms.Controls.Add(this.radBubble);
+            this.pnlChosesAlgorithms.Controls.Add(this.radQuick);
+            this.pnlChosesAlgorithms.Location = new System.Drawing.Point(806, 439);
+            this.pnlChosesAlgorithms.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlChosesAlgorithms.Name = "pnlChosesAlgorithms";
+            this.pnlChosesAlgorithms.Size = new System.Drawing.Size(353, 147);
+            this.pnlChosesAlgorithms.TabIndex = 4;
             // 
             // radSelection
             // 
             this.radSelection.AutoSize = true;
             this.radSelection.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radSelection.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radSelection.Location = new System.Drawing.Point(206, 110);
+            this.radSelection.Location = new System.Drawing.Point(201, 109);
             this.radSelection.Margin = new System.Windows.Forms.Padding(2);
             this.radSelection.Name = "radSelection";
             this.radSelection.Size = new System.Drawing.Size(148, 28);
@@ -763,7 +764,7 @@
             this.radInsertion.AutoSize = true;
             this.radInsertion.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radInsertion.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radInsertion.Location = new System.Drawing.Point(206, 78);
+            this.radInsertion.Location = new System.Drawing.Point(201, 77);
             this.radInsertion.Margin = new System.Windows.Forms.Padding(2);
             this.radInsertion.Name = "radInsertion";
             this.radInsertion.Size = new System.Drawing.Size(148, 28);
@@ -777,7 +778,7 @@
             this.radShell.AutoSize = true;
             this.radShell.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radShell.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radShell.Location = new System.Drawing.Point(206, 45);
+            this.radShell.Location = new System.Drawing.Point(201, 44);
             this.radShell.Margin = new System.Windows.Forms.Padding(2);
             this.radShell.Name = "radShell";
             this.radShell.Size = new System.Drawing.Size(114, 28);
@@ -791,7 +792,7 @@
             this.radHeap.AutoSize = true;
             this.radHeap.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radHeap.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radHeap.Location = new System.Drawing.Point(206, 11);
+            this.radHeap.Location = new System.Drawing.Point(201, 10);
             this.radHeap.Margin = new System.Windows.Forms.Padding(2);
             this.radHeap.Name = "radHeap";
             this.radHeap.Size = new System.Drawing.Size(116, 28);
@@ -805,7 +806,7 @@
             this.radInterchange.AutoSize = true;
             this.radInterchange.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radInterchange.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radInterchange.Location = new System.Drawing.Point(14, 110);
+            this.radInterchange.Location = new System.Drawing.Point(9, 109);
             this.radInterchange.Margin = new System.Windows.Forms.Padding(2);
             this.radInterchange.Name = "radInterchange";
             this.radInterchange.Size = new System.Drawing.Size(176, 28);
@@ -819,7 +820,7 @@
             this.radMerge.AutoSize = true;
             this.radMerge.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radMerge.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radMerge.Location = new System.Drawing.Point(14, 78);
+            this.radMerge.Location = new System.Drawing.Point(9, 77);
             this.radMerge.Margin = new System.Windows.Forms.Padding(2);
             this.radMerge.Name = "radMerge";
             this.radMerge.Size = new System.Drawing.Size(125, 28);
@@ -833,7 +834,7 @@
             this.radBubble.AutoSize = true;
             this.radBubble.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radBubble.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radBubble.Location = new System.Drawing.Point(14, 45);
+            this.radBubble.Location = new System.Drawing.Point(9, 44);
             this.radBubble.Margin = new System.Windows.Forms.Padding(2);
             this.radBubble.Name = "radBubble";
             this.radBubble.Size = new System.Drawing.Size(132, 28);
@@ -848,7 +849,7 @@
             this.radQuick.Checked = true;
             this.radQuick.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radQuick.ForeColor = System.Drawing.Color.AliceBlue;
-            this.radQuick.Location = new System.Drawing.Point(14, 11);
+            this.radQuick.Location = new System.Drawing.Point(9, 10);
             this.radQuick.Margin = new System.Windows.Forms.Padding(2);
             this.radQuick.Name = "radQuick";
             this.radQuick.Size = new System.Drawing.Size(122, 28);
@@ -868,11 +869,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.ClientSize = new System.Drawing.Size(1159, 586);
-            this.Controls.Add(this.pnlLoaiThuatToan);
+            this.ClientSize = new System.Drawing.Size(1157, 586);
+            this.Controls.Add(this.pnlChosesAlgorithms);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnlChayMau);
+            this.Controls.Add(this.pnlExcution);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -885,8 +886,8 @@
             this.panel1.PerformLayout();
             this.pnlExTime.ResumeLayout(false);
             this.pnlExTime.PerformLayout();
-            this.pnlChayMau.ResumeLayout(false);
-            this.pnlChayMau.PerformLayout();
+            this.pnlExcution.ResumeLayout(false);
+            this.pnlExcution.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.speedTrackBar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -896,8 +897,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numArray)).EndInit();
             this.grpDebug.ResumeLayout(false);
             this.grpDebug.PerformLayout();
-            this.pnlLoaiThuatToan.ResumeLayout(false);
-            this.pnlLoaiThuatToan.PerformLayout();
+            this.pnlChosesAlgorithms.ResumeLayout(false);
+            this.pnlChosesAlgorithms.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -907,7 +908,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button bntExit;
         private System.Windows.Forms.Button bntBack;
-        private System.Windows.Forms.Panel pnlChayMau;
+        private System.Windows.Forms.Panel pnlExcution;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button bntIdeaAlgorithm;
         private System.Windows.Forms.Button bntSourceCode;
@@ -921,7 +922,7 @@
         private System.Windows.Forms.Button bntReset;
         private System.Windows.Forms.Button bntCreate;
         private System.Windows.Forms.NumericUpDown numArray;
-        private System.Windows.Forms.Panel pnlLoaiThuatToan;
+        private System.Windows.Forms.Panel pnlChosesAlgorithms;
         private System.Windows.Forms.RadioButton radSelection;
         private System.Windows.Forms.RadioButton radInsertion;
         private System.Windows.Forms.RadioButton radShell;
@@ -952,11 +953,11 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TrackBar speedTrackBar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox grpControl;
         private System.Windows.Forms.Button bntPlay;
         private System.Windows.Forms.Button bntPause;
         private System.Windows.Forms.Timer ExTime;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

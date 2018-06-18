@@ -56,150 +56,140 @@
             // pt10
             // 
             this.pt10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pt10.Location = new System.Drawing.Point(439, 221);
-            this.pt10.Margin = new System.Windows.Forms.Padding(4);
+            this.pt10.Location = new System.Drawing.Point(329, 182);
             this.pt10.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.pt10.Name = "pt10";
-            this.pt10.Size = new System.Drawing.Size(69, 18);
+            this.pt10.Size = new System.Drawing.Size(52, 16);
             this.pt10.TabIndex = 32;
             this.pt10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pt9
             // 
             this.pt9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pt9.Location = new System.Drawing.Point(175, 221);
-            this.pt9.Margin = new System.Windows.Forms.Padding(4);
+            this.pt9.Location = new System.Drawing.Point(131, 182);
             this.pt9.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.pt9.Name = "pt9";
-            this.pt9.Size = new System.Drawing.Size(69, 18);
+            this.pt9.Size = new System.Drawing.Size(52, 16);
             this.pt9.TabIndex = 31;
             this.pt9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pt8
             // 
             this.pt8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pt8.Location = new System.Drawing.Point(439, 171);
-            this.pt8.Margin = new System.Windows.Forms.Padding(4);
+            this.pt8.Location = new System.Drawing.Point(329, 141);
             this.pt8.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.pt8.Name = "pt8";
-            this.pt8.Size = new System.Drawing.Size(69, 18);
+            this.pt8.Size = new System.Drawing.Size(52, 16);
             this.pt8.TabIndex = 30;
             this.pt8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pt7
             // 
             this.pt7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pt7.Location = new System.Drawing.Point(175, 171);
-            this.pt7.Margin = new System.Windows.Forms.Padding(4);
+            this.pt7.Location = new System.Drawing.Point(131, 141);
             this.pt7.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.pt7.Name = "pt7";
-            this.pt7.Size = new System.Drawing.Size(69, 18);
+            this.pt7.Size = new System.Drawing.Size(52, 16);
             this.pt7.TabIndex = 29;
             this.pt7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pt6
             // 
             this.pt6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pt6.Location = new System.Drawing.Point(439, 122);
-            this.pt6.Margin = new System.Windows.Forms.Padding(4);
+            this.pt6.Location = new System.Drawing.Point(329, 103);
             this.pt6.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.pt6.Name = "pt6";
-            this.pt6.Size = new System.Drawing.Size(69, 18);
+            this.pt6.Size = new System.Drawing.Size(52, 16);
             this.pt6.TabIndex = 28;
             this.pt6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pt5
             // 
             this.pt5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pt5.Location = new System.Drawing.Point(175, 122);
-            this.pt5.Margin = new System.Windows.Forms.Padding(4);
+            this.pt5.Location = new System.Drawing.Point(131, 103);
             this.pt5.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.pt5.Name = "pt5";
-            this.pt5.Size = new System.Drawing.Size(69, 18);
+            this.pt5.Size = new System.Drawing.Size(52, 16);
             this.pt5.TabIndex = 27;
             this.pt5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pt4
             // 
             this.pt4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pt4.Location = new System.Drawing.Point(439, 73);
-            this.pt4.Margin = new System.Windows.Forms.Padding(4);
+            this.pt4.Location = new System.Drawing.Point(329, 63);
             this.pt4.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.pt4.Name = "pt4";
-            this.pt4.Size = new System.Drawing.Size(69, 18);
+            this.pt4.Size = new System.Drawing.Size(52, 16);
             this.pt4.TabIndex = 26;
             this.pt4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pt3
             // 
             this.pt3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pt3.Location = new System.Drawing.Point(175, 73);
-            this.pt3.Margin = new System.Windows.Forms.Padding(4);
+            this.pt3.Location = new System.Drawing.Point(131, 63);
             this.pt3.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.pt3.Name = "pt3";
-            this.pt3.Size = new System.Drawing.Size(69, 18);
+            this.pt3.Size = new System.Drawing.Size(52, 16);
             this.pt3.TabIndex = 25;
             this.pt3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pt2
             // 
             this.pt2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pt2.Location = new System.Drawing.Point(439, 24);
-            this.pt2.Margin = new System.Windows.Forms.Padding(4);
+            this.pt2.Location = new System.Drawing.Point(329, 24);
             this.pt2.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.pt2.Name = "pt2";
-            this.pt2.Size = new System.Drawing.Size(69, 18);
+            this.pt2.Size = new System.Drawing.Size(52, 16);
             this.pt2.TabIndex = 24;
             this.pt2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pt1
             // 
             this.pt1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pt1.Location = new System.Drawing.Point(175, 24);
-            this.pt1.Margin = new System.Windows.Forms.Padding(4);
+            this.pt1.Location = new System.Drawing.Point(131, 24);
             this.pt1.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.pt1.Name = "pt1";
-            this.pt1.Size = new System.Drawing.Size(69, 18);
+            this.pt1.Size = new System.Drawing.Size(52, 16);
             this.pt1.TabIndex = 23;
             this.pt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -210,10 +200,9 @@
             this.btApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btApply.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btApply.ForeColor = System.Drawing.Color.White;
-            this.btApply.Location = new System.Drawing.Point(175, 270);
-            this.btApply.Margin = new System.Windows.Forms.Padding(4);
+            this.btApply.Location = new System.Drawing.Point(131, 219);
             this.btApply.Name = "btApply";
-            this.btApply.Size = new System.Drawing.Size(333, 46);
+            this.btApply.Size = new System.Drawing.Size(250, 37);
             this.btApply.TabIndex = 33;
             this.btApply.Text = "Apply Now";
             this.btApply.UseVisualStyleBackColor = false;
@@ -227,20 +216,19 @@
             this.bntBack.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntBack.ForeColor = System.Drawing.Color.White;
             this.bntBack.Image = ((System.Drawing.Image)(resources.GetObject("bntBack.Image")));
-            this.bntBack.Location = new System.Drawing.Point(13, 270);
-            this.bntBack.Margin = new System.Windows.Forms.Padding(4);
+            this.bntBack.Location = new System.Drawing.Point(10, 219);
             this.bntBack.Name = "bntBack";
-            this.bntBack.Size = new System.Drawing.Size(48, 46);
+            this.bntBack.Size = new System.Drawing.Size(36, 37);
             this.bntBack.TabIndex = 33;
             this.bntBack.UseVisualStyleBackColor = false;
             this.bntBack.Click += new System.EventHandler(this.bntBack_Click);
             // 
             // frmByHand
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.ClientSize = new System.Drawing.Size(540, 335);
+            this.ClientSize = new System.Drawing.Size(405, 272);
             this.Controls.Add(this.bntBack);
             this.Controls.Add(this.btApply);
             this.Controls.Add(this.pt10);
@@ -254,7 +242,6 @@
             this.Controls.Add(this.pt2);
             this.Controls.Add(this.pt1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmByHand";
             this.Text = "FrmByHand";
             this.Load += new System.EventHandler(this.frmByHand_Load);

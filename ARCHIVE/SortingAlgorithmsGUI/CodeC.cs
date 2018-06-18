@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CODE
+namespace _Code
 {
-    class CodeC
+    class Code
     {
         public void insertionsort(ListBox lst_Code, Boolean tang)
         {
@@ -236,7 +236,7 @@ namespace CODE
         public void quicksort(ListBox lst_Code, Boolean tang)
         {
             lst_Code.Items.Add("void QuickSort(int a[], int left, int right)");
-            lst_Code.Items.Add("     {");
+            lst_Code.Items.Add("{");
             lst_Code.Items.Add("            int i, j, x;");
             lst_Code.Items.Add("            x = a[(left + right) / 2]; ");
             lst_Code.Items.Add("            i = left; j = right;");
@@ -262,7 +262,7 @@ namespace CODE
             lst_Code.Items.Add("                   QuickSort(a, left, j);");
             lst_Code.Items.Add("               if(i < right)");
             lst_Code.Items.Add("                   QuickSort(a, i, right);");
-            lst_Code.Items.Add("      }");
+            lst_Code.Items.Add("}");
             lst_Code.Items.Add("  void Swap(int &a,int &b)  {");
             lst_Code.Items.Add("           int temp = a;");
             lst_Code.Items.Add("            a = b;");

@@ -41,5 +41,17 @@ namespace SortingAlgorithmsGUI
             this.Hide();
             this.Show();
         }
+
+        private void frmIntroduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bntApplication.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                bntExcecutors.PerformClick();
+            }
+        }
     }
 }

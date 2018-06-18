@@ -51,8 +51,9 @@
             this.panel1.Controls.Add(this.bntMinimize);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(649, 38);
+            this.panel1.Size = new System.Drawing.Size(487, 31);
             this.panel1.TabIndex = 0;
             // 
             // bunifuImageButton1
@@ -60,9 +61,10 @@
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(621, 9);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(466, 7);
+            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(20, 18);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(15, 15);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bunifuImageButton1.TabIndex = 0;
             this.bunifuImageButton1.TabStop = false;
@@ -74,9 +76,10 @@
             this.bntMinimize.BackColor = System.Drawing.Color.Transparent;
             this.bntMinimize.Image = ((System.Drawing.Image)(resources.GetObject("bntMinimize.Image")));
             this.bntMinimize.ImageActive = null;
-            this.bntMinimize.Location = new System.Drawing.Point(600, 9);
+            this.bntMinimize.Location = new System.Drawing.Point(450, 7);
+            this.bntMinimize.Margin = new System.Windows.Forms.Padding(2);
             this.bntMinimize.Name = "bntMinimize";
-            this.bntMinimize.Size = new System.Drawing.Size(20, 18);
+            this.bntMinimize.Size = new System.Drawing.Size(15, 15);
             this.bntMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bntMinimize.TabIndex = 0;
             this.bntMinimize.TabStop = false;
@@ -88,9 +91,10 @@
             this.lbApplication.AutoSize = true;
             this.lbApplication.Font = new System.Drawing.Font("Candara", 38.25F);
             this.lbApplication.ForeColor = System.Drawing.Color.White;
-            this.lbApplication.Location = new System.Drawing.Point(75, 85);
+            this.lbApplication.Location = new System.Drawing.Point(56, 69);
+            this.lbApplication.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbApplication.Name = "lbApplication";
-            this.lbApplication.Size = new System.Drawing.Size(341, 78);
+            this.lbApplication.Size = new System.Drawing.Size(270, 63);
             this.lbApplication.TabIndex = 1;
             this.lbApplication.Text = "Application";
             // 
@@ -99,9 +103,10 @@
             this.lbSortingAlgorithms.AutoSize = true;
             this.lbSortingAlgorithms.Font = new System.Drawing.Font("Candara", 24F);
             this.lbSortingAlgorithms.ForeColor = System.Drawing.Color.White;
-            this.lbSortingAlgorithms.Location = new System.Drawing.Point(209, 150);
+            this.lbSortingAlgorithms.Location = new System.Drawing.Point(157, 122);
+            this.lbSortingAlgorithms.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSortingAlgorithms.Name = "lbSortingAlgorithms";
-            this.lbSortingAlgorithms.Size = new System.Drawing.Size(341, 49);
+            this.lbSortingAlgorithms.Size = new System.Drawing.Size(268, 39);
             this.lbSortingAlgorithms.TabIndex = 2;
             this.lbSortingAlgorithms.Text = "Sorting Algorithms";
             // 
@@ -115,9 +120,10 @@
             this.bntExcecutors.ForeColor = System.Drawing.Color.White;
             this.bntExcecutors.Image = ((System.Drawing.Image)(resources.GetObject("bntExcecutors.Image")));
             this.bntExcecutors.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntExcecutors.Location = new System.Drawing.Point(155, 265);
+            this.bntExcecutors.Location = new System.Drawing.Point(116, 215);
+            this.bntExcecutors.Margin = new System.Windows.Forms.Padding(2);
             this.bntExcecutors.Name = "bntExcecutors";
-            this.bntExcecutors.Size = new System.Drawing.Size(151, 39);
+            this.bntExcecutors.Size = new System.Drawing.Size(113, 32);
             this.bntExcecutors.TabIndex = 3;
             this.bntExcecutors.Text = "Excecutors";
             this.bntExcecutors.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,9 +142,10 @@
             this.bntApplication.ForeColor = System.Drawing.Color.White;
             this.bntApplication.Image = ((System.Drawing.Image)(resources.GetObject("bntApplication.Image")));
             this.bntApplication.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntApplication.Location = new System.Drawing.Point(351, 265);
+            this.bntApplication.Location = new System.Drawing.Point(263, 215);
+            this.bntApplication.Margin = new System.Windows.Forms.Padding(2);
             this.bntApplication.Name = "bntApplication";
-            this.bntApplication.Size = new System.Drawing.Size(151, 39);
+            this.bntApplication.Size = new System.Drawing.Size(113, 32);
             this.bntApplication.TabIndex = 3;
             this.bntApplication.Text = "Application";
             this.bntApplication.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -157,19 +164,21 @@
             // 
             // frmIntroduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.ClientSize = new System.Drawing.Size(649, 334);
+            this.ClientSize = new System.Drawing.Size(487, 271);
             this.Controls.Add(this.bntApplication);
             this.Controls.Add(this.bntExcecutors);
             this.Controls.Add(this.lbSortingAlgorithms);
             this.Controls.Add(this.lbApplication);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmIntroduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sorting Algorithms";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmIntroduct_KeyDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntMinimize)).EndInit();
